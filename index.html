@@ -59,17 +59,56 @@
       <h2>Table of Contents</h2>
       <sl-tree>
         <sl-tree-item expanded>
-          <a href="#section-header-1">1. Section Header 1</a>
+          <a href="#Introduction">1. Introduction</a>
           <sl-tree-item>
-            <a href="#sub-section-1-header-1">1.1. Sub-section Header 1</a>
+            <a href="#Research-Context">Research Context</a>
           </sl-tree-item>
           <sl-tree-item>
-            <a href="#sub-section-1-header-2">1.2. Sub-section Header 2</a>
+            <a href="#Problem-Statement">Problem Statement</a>
+          </sl-tree-item>
+          <sl-tree-item>
+            <a href="#Project-Objective">Project-Objective</a>
+          </sl-tree-item>
+          <sl-tree-item>
+            <a href="#Problem-Scope">Project Scope</a>
+          </sl-tree-item>
+          <sl-tree-item>
+            <a href="#Novelty-and-Contribution">Novelty and Contribution</a>
+          </sl-tree-item>          
+        </sl-tree-item>
+
+        <sl-tree-item expanded>
+          <a href="#Methodology">2. Methodology</a>
+          <sl-tree-item>
+            <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
+          </sl-tree-item>
+          <sl-tree-item>
+            <a href="#sub-section-2-header-2">2.2. Sub-section Header 2</a>
           </sl-tree-item>
         </sl-tree-item>
 
         <sl-tree-item expanded>
-          <a href="#section-header-2">2. Section Header 1</a>
+          <a href="#Results">3. Results</a>
+          <sl-tree-item>
+            <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
+          </sl-tree-item>
+          <sl-tree-item>
+            <a href="#sub-section-2-header-2">2.2. Sub-section Header 2</a>
+          </sl-tree-item>
+        </sl-tree-item>
+
+        <sl-tree-item expanded>
+          <a href="#Discussion">4. Discussion</a>
+          <sl-tree-item>
+            <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
+          </sl-tree-item>
+          <sl-tree-item>
+            <a href="#sub-section-2-header-2">2.2. Sub-section Header 2</a>
+          </sl-tree-item>
+        </sl-tree-item>
+
+        <sl-tree-item expanded>
+          <a href="#Future-works">5. Future Works</a>
           <sl-tree-item>
             <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
           </sl-tree-item>
@@ -88,56 +127,133 @@
     <div>
 
       <!-- This is an example of what a section might look like -->
-      <div id="section-header-1">
-        <h2> 1. Section Header 1 </h2>
+      <div id="Introduction">
+        <h2> 1. Introduction </h2>
+        <div id="Research-Context">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna
-          aliqua. Tincidunt ornare massa eget egestas. At tellus at urna condimentum mattis pellentesque id nibh tortor.
-          Elementum sagittis vitae et leo duis ut diam. Morbi tristique senectus et netus et malesuada fames.
-          Suspendisse
-          ultrices gravida dictum fusce ut placerat orci. Risus nullam eget felis eget nunc lobortis mattis aliquam
-          faucibus
-          (Brody, 2007). Eget sit amet tellus cras adipiscing enim eu turpis egestas. Aliquet nibh praesent tristique
-          magna
-          sit amet purus. Adipiscing bibendum est ultricies integer quis auctor elit sed. Fermentum et sollicitudin ac
-          orci
-          phasellus egestas tellus rutrum. At in tellus integer feugiat scelerisque varius morbi enim nunc. Volutpat
-          blandit
-          aliquam etiam erat velit scelerisque in. Id diam maecenas ultricies mi eget mauris pharetra et. Nec dui nunc
-          mattis
-          enim ut tellus elementum sagittis vitae.
+          <b>Research Context.</b> Engineered immune-cell therapies have transformed oncology
+          by demonstrating that synthetic genetic reprogramming can endow effector cells with
+          potent, tumor-specific cytotoxicity [1]. Among these, chimeric antigen receptor (CAR)
+          T-cell therapy stands as the most successful example—six products have gained 
+          regulatory approval to date for the treatment of aggressive malignancies [2], such as
+          relapsed or refractory B-cell lymphoma [3, 4] and multiple myeloma [5, 6]. This 
+          approach harnesses a patient’s own immune system to selectively recognize and 
+          eliminate tumor cells, overcoming limitations of traditional cancer treatments 
+          such as surgery, radiotherapy, and chemotherapy, which often lack selectivity and 
+          efficacy against advanced or disseminated disease. Reflecting its impact, the 
+          global cell therapy market—estimated at US$25 billion in 2025—is projected to 
+          exceed US$117 billion by 2034, driven by expansion into solid tumors [7], 
+          autoimmune disorders, and infectious diseases.
         </p>
+        <p>
+          Despite these clinical successes, the field remains constrained by a fundamental
+          manufacturing bottleneck. As of June 2023, more than 1300 clinical trials of CAR-T
+          and related therapies were registered, approximately 93% of which employ autologous
+          manufacturing pipelines [? ]. Such patient-specific production is logistically fragile and
+          economically prohibitive (US$0.4–1 million per treatment), limiting access to roughly
+          20% of prescribed patients [? ? ]. Moreover, in real-world settings, manufacturing
+          delays are so severe that ∼ 7% of patients die before receiving their infusion [? ].
+        </p>
+        <p>
+          The core challenge lies in the transfection of primary immune cells—a critical step
+          for introducing chimeric receptors or enabling precise genome edits. Current 
+          delivery modalities impose intrinsic trade-offs: (1) Viral vectors suffer from 
+          limited cargo capacity (∼ 5–15 kb), risks of random genomic integration, 
+          immunogenicity, and costly cGMP-scale production [? ? ]. (2) Bulk electroporation 
+          requires extremely high electric fields (tens to hundreds of kVcm−1), causing 
+          Joule heating, calcium dysregulation, and transcriptional perturbations that 
+          compromise cell viability and function [? ]. Furthermore, current treatment relies 
+          on centralized production models due to labor-intensive manual production and the 
+          need to maintain consistent quality and minimize product variability. Additionally, 
+          QA/QC protocols are implemented due to concerns from the viral nature of the 
+          treatment. This contributes to long wait times and necessitates cryopreservation, 
+          which can render some patients ineligible due to rapid deterioration in health and 
+          reduction in CAR-T cell viability before infusion. Current solutions to address 
+          these challenges include automated devices such as CliniMac’s Prodigy and
+          Thermofisher CTS xenon system, but they are designed to produce one batch of dose per 
+          cycle.
+        </p>
+        <p>
+          With the U.S. FDA projecting 10–20 new cell and gene therapy approvals annually
+          by 2025 and the allogeneic immune-cell therapy market expected to grow at a CAGR
+          of ∼ 27.4%, there is an urgent need for scalable, non-viral, multipayload transfection
+          technologies that preserve cellular integrity and integrate seamlessly into closed-loop
+          automation.
+          
+        </p>
+        </div>
+        <div id="Problem-Statement">
+        <p>
+          <b>Probelm Statement.</b> This demand motivates a new manufacturing paradigm: a
+          universal, automated bioreactor platform capable of producing off-the-shelf immune
+          effector cells at scale—decoupled from viral intermediates, engineered for high
+          throughput and low-perturbation delivery, and designed to accelerate the industrial
+          translation of next-generation cell therapies.
+        </p>
+        </div>
+        <div id="Project-Objective">
+        <p>
+          <b>Project Objective.</b> In this project, we aim to streamline and automate the
+          transfection workflow for producing allogeneic immune cells. Current manufacturing
+          pipelines for CAR-T therapy remain expensive, labour-intensive, and centralized, 
+          creating high costs, quality variability, and long production cycles. By developing an
+          integrated automated system, we seek to reduce production costs, ensure consistent
+          product quality, and shorten vein-to-vein time—ultimately enabling decentralized and
+          more accessible manufacturing of immune-cell therapies. Within the team, Tianmu
+          will lead the development of the automation backbone, focusing primarily on the
+          design and optimization of the media-transportation system. Celeste will concentrate
+          on engineering the transfection module. Both subsystems will be jointly integrated
+          into a cohesive automated platform.
+        </p>
+        </div>
+        <div id="Project-Scope">
+        <p>
+          <b>Project Scope.</b> Because the central objective is automation, our validation 
+          strategy emphasizes engineering performance rather than deep biological 
+          characterization. Specifically, our target milestones are: (1) improved recovery 
+          efficiency—minimizing residual volume and achieving a recovery rate greater than 50%; 
+          (2) robust, stable, and controllable system operation with a total processing time below 
+          10 minutes; and (3) low system-induced cell loss, maintaining cell viability above 70%
+          when operating without electroporation. Initial testing will be performed using Jurkat 
+          cells, an immortalized T-cell line with a rapid doubling time (approximately 1–2 days), 
+          making it suitable for repeated prototyping cycles. The combined evaluation across 
+          recovery, stability, and viability will determine whether the platform is ready for 
+          downstream optimization toward bedside or on-bench automated manufacturing of immune cells.
+        </p>
+        <p>
+          As an additional enhancement, we aim to incorporate experiments in vitro once the
+          engineering benchmarks are met. This may include optimizing system parameters for
+          transfection of primary human T cells using fluorescent dyes or non-functional protein
+          cargo, thereby producing a prototype that is immediately ready for future biologically
+          intensive refinement.
+        </p>
+        </div>
+        <div id="Novelty-and-Contribution">
+        <p>
+          <b>Novelty and Contribution.</b> Our work presents three key advances over existing
+          approaches: (1) We automate a non-viral transfection pipeline built on nanostructured
+          interfaces that can be manufactured at comparatively low cost. The goal is
+          to deliver a next-generation, scalable, and automated non-viral transfection 
+          platform that can serve both clinical (bed-side) and research (on-bench) applications. No
+          equivalent system currently exists on the market; our prototype therefore lays the
+          foundational groundwork for a future universal immune-cell manufacturing device.
+          (2) We expand our earlier single-well prototype into a 96-well system, increasing 
+          production throughput by up to 96-fold. The redesigned platform incorporates standard
+          laboratory consumables—including 96-well plates, pipette tips, and common medical
+          springs—to ensure compatibility with existing laboratory workflows and enhance 
+          clinical utility. (3) We introduce an innovative shift from media-based to 
+          container-based transportation. This approach mitigates cell loss and residual 
+          accumulation, two common issues in current bioreactor designs. By ensuring that cells are transferred in a
+          highly preserved state, this method improves cell viability and significantly compresses
+          the overall manufacturing timeline.
+        </p>
+        </div>
+
       </div>
 
-      <div id="sub-section-1-header-1">
-        <h3>1.1 Sub-section Header 1</h3>
-        <p>
-          Ultrices dui sapien eget mi. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Dolor purus non enim
-          praesent elementum facilisis. Lacus vestibulum sed arcu non odio euismod lacinia at. Metus aliquam eleifend mi
-          in nulla. Lacus sed viverra tellus in hac habitasse platea. Varius quam quisque id diam vel quam elementum
-          pulvinar. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Diam ut venenatis tellus in metus
-          vulputate. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Venenatis lectus magna
-          fringilla
-          urna. In nisl nisi scelerisque eu ultrices. Velit egestas dui id ornare arcu odio ut sem nulla. Quam id leo in
-          vitae. Egestas congue quisque egestas diam in arcu cursus euismod quis. Porttitor leo a diam sollicitudin
-          tempor
-          id eu nisl.
-        </p>
-      </div>
+      
 
-      <div id="sub-section-1-header-2">
-        <h3>1.2 Sub-section Header 2</h3>
-        <p>
-          Fermentum dui faucibus in ornare quam viverra orci. Donec ultrices tincidunt arcu non sodales. A diam maecenas
-          sed enim ut sem viverra. Semper viverra nam libero justo laoreet sit. Mi sit amet mauris commodo quis. Auctor
-          augue mauris augue neque gravida in fermentum et. Auctor elit sed vulputate mi sit amet. Maecenas pharetra
-          convallis posuere morbi leo urna. Sem nulla pharetra diam sit amet nisl. Id nibh tortor id aliquet lectus.
-          Nibh
-          nisl condimentum id venenatis a condimentum vitae sapien. Convallis posuere morbi leo urna molestie at
-          elementum.
-        </p>
-
+        <!-- This is an example of how you might use the image component -->
         <!-- This is an example of how you might use the image component -->
         <image-component tag="image" source="assets/requirement.png"
           subtitle="Image 1: iDP suggested pathway"></image-component>
@@ -145,12 +261,10 @@
     </div>
 
 
-    <br />
-    <br />
     <sl-divider></sl-divider>
-    <div>
-      <div id="section-header-2">
-        <h2>2. Section Header 2</h2>
+    <div class = "content">
+      <div id="Methodology">
+        <h2>2. Methodology</h2>
         <p>
           Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
           eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
@@ -161,6 +275,156 @@
           aliquam sem.
         </p>
       </div>
+
+      <div id="sub-section-2-header-1">
+        <h3>2.1. Sub-section Header 1</h3>
+        <p>
+          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
+          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
+          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
+          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
+          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
+          fames ac. <a href="#image">Link to the image above</a>
+        </p>
+
+        <!-- This is an example of how you might use the video component -->
+        <video-component tag="rick" source="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          subtitle="Video: Never gonna give you up?"></video-component>
+      </div>
+
+      <div id="sub-section-2-header-2">
+        <h3>2.2. Sub-section Header 2</h3>
+        <p>
+          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
+          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
+          habitant
+          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
+          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
+          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
+        </p>
+
+        <!-- This is an example of how you might use the table component -->
+        <table-component subtitle="Table: Demo table">
+          <div id="table-1"></div>
+        </table-component>
+      </div>
+    </div>
+
+    <sl-divider></sl-divider>
+    <div class = "content">
+      <div id="Results">
+        <h2>3. Results</h2>
+        <p>
+          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
+          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
+          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
+          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
+          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
+          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
+          aliquam sem.
+        </p>
+        <iframe src="Figures/Figure_1.pdf" width="100%" height="600px"></iframe>
+        
+      </div>
+
+      <div id="sub-section-2-header-1">
+        <h3>2.1. Sub-section Header 1</h3>
+        <p>
+          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
+          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
+          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
+          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
+          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
+          fames ac. <a href="#image">Link to the image above</a>
+        </p>
+
+        <!-- This is an example of how you might use the video component -->
+        <video-component tag="rick" source="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          subtitle="Video: Never gonna give you up?"></video-component>
+      </div>
+
+      <div id="sub-section-2-header-2">
+        <h3>2.2. Sub-section Header 2</h3>
+        <p>
+          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
+          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
+          habitant
+          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
+          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
+          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
+        </p>
+
+        <!-- This is an example of how you might use the table component -->
+        <table-component subtitle="Table: Demo table">
+          <div id="table-1"></div>
+        </table-component>
+      </div>
+    </div>
+
+    <sl-divider></sl-divider>
+    <div class = "content">
+      <div id="Discussion">
+        <h2>4. Discussion</h2>
+        <p>
+          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
+          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
+          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
+          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
+          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
+          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
+          aliquam sem.
+        </p>
+      </div>      
+      <iframe src="Figures/Figure_2.pdf" width="100%" height="600px"></iframe>
+
+      <div id="sub-section-2-header-1">
+        <h3>2.1. Sub-section Header 1</h3>
+        <p>
+          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
+          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
+          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
+          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
+          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
+          fames ac. <a href="#image">Link to the image above</a>
+        </p>
+
+        <!-- This is an example of how you might use the video component -->
+        <video-component tag="rick" source="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          subtitle="Video: Never gonna give you up?"></video-component>
+      </div>
+
+      <div id="sub-section-2-header-2">
+        <h3>2.2. Sub-section Header 2</h3>
+        <p>
+          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
+          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
+          habitant
+          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
+          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
+          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
+        </p>
+
+        <!-- This is an example of how you might use the table component -->
+        <table-component subtitle="Table: Demo table">
+          <div id="table-1"></div>
+        </table-component>
+      </div>
+    </div>
+
+    <div class = "content">
+      <div id="Future-works">
+        <h2>5. Future Works</h2>
+        <p>
+          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
+          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
+          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
+          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
+          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
+          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
+          aliquam sem.
+        </p>
+      </div>
+      <iframe src="Figures/Figure_3.pdf" width="100%" height="600px"></iframe>
 
       <div id="sub-section-2-header-1">
         <h3>2.1. Sub-section Header 1</h3>
@@ -230,3 +494,4 @@
 </body>
 
 </html>
+
