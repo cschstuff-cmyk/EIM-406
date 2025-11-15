@@ -227,47 +227,47 @@
           potent, tumor-specific cytotoxicity <a href="#ref1">[1]</a>. Among these, chimeric antigen receptor (CAR)
           T-cell therapy stands as the most successful example—six products have gained 
           regulatory approval to date for the treatment of aggressive malignancies <a href="#ref2">[2]</a>, such as
-          relapsed or refractory B-cell lymphoma <a href="#link">[3-4]</a> and multiple myeloma <a href="#link">[5-6]</a>. This 
+          relapsed or refractory B-cell lymphoma <a href="#ref3">[3,</a><a href="#ref4">4]</a> and multiple myeloma <a href="#ref5">[5,</a><a href="#ref6">6]</a>. This 
           approach harnesses a patient’s own immune system to selectively recognize and 
-          eliminate tumor cells, overcoming limitations of traditional cancer treatments 
-          such as surgery, radiotherapy, and chemotherapy, which often lack selectivity and 
+          eliminate tumor cells, overcoming limitations of traditional cancer treatments <a href="#ref7">[7]</a>
+          such as surgery <a href="#ref8">[8]</a>, radiotherapy <a href="#ref9">[9]</a>, and chemotherapy<a href="#ref10">[10]</a>, which often lack selectivity and 
           efficacy against advanced or disseminated disease. Reflecting its impact, the 
           global cell therapy market—estimated at US$25 billion in 2025—is projected to 
-          exceed US$117 billion by 2034, driven by expansion into solid tumors <a href="#link">[7]</a>, 
-          autoimmune disorders, and infectious diseases.
+          exceed US$117 billion by 2034 <a href="#ref11">[11]</a>, driven by expansion into solid tumors <a href="#ref11">[11]</a>, 
+          autoimmune disorders <a href="#ref12">[12]</a>, and infectious diseases <a href="#ref13">[13]</a>.
         </p>
         <p>
           Despite these clinical successes, the field remains constrained by a fundamental
           manufacturing bottleneck. As of June 2023, more than 1300 clinical trials of CAR-T
           and related therapies were registered, approximately 93% of which employ autologous
-          manufacturing pipelines <a href="#link">[8]</a>. Such patient-specific production is logistically fragile and
-          economically prohibitive (US$0.4–1 million per treatment <a href="#link">[8]</a>), limiting access to roughly
-          20% of prescribed patients <a href="#link">[9-10]</a>. Moreover, in real-world settings, manufacturing
-          delays are so severe that ∼ 7% of patients die before receiving their infusion <a href="#link">[11]</a>.
+          manufacturing pipelines <a href="#ref14">[14]</a>. Such patient-specific production is logistically fragile and
+          economically prohibitive (US$0.4–1 million per treatment), limiting access to roughly
+          20% of prescribed patients <a href="#ref14">[14,</a><a href="#ref15">15]</a>. Moreover, in real-world settings, manufacturing
+          delays are so severe that ∼ 7% of patients die before receiving their infusion <a href="#ref15">[15]</a>.
         </p>
         <p>
           The core challenge lies in the transfection of primary immune cells—a critical step
           for introducing chimeric receptors or enabling precise genome edits. Current 
           delivery modalities impose intrinsic trade-offs: (1) Viral vectors suffer from 
           limited cargo capacity (∼ 5–15 kb), risks of random genomic integration, 
-          immunogenicity, and costly cGMP-scale production <a href="#link">[12-13]</a>. (2) Bulk electroporation 
+          immunogenicity, and costly cGMP-scale production <a href="#ref14">[14,</a><a href="#ref15">15]</a>. (2) Bulk electroporation 
           requires extremely high electric fields (tens to hundreds of kVcm−1), causing 
           Joule heating, calcium dysregulation, and transcriptional perturbations that 
-          compromise cell viability and function <a href="#link">[14-15]</a>. Furthermore, current treatment relies 
+          compromise cell viability and function <a href="#ref14">[14]</a>. Furthermore, current treatment relies 
           on centralized production models due to labor-intensive manual production and the 
-          need to maintain consistent quality and minimize product variability. Additionally, 
+          need to maintain consistent quality and minimize product variability <a href="#ref16">[16]</a>. Additionally, 
           QA/QC protocols are implemented due to concerns from the viral nature of the 
-          treatment. This contributes to long wait times and necessitates cryopreservation, 
+          treatment <a href="#ref17">[17]</a>. This contributes to long wait times and necessitates cryopreservation, 
           which can render some patients ineligible due to rapid deterioration in health and 
-          reduction in CAR-T cell viability before infusion. Current solutions to address 
-          these challenges include automated devices such as CliniMac’s Prodigy and
-          Thermofisher CTS xenon system, but they are designed to produce one batch of dose per 
+          reduction in CAR-T cell viability before infusion <a href="#ref16">[16]</a>. Current solutions to address 
+          these challenges include automated devices such as CliniMac’s Prodigy<sup><a href="https://www.miltenyibiotec.com/SG-en/products/clinimacs-prodigy.html">1</a></sup> and
+          Thermofisher CTS xenon system <sup><a href="https://www.thermofisher.com/sg/en/home/life-science/cell-culture/transfection/neon-electroporation-system.html">2</a></sup>, but they are designed to produce one batch of dose per 
           cycle.
         </p>
         <p>
           With the U.S. FDA projecting 10–20 new cell and gene therapy approvals annually
-          by 2025 and the allogeneic immune-cell therapy market expected to grow at a CAGR
-          of ∼ 27.4%, there is an urgent need for scalable, non-viral, multipayload transfection
+          by 2025<sup><a href="https://www.fiercebiotech.com/biotech/fda-planning-new-guidance-hires-cell-and-gene-therapies-for-2019?">3</a></sup> and the allogeneic immune-cell therapy market expected to grow at a CAGR
+          of ∼ 27.4%<sup><a href="https://www.grandviewresearch.com/industry-analysis/allogeneic-cell-therapy-market-report">4</a></sup>, there is an urgent need for scalable, non-viral, multipayload transfection
           technologies that preserve cellular integrity and integrate seamlessly into closed-loop
           automation.
           
@@ -295,7 +295,7 @@
         </p>
         <p>
           Building on our MVP work which has demonstrated effective cell isolation 
-          (results not published) and single-well transfection~\cite{kumar2025non}, 
+          (results not published) and single-well transfection<a href="#ref18">[18]</a>, 
           preliminary testing in the 96-well configuration revealed several challenges.
                   <table class="design-table" id="Table-1">
           <caption>Table 1: Preliminary Testing Concerns related to MVP Set Up</caption>
@@ -788,7 +788,7 @@
             lower cost. Its naturally forming TiO<sub>2</sub> passivation layer 
             ensures stable performance under repeated electrical pulsing at 40-50V 
             in buffered media such as RPMI-1640, with demonstrated low cytotoxicity 
-            in Jurkat or primary human T cells~\cite{santra2016dielectric, ossowska2021effect}. 
+            in Jurkat or primary human T cells <a href="#ref19">[19,</a><a href="#ref20">20]</a>. 
           </p>
           </div>
 
@@ -962,11 +962,11 @@
             alumina lining within the pores. In Step~4, directional oxygen plasma reactive-ion 
             etching (O<sub>2</sub> RIE) or CF<sub>4</sub>/CHF<sub>3</sub>-based plasma steps to
             precisely sculpt the exposed structures. Reproduced from Arun et. al.
-            <a href="#ref1">[1]</a>. <b>Design Overview</b>The device consists of a conveyor, 
+            <a href="#ref18">[18]</a>. <b>Design Overview</b>The device consists of a conveyor, 
             sample transporter, sample platform which holds both the sample reservoir and the transfection
             plate, electroporation array and magnet. Bottom left: Electrode Array Schematics. (i) Schematics 
-            of layers of the nanoelectroporation substrate. Reproduced from Arun et. al.<a href="#ref1">[1]</a>
-            (ii) Schematics of nanoelectroporation. Reproduced from Arun et. al.<a href="#ref1">[1]</a>
+            of layers of the nanoelectroporation substrate. Reproduced from Arun et. al.<a href="#ref18">[18]</a>
+            (ii) Schematics of nanoelectroporation. Reproduced from Arun et. al.<a href="#ref18">[18]</a>
             <b>(c.)</b>Automated transfection protocol. Cells are (i) input into sample reservoir, 
             (ii, iii) translate to transfection plate, (iv) electroporated, (v) re-collected and 
             (vi) output.
@@ -1087,7 +1087,7 @@
             the electric field and average electric field strength at transfection membrane and 
             found that across all meshes, the average electric field strength remained 
             negligibly different (p > 0.99; Mean Square Difference < 0.1 V/m; 
-            <a href="#Figure-3">Fig.3c</a> Top Right). Next, theoretical computation confirmed pulsed 
+            <a href="#Figure-3">Fig.3c</a> Top Right). Next, theoretical computation (<a href="#Electrochemical-Analysis">Appendix</a>) confirmed pulsed 
             operation under the anticipated voltage and buffer conditions induced negligible 
             release of Ti<sup>4+</sup> ions, supporting the suitability of titanium as a 
             biocompatible anode material within the RPMI-based electroporation environment.
@@ -1239,7 +1239,7 @@
             is confirmed stable, electroporation performance will be evaluated using 
             Jurkat cells with fluorescent dyes and proteins, and optionally extended 
             to primary T cells to assess translational potential. Detailed protocols 
-            are provided in the Appendix <a href="#Simulation-Protocol">Protocol</a>>. (b.)Engineering characterization: We will verify uniform current distribution across 
+            are provided in the Appendix <a href="#Future-Experiment-Protocol">Protocol</a>>. (b.)Engineering characterization: We will verify uniform current distribution across 
             titanium electrodes, ensure no fluid seepage within the consumables 
             assembly (well plate, nanostraw membrane, cargo channel, ITO substrate), 
             and characterize electric-field uniformity across wells during 
