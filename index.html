@@ -58,12 +58,19 @@
 
       <!-- This is the team member component use to display details about your team members -->
       <div class="team-member-wrapper">
-        <team-member avatar=null name="Chng Jing Xuan, Celeste" department="Biomedical Engineering" year=""
+        <team-member avatar="Figures/photo_2.png" name="Chng Jing Xuan, Celeste" department="Biomedical Engineering" year=""
           ></team-member>
-        <team-member avatar=null name="Hu Tianmu" department="Engineering Science Programme" year=""
+        <team-member avatar="Figures/photo_1.jpeg" name="Hu Tianmu" department="Engineering Science Programme" year=""
           ></team-member>
         
       </div>
+    </div>
+
+    <div id="Abstract" class="content-inner">
+        <h2>Abstract</h2>
+        <p>
+          Engineered immune-cell therapies remain constrained by high-cost, labour-intensive, and centralized manufacturing pipelines, with non-viral transfection representing a major bottleneck. To address this, we developed a fully automated, non-viral transfection platform designed as a universal backbone for scalable, off-the-shelf immune-cell manufacturing. Our system integrates conveyor-based plate transport, syringe-driven media handling, and a redesigned electroporation module incorporating a nanostraw substrate and a machine-aligned titanium electrode array. Across thirty automated cycles, the device demonstrated robust mechanical stability, reproducible timing (556 ± 12 s per run), and mesh-independent electric-field uniformity between titanium and platinum electrodes (MSE &lt; 0.1 V/m). Electrochemical analysis confirmed the safety of titanium operation in RPMI, and dimensional validation verified consistent alignment across modules. Together, these results establish a wet-lab-ready automated transfection backbone capable of supporting high-throughput, low-perturbation engineering of immune cells, laying the foundation for decentralized, scalable, and clinically compatible non-viral manufacturing of next-generation allogeneic therapies.
+        </p>
     </div>
 
         
@@ -387,17 +394,17 @@
         <figure class="svg-component" id="Figure-1">
           <img src="Figures/Figure_1_svg.svg" alt="Fig. 1: Overview of CAR-T Therapy">
           <figcaption>
-            <b>Fig. 1: Overview of CAR-T Therapy</b> <b>(a.)</b>Cycle of CAR-T therapy. 
+            <b>Fig. 1: Overview of CAR-T Therapy</b> <b>(a.)</b> Cycle of CAR-T therapy. 
               Blood samples are often drawn from Patient, from which primary human T cells are 
               isolated. Cargoes are transfected into the T cells to introduce CAR phonotype. 
-              Outter rings summarize the time CAR-T manufacturing can take. <b>(b.)</b>User cases.
+              Outter rings summarize the time CAR-T manufacturing can take. <b>(b.)</b> User cases.
               Scenario 1 is our user case, where the blood samples are collected bedside, and 
               re-infused into patients after manufacturing. Scenario 2 requires cyropreservation to 
               transport samples to a centralized production factory. Scenario 3 includes 
               two cases---including that patients travel to a centralized facility where the full 
               cycle of CAR-T production can be performed, and that patients travel to a facility 
               where only sample collection is achievavle, while other manufacturing processes have to 
-              done elesewhere. <b>(c.)</b>Cost benchmark across current technolgies. Left: Stacked 
+              done elesewhere. <b>(c.)</b> Cost benchmark across current technolgies. Left: Stacked 
               cost comparison. Left: Cost breakdown (top) and cost percentage (down).
 
           </figcaption>
@@ -955,7 +962,7 @@
         <figure class="svg-component" id="Figure-2">
           <img src="Figures/Figure_2_svg.svg" alt="Fig. 2: Design and Prototype">
           <figcaption>
-            <b>Fig. 2: Design and Prototype</b> <b>(a.)</b>Fabrication of Nanostraw. Nanostrw 
+            <b>Fig. 2: Design and Prototype</b> <b>(a.)</b> Fabrication of Nanostraw. Nanostrw 
             membranes were fabricated through a multistep process beginning with track-etched
             <i>poly(ethylene terephthalate)</i>(PETE) films (Step~1), in which ion-irradiation 
             and chemical etching generate uniformly distributed, high-aspect-ratio nanopores. 
@@ -966,12 +973,12 @@
             alumina lining within the pores. In Step~4, directional oxygen plasma reactive-ion 
             etching (O<sub>2</sub> RIE) or CF<sub>4</sub>/CHF<sub>3</sub>-based plasma steps to
             precisely sculpt the exposed structures. Reproduced from Arun et. al.
-            <a href="#ref18">[18]</a>. <b>Design Overview</b>The device consists of a conveyor, 
+            <a href="#ref18">[18]</a>. <b>(b.)</b> Design Overview.The device consists of a conveyor, 
             sample transporter, sample platform which holds both the sample reservoir and the transfection
             plate, electroporation array and magnet. Bottom left: Electrode Array Schematics. (i) Schematics 
             of layers of the nanoelectroporation substrate. Reproduced from Arun et. al.<a href="#ref18">[18]</a>
             (ii) Schematics of nanoelectroporation. Reproduced from Arun et. al.<a href="#ref18">[18]</a>
-            <b>(c.)</b>Automated transfection protocol. Cells are (i) input into sample reservoir, 
+            <b>(c.)</b> Automated transfection protocol. Cells are (i) input into sample reservoir, 
             (ii, iii) translate to transfection plate, (iv) electroporated, (v) re-collected and 
             (vi) output.
 
@@ -1133,14 +1140,14 @@
       <figure class="svg-component" id="Figure-3">
         <img src="Figures/Figure_3_updated.svg" alt="Fig. 3: Iteration on Transfection Plate">
         <figcaption>
-          <b>Fig 3: Iteration on Transfection Plate</b> <b>(a.)</b>Schematics of the 
+          <b>Fig 3: Iteration on Transfection Plate</b> <b>(a.)</b> Schematics of the 
           iterated tyransfection plate. The iteration re-considers the design of the 
-          electrode array (top) and transfection plate (bottom). <b>(b.)</b>Crossectional 
+          electrode array (top) and transfection plate (bottom). <b>(b.)</b> Crossectional 
           schematics of iterated transfection plate. The electroporation well is placed 
           on top of the double layer conductive plates, whcih consists of the indium tin 
           oxide (ITO) as top layer and metal plate on bottom. The structure is installed 
           on a holder. Cargo can be loaded parallelly through the 8 channels on the right.
-          <b>(c.)</b>Iteration of electrode array. Non-uniform, hand-made, platinum 
+          <b>(c.)</b> Iteration of electrode array. Non-uniform, hand-made, platinum 
           electrode array has been iterated into a machine-grade, vertically aligned, 
           titanium electrode array. The electrodes are fixed through a cylindrical screw 
           holders and sealed at the back by cap soldering. Top left: Computational study on 
@@ -1262,7 +1269,7 @@
       
     </div>
 
-
+    <sl-divider></sl-divider>
     <div class = "content-inner">
       <!-- Container for references -->
       <h2>References</h2>
@@ -1278,7 +1285,7 @@
           .catch(err => console.error('Error loading references:', err));
       </script>
     </div>
-
+    <sl-divider></sl-divider>
     <div class = "content-inner">
       <!-- Container for Appendix -->
       <div id="Appendix">
@@ -1382,7 +1389,7 @@
             Jurkat or primary human T cells. The actual effects could be even lower since here we 
             assume 100% electrolysis on Titanium, however in reality, water usually 
             overwhelmingly wins over titanium dissolution under near-neutral biological 
-            conditions~\cite{munoz2011pourbaix}.
+            conditions <a href="#ref21">[21]</a>.
           </p>
         </div>
 
@@ -1394,7 +1401,7 @@
             evaluation of transport and transfection performance. Unless stated 
             otherwise, all procedures will be conducted under sterile conditions in a 
             Class~II biosafety cabinet, and all cell suspensions will be handled using 
-            low-retention sterile plasticware. Jurkat E6--1 cells (ATCC~TIB{-}152) and 
+            low-retention sterile plasticware. Jurkat E6-1 cells (ATCC TIB-152) and 
             primary human CD3<sup>+</sup> T cells (Stemcell Technologies or Lonza), 
             either freshly isolated or thawed from cryopreserved stocks, will 
             be maintained according to the manufacturer’s recommendations before 
