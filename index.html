@@ -103,9 +103,7 @@
               <sl-tree-item>
               <a href="#Table-2">Table 2: Design Specification for Automation Backbone</a>
               </sl-tree-item>
-              <sl-tree-item>
-                <a href="#Table-3">Table 3: Design considerations and options for automated cell-transport and electroporation system (automated backbone)</a>
-              </sl-tree-item>
+              
               <sl-tree-item>
                 <a href="#Cell-Transport">Cell transportation between sample reservoir and 96-well plate</a>
               </sl-tree-item>
@@ -118,6 +116,9 @@
               <sl-tree-item>
                 <a href="#Actuation-Strategy">Actuation strategy for plate transport</a>
               </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Table-3">Table 3: Design considerations and options for automated cell-transport and electroporation system (automated backbone)</a>
+              </sl-tree-item>
               
             </sl-tree-item>
             
@@ -125,10 +126,7 @@
               <a href="#Transfection-Plate">Transfection Plate</a>
               <sl-tree-item>
               <a href="#Table-4">Table 4: Design Specifications for Transfection Plates</a>
-              </sl-tree-item>
-              <sl-tree-item>
-                <a href="#Table-5">Table 5: Design considerations and options for automated cell-transport and electroporation system (transfection plates)</a>
-              </sl-tree-item>
+              </sl-tree-item>              
               <sl-tree-item>
                 <a href="#Cathode-Material">Material of cathode</a>
               </sl-tree-item>
@@ -146,6 +144,9 @@
               </sl-tree-item>
               <sl-tree-item>
                 <a href="#Adhesive-Selection">Adhesive selection for component bonding</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Table-5">Table 5: Design considerations and options for automated cell-transport and electroporation system (transfection plates)</a>
               </sl-tree-item>
               <sl-tree-item>
                 <a href="#Table-6">Table 6: Reuse strategy for device components</a>
@@ -468,43 +469,7 @@
               </tr>
             </tbody>
           </table>
-          <table class="design-table" id="Table-3">
-            <caption>Table 3: Design considerations and options for automated cell-transport and electroporation system (automated backbone)</caption>
-            <thead>
-              <tr>
-                <th>Area of focus</th>
-                <th>Consideration</th>
-                <th>Options</th>
-                <th>Options</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Transportation of cells from sample reservoir to 96-well plate and vice versa</td>
-                <td>Ensure cell loss is minimal during transportation</td>
-                <td class="highlighted"><strong>Transporter</strong></td>
-                <td>Peristaltic pumps</td>
-              </tr>
-              <tr>
-                <td>Extraction of cells from sample reservoir to well plates</td>
-                <td>Ensure minimal residue of cells in system during extraction/dispensing</td>
-                <td class="highlighted"><strong>Syringes</strong></td>
-                <td>Pipette tips</td>
-              </tr>
-              <tr>
-                <td>Layout of components (sample loading, well-plate filling, electroporation region)</td>
-                <td>Ensure footprint stays within specification; ensure efficient operation to minimise total time</td>
-                <td>L-shape</td>
-                <td class="highlighted"><strong>Horizontal line</strong></td>
-              </tr>
-              <tr>
-                <td>Actuator type for transport of cells</td>
-                <td>Ensure that movement of load is smooth; ensure that movement can be paused stably without introducing unwanted fluid disturbances</td>
-                <td>Belt-driven actuator</td>
-                <td class="highlighted"><strong>Ball screw linear actuator</strong></td>
-              </tr>
-            </tbody>
-          </table>
+          
 
           <p>
             The automatic backbone aims to address cell loss and long production 
@@ -634,6 +599,43 @@
             repeatability.
           </p>
           </div>
+          <table class="design-table" id="Table-3">
+            <caption>Table 3: Design considerations and options for automated cell-transport and electroporation system (automated backbone)</caption>
+            <thead>
+              <tr>
+                <th>Area of focus</th>
+                <th>Consideration</th>
+                <th>Options</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Transportation of cells from sample reservoir to 96-well plate and vice versa</td>
+                <td>Ensure cell loss is minimal during transportation</td>
+                <td class="highlighted"><strong>Transporter</strong></td>
+                <td>Peristaltic pumps</td>
+              </tr>
+              <tr>
+                <td>Extraction of cells from sample reservoir to well plates</td>
+                <td>Ensure minimal residue of cells in system during extraction/dispensing</td>
+                <td class="highlighted"><strong>Syringes</strong></td>
+                <td>Pipette tips</td>
+              </tr>
+              <tr>
+                <td>Layout of components (sample loading, well-plate filling, electroporation region)</td>
+                <td>Ensure footprint stays within specification; ensure efficient operation to minimise total time</td>
+                <td>L-shape</td>
+                <td class="highlighted"><strong>Horizontal line</strong></td>
+              </tr>
+              <tr>
+                <td>Actuator type for transport of cells</td>
+                <td>Ensure that movement of load is smooth; ensure that movement can be paused stably without introducing unwanted fluid disturbances</td>
+                <td>Belt-driven actuator</td>
+                <td class="highlighted"><strong>Ball screw linear actuator</strong></td>
+              </tr>
+            </tbody>
+          </table>
           
           
 
@@ -683,87 +685,7 @@
               </tbody>
             </table>
 
-            <table class="design-table" id="Table-5">
-              <caption>Table 5: Design considerations and options for automated cell-transport and electroporation system (transfection plates)</caption>
-              <thead>
-                <tr>
-                  <th>Area of focus</th>
-                  <th>Considerations</th>
-                  <th>Options</th>
-                  <th>Options</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Material of cathode</td>
-                  <td>
-                    <ul style="margin: 0; padding-left: 1.5em;">
-                      <li>Ensure material is non-corrosive</li>
-                      <li>Ensure biocompatibility</li>
-                    </ul>
-                  </td>
-                  <td>Platinum</td>
-                  <td class="highlighted"><strong>Titanium</strong></td>
-                </tr>
-                <tr>
-                  <td>Design of cargo channel</td>
-                  <td>
-                    <ul style="margin: 0; padding-left: 1.5em;">
-                      <li>Ensure channels allow cargo to be distributed uniformly</li>
-                      <li>To fill 8 channels</li>
-                    </ul>
-                  </td>
-                  <td>One input to Two channel</td>
-                  <td class="highlighted"><strong>One input to One channel</strong></td>
-                </tr>
-                <tr>
-                  <td>Material of Cargo channel</td>
-                  <td>
-                    <ul style="margin: 0; padding-left: 1.5em;">
-                      <li>Ensure biocompatibility</li>
-                      <li>Ensure chemically inert and electrically insulating throughout the process</li>
-                      <li>Smooth finishing to prevent protein adsorption and aggregation</li>
-                    </ul>
-                  </td>
-                  <td>Acrylic</td>
-                  <td class="highlighted"><strong>M2R-CL</strong></td>
-                </tr>
-                <tr>
-                  <td>Delivery of current to ITO plate</td>
-                  <td>
-                    <ul style="margin: 0; padding-left: 1.5em;">
-                      <li>Ensure reliable delivery of current</li>
-                      <li>Minimise risk of damaging ITO plate</li>
-                      <li>Only top surface coated with ITO</li>
-                    </ul>
-                  </td>
-                  <td>From side of ITO plate (similar to current set-up)</td>
-                  <td class="highlighted"><strong>From bottom of ITO plate</strong></td>
-                </tr>
-                <tr>
-                  <td>Consumable Attachment</td>
-                  <td>
-                    <ul style="margin: 0; padding-left: 1.5em;">
-                      <li>Prevent movement of consumables during production</li>
-                      <li>Avoid misalignment with internal components</li>
-                    </ul>
-                  </td>
-                  <td>Latch</td>
-                  <td class="highlighted"><strong>Interlock structures</strong></td>
-                </tr>
-                <tr>
-                  <td>Adhesive</td>
-                  <td>
-                    <ul style="margin: 0; padding-left: 1.5em;">
-                      <li>Form a well-sealed boundary to prevent leakage</li>
-                      <li>Ensure medical-grade quality</li>
-                    </ul>
-                  </td>
-                  <td>Double-sided tape</td>
-                  <td class="highlighted"><strong>Glue</strong></td>
-                </tr>
-              </tbody>
-            </table>
+            
           <p>
             The transfection set up aims to address viral-vector CAR-T challenges and 
             scalability limits, targeting (1a) and (1b) (<a href="#Table-1">Table 1</a>). It 
@@ -853,6 +775,88 @@
             contamination risk, supporting consistent multi-layer bonding integrity.
           </p>
           </div>
+
+          <table class="design-table" id="Table-5">
+              <caption>Table 5: Design considerations and options for automated cell-transport and electroporation system (transfection plates)</caption>
+              <thead>
+                <tr>
+                  <th>Area of focus</th>
+                  <th>Considerations</th>
+                  <th>Options</th>
+                  <th>Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Material of cathode</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Ensure material is non-corrosive</li>
+                      <li>Ensure biocompatibility</li>
+                    </ul>
+                  </td>
+                  <td>Platinum</td>
+                  <td class="highlighted"><strong>Titanium</strong></td>
+                </tr>
+                <tr>
+                  <td>Design of cargo channel</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Ensure channels allow cargo to be distributed uniformly</li>
+                      <li>To fill 8 channels</li>
+                    </ul>
+                  </td>
+                  <td>One input to Two channel</td>
+                  <td class="highlighted"><strong>One input to One channel</strong></td>
+                </tr>
+                <tr>
+                  <td>Material of Cargo channel</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Ensure biocompatibility</li>
+                      <li>Ensure chemically inert and electrically insulating throughout the process</li>
+                      <li>Smooth finishing to prevent protein adsorption and aggregation</li>
+                    </ul>
+                  </td>
+                  <td>Acrylic</td>
+                  <td class="highlighted"><strong>M2R-CL</strong></td>
+                </tr>
+                <tr>
+                  <td>Delivery of current to ITO plate</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Ensure reliable delivery of current</li>
+                      <li>Minimise risk of damaging ITO plate</li>
+                      <li>Only top surface coated with ITO</li>
+                    </ul>
+                  </td>
+                  <td>From side of ITO plate (similar to current set-up)</td>
+                  <td class="highlighted"><strong>From bottom of ITO plate</strong></td>
+                </tr>
+                <tr>
+                  <td>Consumable Attachment</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Prevent movement of consumables during production</li>
+                      <li>Avoid misalignment with internal components</li>
+                    </ul>
+                  </td>
+                  <td>Latch</td>
+                  <td class="highlighted"><strong>Interlock structures</strong></td>
+                </tr>
+                <tr>
+                  <td>Adhesive</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Form a well-sealed boundary to prevent leakage</li>
+                      <li>Ensure medical-grade quality</li>
+                    </ul>
+                  </td>
+                  <td>Double-sided tape</td>
+                  <td class="highlighted"><strong>Glue</strong></td>
+                </tr>
+              </tbody>
+            </table>
 
         
 
@@ -1287,19 +1291,16 @@
           the plate material, pure Titanium as the electrode material, and RPMI-1640 as the 
           media. Setup dimension follows standard 96 well plate in <i>in vitro</i>
           experiment. We ignore the cell-induced change in media physic property. 
-          COMSOL source file can be found: <a>https://drive.google.com/file/d/1c7R-vwOzrDp02cw1erP_ud3_XpHydPfI/view?usp=sharing</a>.
+          COMSOL source file can be found: <a href="https://drive.google.com/file/d/1c7R-vwOzrDp02cw1erP_ud3_XpHydPfI/view?usp=sharing">here</a>.
           </p>
           <figure class="svg-component" id="fig_simulation">
-            <img src="Figures/simulation_setup.svg" alt="fig_simulation">
+            <img src="Figures/simulation_setup_1.svg" alt="fig_simulation">
             <figcaption>
-              <b>Fig. 1: Overview of CAR-T Therapy</b> The 96-well geometry was simplified 
-              to a single-well configuration, assuming minimal inter-well interaction. Short, 
-              red arrows indicate the electric field, whose boldness indicates the magnitude.
-
+              <b>Fig. S1 Overview of the simulated electric field.</b> The 96-well geometry was simplified to a single-well configuration, assuming minimal inter-well interaction.Short, red arrows indicate the electric field, whose boldness indicates the magnitude
             </figcaption>
             <div class="modal">
               <span class="close">&times;</span>
-              <img class="modal-content" src="Figures/simulation_setup.svg">
+              <img class="modal-content" src="Figures/simulation_setup_1.svg">
               <div class="caption"></div>
             </div>
           </figure> 
