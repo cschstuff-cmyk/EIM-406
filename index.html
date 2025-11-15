@@ -31,100 +31,119 @@
   <script src="./components/table-component/table-component.js"></script>
 
   <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="components/clickable-svg/svg-component.css">
+
+
+
+    <!-- Smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 
 <body>
   <div class="content">
-    <h1>Project Title</h1>
+    <div class ="content-inner">
+      <h1>A Landmark Step Towards Off-the-Shelf,
+      Non-viral Immunotherapy: Large-Scale Immune
+      Cell Manufacturing in an Automated Universal
+      Bioreactor</h1>
 
-    <!-- This is the team member component use to display details about your team members -->
-    <div class="team-member-wrapper">
-      <team-member avatar="assets/blackranger.png" name="Black" department="Mechanical Engineering"
-        year="1993"></team-member>
-      <team-member avatar="assets/yellowranger.png" name="Yellow" department="Computer Engineering"
-        year="1993"></team-member>
-      <team-member avatar="assets/redranger.png" name="Red" department="Electrical Engineering"
-        year="1993"></team-member>
-      <team-member avatar="assets/pinkranger.png" name="Pink" department="Biomedical Engineering"
-        year="1993"></team-member>
-      <team-member avatar="assets/blueranger.png" name="Blue" department="Chemical Engineering"
-        year="1993"></team-member>
+      <!-- This is the team member component use to display details about your team members -->
+      <div class="team-member-wrapper">
+        <team-member avatar=null name="Chng Jing Xuan, Celeste" department="Biomedical Engineering" year=""
+          ></team-member>
+        <team-member avatar=null name="Hu Tianmu" department="Engineering Science Programme" year=""
+          ></team-member>
+        
+      </div>
     </div>
 
-    <!-- This is a divide from the shoelace library for aesthetic purpose -->
-    <sl-divider></sl-divider>
+        
+    <div class="layout">
+      <aside class="sidebar">      
+        <h2>Table of Contents</h2>
+        <sl-tree>
+          <sl-tree-item  >
+            <a href="#Introduction">1. Introduction</a>
+            <sl-tree-item>
+              <a href="#Research-Context">Research Context</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Problem-Statement">Problem Statement</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Project-Objective">Project-Objective</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Problem-Scope">Project Scope</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Novelty-and-Contribution">Novelty and Contribution</a>
+            </sl-tree-item> 
+            <sl-tree-item>
+              <a href="#Figure-1">Figure 1: Overview of CAR_T Therapy</a>
+            </sl-tree-item>         
+          </sl-tree-item>
 
-    <!-- This is the table-of-content component use to define all of the link directly to each section -->
-    <div class="table-of-content">
-      <h2>Table of Contents</h2>
-      <sl-tree>
-        <sl-tree-item expanded>
-          <a href="#Introduction">1. Introduction</a>
-          <sl-tree-item>
-            <a href="#Research-Context">Research Context</a>
+          <sl-tree-item  >
+            <a href="#Methodology">2. Methodology</a>
+            <sl-tree-item>
+              <a href="#Table-1">Table 1: Design considerations and options for automated cell-transport and electroporation system</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Table-2">Table 2: Reuse strategy for device components</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Table-3">Table 3: Design considerations and options for automated cell-transport and electroporation system</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Figure-2">Figure 2: Design and Prototype</a>
+            </sl-tree-item>
+            
           </sl-tree-item>
-          <sl-tree-item>
-            <a href="#Problem-Statement">Problem Statement</a>
-          </sl-tree-item>
-          <sl-tree-item>
-            <a href="#Project-Objective">Project-Objective</a>
-          </sl-tree-item>
-          <sl-tree-item>
-            <a href="#Problem-Scope">Project Scope</a>
-          </sl-tree-item>
-          <sl-tree-item>
-            <a href="#Novelty-and-Contribution">Novelty and Contribution</a>
-          </sl-tree-item>          
-        </sl-tree-item>
 
-        <sl-tree-item expanded>
-          <a href="#Methodology">2. Methodology</a>
-          <sl-tree-item>
-            <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
+          <sl-tree-item >
+            <a href="#Results">3. Results</a>
+            <sl-tree-item>
+              <a href="#Device-Fabrication">Device Fabrication</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Device-Test">Device Test</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Figure-3">Figure 3: Iteration on Transfection Plate</a>
+            </sl-tree-item>
           </sl-tree-item>
-          <sl-tree-item>
-            <a href="#sub-section-2-header-2">2.2. Sub-section Header 2</a>
-          </sl-tree-item>
-        </sl-tree-item>
 
-        <sl-tree-item expanded>
-          <a href="#Results">3. Results</a>
-          <sl-tree-item>
-            <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
+          <sl-tree-item >
+            <a href="#Discussion">4. Discussion</a>
+            <sl-tree-item>
+              <a href="#Limitations">Limitations</a>
+            </sl-tree-item>
+            <sl-tree-item>
+              <a href="#Future-Work">Future Work</a>
+            </sl-tree-item>
           </sl-tree-item>
-          <sl-tree-item>
-            <a href="#sub-section-2-header-2">2.2. Sub-section Header 2</a>
-          </sl-tree-item>
-        </sl-tree-item>
 
-        <sl-tree-item expanded>
-          <a href="#Discussion">4. Discussion</a>
-          <sl-tree-item>
-            <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
-          </sl-tree-item>
-          <sl-tree-item>
-            <a href="#sub-section-2-header-2">2.2. Sub-section Header 2</a>
-          </sl-tree-item>
-        </sl-tree-item>
+          
 
-        <sl-tree-item expanded>
-          <a href="#Future-works">5. Future Works</a>
           <sl-tree-item>
-            <a href="#sub-section-2-header-1">2.1. Sub-section Header 1</a>
+            <a href="#references">References</a>
           </sl-tree-item>
-          <sl-tree-item>
-            <a href="#sub-section-2-header-2">2.2. Sub-section Header 2</a>
-          </sl-tree-item>
-        </sl-tree-item>
-
-        <sl-tree-item>
-          <a href="#references">References</a>
-        </sl-tree-item>
-      </sl-tree>
+        </sl-tree>
+      </aside>
+                
     </div>
+
+    
     <sl-divider></sl-divider>
 
-    <div>
+    <div class = "content-inner">
+      
 
       <!-- This is an example of what a section might look like -->
       <div id="Introduction">
@@ -133,36 +152,36 @@
         <p>
           <b>Research Context.</b> Engineered immune-cell therapies have transformed oncology
           by demonstrating that synthetic genetic reprogramming can endow effector cells with
-          potent, tumor-specific cytotoxicity [1]. Among these, chimeric antigen receptor (CAR)
+          potent, tumor-specific cytotoxicity <a href="#link">[1]</a>. Among these, chimeric antigen receptor (CAR)
           T-cell therapy stands as the most successful example—six products have gained 
-          regulatory approval to date for the treatment of aggressive malignancies [2], such as
-          relapsed or refractory B-cell lymphoma [3, 4] and multiple myeloma [5, 6]. This 
+          regulatory approval to date for the treatment of aggressive malignancies <a href="#link">[2]</a>, such as
+          relapsed or refractory B-cell lymphoma <a href="#link">[3-4]</a> and multiple myeloma <a href="#link">[5-6]</a>. This 
           approach harnesses a patient’s own immune system to selectively recognize and 
           eliminate tumor cells, overcoming limitations of traditional cancer treatments 
           such as surgery, radiotherapy, and chemotherapy, which often lack selectivity and 
           efficacy against advanced or disseminated disease. Reflecting its impact, the 
           global cell therapy market—estimated at US$25 billion in 2025—is projected to 
-          exceed US$117 billion by 2034, driven by expansion into solid tumors [7], 
+          exceed US$117 billion by 2034, driven by expansion into solid tumors <a href="#link">[7]</a>, 
           autoimmune disorders, and infectious diseases.
         </p>
         <p>
           Despite these clinical successes, the field remains constrained by a fundamental
           manufacturing bottleneck. As of June 2023, more than 1300 clinical trials of CAR-T
           and related therapies were registered, approximately 93% of which employ autologous
-          manufacturing pipelines [? ]. Such patient-specific production is logistically fragile and
-          economically prohibitive (US$0.4–1 million per treatment), limiting access to roughly
-          20% of prescribed patients [? ? ]. Moreover, in real-world settings, manufacturing
-          delays are so severe that ∼ 7% of patients die before receiving their infusion [? ].
+          manufacturing pipelines <a href="#link">[8]</a>. Such patient-specific production is logistically fragile and
+          economically prohibitive (US$0.4–1 million per treatment <a href="#link">[8]</a>), limiting access to roughly
+          20% of prescribed patients <a href="#link">[9-10]</a>. Moreover, in real-world settings, manufacturing
+          delays are so severe that ∼ 7% of patients die before receiving their infusion <a href="#link">[11]</a>.
         </p>
         <p>
           The core challenge lies in the transfection of primary immune cells—a critical step
           for introducing chimeric receptors or enabling precise genome edits. Current 
           delivery modalities impose intrinsic trade-offs: (1) Viral vectors suffer from 
           limited cargo capacity (∼ 5–15 kb), risks of random genomic integration, 
-          immunogenicity, and costly cGMP-scale production [? ? ]. (2) Bulk electroporation 
+          immunogenicity, and costly cGMP-scale production <a href="#link">[12-13]</a>. (2) Bulk electroporation 
           requires extremely high electric fields (tens to hundreds of kVcm−1), causing 
           Joule heating, calcium dysregulation, and transcriptional perturbations that 
-          compromise cell viability and function [? ]. Furthermore, current treatment relies 
+          compromise cell viability and function <a href="#link">[14-15]</a>. Furthermore, current treatment relies 
           on centralized production models due to labor-intensive manual production and the 
           need to maintain consistent quality and minimize product variability. Additionally, 
           QA/QC protocols are implemented due to concerns from the viral nature of the 
@@ -184,7 +203,7 @@
         </div>
         <div id="Problem-Statement">
         <p>
-          <b>Probelm Statement.</b> This demand motivates a new manufacturing paradigm: a
+          <b>Problem Statement.</b> This demand motivates a new manufacturing paradigm: a
           universal, automated bioreactor platform capable of producing off-the-shelf immune
           effector cells at scale—decoupled from viral intermediates, engineered for high
           throughput and low-perturbation delivery, and designed to accelerate the industrial
@@ -249,234 +268,570 @@
         </p>
         </div>
 
+
+      
+        
+
+        <figure class="svg-component" id="Figure-1">
+          <img src="Figures/Figure_1_svg.svg" alt="Figure 1">
+          <figcaption>
+            <b>Fig 1: Overview of CAR-T Therapy</b> <b>(a.)</b>Cycle of CAR-T therapy. 
+              Blood samples are often drawn from Patient, from which primary human T cells are 
+              isolated. Cargoes are transfected into the T cells to introduce CAR phonotype. 
+              Outter rings summarize the time CAR-T manufacturing can take. <b>(b.)</b>User cases.
+              Scenario 1 is our user case, where the blood samples are collected bedside, and 
+              re-infused into patients after manufacturing. Scenario 2 requires cyropreservation to 
+              transport samples to a centralized production factory. Scenario 3 includes 
+              two cases---including that patients travel to a centralized facility where the full 
+              cycle of CAR-T production can be performed, and that patients travel to a facility 
+              where only sample collection is achievavle, while other manufacturing processes have to 
+              done elesewhere. <b>(c.)</b>Cost benchmark across current technolgies. Left: Stacked 
+              cost comparison. Left: Cost breakdown (top) and cost percentage (down).
+
+          </figcaption>
+          <div class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" src="Figures/Figure_1_svg.svg">
+            <div class="caption"></div>
+          </div>
+        </figure>  
+
+                
+      </div>
+      
+    </div>
+    
+
+    <sl-divider></sl-divider>
+    <div class = "content-inner">
+      <div id="Methodology">
+        <h2>2. Methodology</h2>
+
+        <table class="design-table" id="Table-1">
+          <caption>Table 1: Design considerations and options for automated cell-transport and electroporation system</caption>
+          <thead>
+            <tr>
+              <th>Area of focus</th>
+              <th>Consideration</th>
+              <th colspan="2">Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Transportation of cells from sample reservoir to 96-well plate and vice versa</td>
+              <td>Ensure cell loss is minimal during transportation</td>
+              <td class="highlighted"><strong>Transporter</strong></td>
+              <td>Peristaltic pumps</td>
+            </tr>
+            <tr>
+              <td>Extraction of cells from sample reservoir to well plates</td>
+              <td>Ensure minimal residue of cells in system during extraction/dispensing</td>
+              <td class="highlighted"><strong>Syringes</strong></td>
+              <td>Pipette tips</td>
+            </tr>
+            <tr>
+              <td>Layout of components (sample loading, well-plate filling, electroporation region)</td>
+              <td>Ensure footprint stays within specification; ensure efficient operation to minimise total time</td>
+              <td>L-shape</td>
+              <td class="highlighted"><strong>Horizontal line</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="design-table" id="Table-2">
+          <caption>Table 2: Reuse strategy for device components</caption>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Decision</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nano-straw membrane</td>
+              <td>Single use</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Nanoscale structure makes it highly costly to sterilize.</li>
+                  <li>High contact with patient-derived samples; single use is safer.</li>
+                  <li>Bonded to well plate and cargo channel.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Well plate</td>
+              <td>Single use</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Bonded to nano-straw membrane, difficult to salvage for reuse.</li>
+                  <li>High contact with patient samples; single use is safer.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Cargo channel</td>
+              <td>Single use</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Bonded to nano-straw membrane, reducing reusability.</li>
+                  <li>Potential contact with patient sample via fluid diffusion.</li>
+                  <li>High surface area and crevices increase contamination risk.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>ITO plate</td>
+              <td>Single use</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Bonded to cargo channel.</li>
+                  <li>May contact patient sample via diffusion; single use safer.</li>
+                  <li>Oxidizes after a few uses, adding production risk.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Anode</td>
+              <td>Reusable, integrated into device</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Complex manufacturing favours reusability.</li>
+                  <li>Cleaning protocol is feasible due to limited crevices.</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="design-table" id="Table-3">
+          <caption>Table 3: Design considerations and options for automated cell-transport and electroporation system</caption>
+          <thead>
+            <tr>
+              <th>Area of focus</th>
+              <th>Considerations</th>
+              <th>Options</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Material of cathode</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Ensure material is non-corrosive</li>
+                  <li>Ensure biocompatibility</li>
+                </ul>
+              </td>
+              <td>Platinum</td>
+              <td class="highlighted"><strong>Titanium</strong></td>
+            </tr>
+            <tr>
+              <td>Design of cargo channel</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Ensure channels allow cargo to be distributed uniformly</li>
+                  <li>To fill 8 channels</li>
+                </ul>
+              </td>
+              <td>One input to Two channel</td>
+              <td class="highlighted"><strong>One input to One channel</strong></td>
+            </tr>
+            <tr>
+              <td>Material of Cargo channel</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Ensure biocompatibility</li>
+                  <li>Ensure chemically inert and electrically insulating throughout the process</li>
+                  <li>Smooth finishing to prevent protein adsorption and aggregation</li>
+                </ul>
+              </td>
+              <td>Acrylic</td>
+              <td class="highlighted"><strong>M2R-CL</strong></td>
+            </tr>
+            <tr>
+              <td>Delivery of current to ITO plate</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Ensure reliable delivery of current</li>
+                  <li>Minimise risk of damaging ITO plate</li>
+                  <li>Only top surface coated with ITO</li>
+                </ul>
+              </td>
+              <td>From side of ITO plate (similar to current set-up)</td>
+              <td class="highlighted"><strong>From bottom of ITO plate</strong></td>
+            </tr>
+            <tr>
+              <td>Consumable Attachment</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Prevent movement of consumables during production</li>
+                  <li>Avoid misalignment with internal components</li>
+                </ul>
+              </td>
+              <td>Latch</td>
+              <td class="highlighted"><strong>Interlock structures</strong></td>
+            </tr>
+            <tr>
+              <td>Adhesive</td>
+              <td>
+                <ul style="margin: 0; padding-left: 1.5em;">
+                  <li>Form a well-sealed boundary to prevent leakage</li>
+                  <li>Ensure medical-grade quality</li>
+                </ul>
+              </td>
+              <td>Double-sided tape</td>
+              <td class="highlighted"><strong>Glue</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+        <figure class="svg-component" id="Figure-2">
+          <img src="Figures/Figure_2_svg.svg" alt="Figure 2">
+          <figcaption>
+            <b>Fig 2: Design and Prototype</b> <b>(a.)</b>Fabrication of Nanostraw. Nanostrw 
+            membranes were fabricated through a multistep process beginning with track-etched
+            <i>poly(ethylene terephthalate)</i>(PETE) films (Step~1), in which ion-irradiation 
+            and chemical etching generate uniformly distributed, high-aspect-ratio nanopores. 
+            In Step~2, a conformal alumina layer is deposited onto the PETE scaffold using 
+            atomic layer deposition (ALD), forming a continuous Al<sub>2</sub>O<sub>3</sub> coating
+            along  the pore walls and on the membrane surface. In Step~3, selective wet alumina 
+            etching exposes the underlying PETE at the pore openings while preserving the 
+            alumina lining within the pores. In Step~4, directional oxygen plasma reactive-ion 
+            etching (O<sub>2</sub> RIE) or CF<sub>4</sub>/CHF<sub>3</sub>-based plasma steps to
+            precisely sculpt the exposed structures. Reproduced from Arun et. al.
+            <a href="#ref1">[1]</a><b>Design Overview</b>The device consists of a conveyor, 
+            sample transporter, sample platform which holds both the sample reservoir and the transfection
+            plate, electroporation array and magnet. Bottom left: Electrode Array Schematics. (i) Schematics 
+            of layers of the nanoelectroporation substrate. Reproduced from Arun et. al.<a href="#ref1">[1]</a>
+            (ii) Schematics of nanoelectroporation. Reproduced from Arun et. al.<a href="#ref1">[1]</a>
+            <b>(c.)</b>Automated transfection protocol. Cells are (i) input into sample reservoir, 
+            (ii, iii) translate to transfection plate, (iv) electroporated, (v) re-collected and 
+            (vi) output.
+
+          </figcaption>
+          <div class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" src="Figures/Figure_2_svg.svg">
+            <div class="caption"></div>
+          </div>
+        </figure>        
+                
+        
+        
+
+
+        
+      </div>
+      
+        
+      
+
+      
+    </div>
+
+    <sl-divider></sl-divider>
+    <div class = "content-inner">
+      <div id="Results">
+        <h2>3. Results</h2>
+        <div id="#Device-Fabrication">
+          <p>
+            <b>Device Fabrication.</b> We successfully designed, manufactured, assembled, 
+            and tested a fully automated electroporation prototype that forms the mechanical 
+            backbone of our non-viral immune-cell engineering platform <a href="#Figure-2">Fig2</a>. 
+            The system integrates four major subsystems: a linear conveyor belt driven by a 
+            stepper motor with a positional precision of 0.1~mm, a reaction platform designed 
+            to secure the sample reservoir and standard 96-well electroporation plates, a 
+            two-degree-of-freedom (DOF) sample transporter, and a vertically aligned electrode 
+            array composed of uniform-length electrodes. Together, these modules enable 
+            programmable sample transportation, accurate plate positioning, and a consistent 
+            electrode--cell interface crucial for reproducible electroporation.
+          </p>
+
+          <p>
+            The linear conveyor belt was adapted from a commercially available product and 
+            mechanically modified to provide precise, automated shuttling of plates across 
+            processing stations. The reaction platform was custom-fabricated from steel plates 
+            and soldered to form a rigid, dimensionally accurate base compatible with standard 
+            wet-lab consumables. The two-DOF sample transporter originated from a 
+            perfume-injection mechanism; the original dispensing assembly was removed and 
+            replaced with an eight-channel springe-based sampling array, allowing automated 
+            media acquisition and delivery at tunable heights and lateral positions to 
+            accommodate potential design iterations. 
+          </p>
+
+          <p>
+            The electrode array was manufactured using a multistep workflow. A 5~mm-thick 
+            white steel plate was first drilled to create a 2~mm hole array. Threaded screw 
+            holders (2~mm outer diameter, 0.5~mm inner diameter) were then soldered into each
+            hole, through which electrode wires were threaded and fixed in place. The back 
+            side of the assembly was sealed by soldering a cap, ensuring uniform electrode 
+            length, stable electrical continuity, and robust structural integrity.
+          </p>
+
+          <p>
+            In parallel, we iterated the electroporation substrate to improve usability, 
+            biocompatibility, and leak prevention. The assembly process was redesigned to 
+            eliminate leakage, and the previous use of medical-grade tape as a bonding component 
+            was replaced with biocompatible adhesive to enhance reliability and ease of use. The 
+            ITO (indium tin oxide) plate was further modified to ensure efficient current 
+            conduction from its base to the top surface. Conductive tape was applied and folded 
+            along the rim of the ITO plate, and a two-layer adhesive strategy was implemented: 
+            an initial layer of medical-grade glue was applied to isolate any non-biocompatible 
+            tape residues, followed by a second adhesive layer bonding the ITO plate to the cargo 
+            channel. Approximately 2~mm of conductive tape was intentionally left on the top 
+            surface to preserve electrical contact, with careful control taken to avoid bubble 
+            formation or tape overlap.
+          </p>
+
+          <p>
+            The cargo channel was fabricated using MultiJet Printing (MJP).
+            Although functional, the printed walls displayed warping due to low rigidity of 
+            thin polymer sections. To ensure greater dimensional stability and sealing 
+            performance during electroporation, we initiated development of an acrylic-based 
+            version with improved structural stiffness. The 96-well plate and the MJP-printed 
+            cargo channel have been fully procured, and procurement of the holder and metal 
+            plate is underway following verification of the automated backbone's performance
+              and design integrity.
+          </p>
+          <p>
+            Collectively, these engineering efforts yielded a fully fabricated, mechanically 
+            validated, wet-lab-ready electroporation prototype integrating high-precision motion 
+            control, a biocompatible and leak-free electroporation substrate, reliable current 
+            delivery through a modified ITO interface, and a refined cargo transport system. 
+            This completed prototype establishes the foundation for subsequent optimization and 
+            testing.
+          </p>
+        </div> 
+        <div id="Device-Test">
+          <p>
+            <b>Device Test.</b> This semester, we validated the mechanical and operational 
+            robustness of the automated transfection platform as a prerequisite for biological 
+            experimentation. System-level stability was assessed through thirty consecutive 
+            automated runs, during which only a single failure was observed; importantly, this 
+            failure was traced to temporary cable interference and has since been resolved 
+            through hardware rerouting. Across all successful runs, the device demonstrated 
+            consistent temporal performance, completing each automated cycle in 
+            556 &plusmn; 12 s, indicating a high level of reproducibility in the 
+            actuation sequence, media handling, and control logic. Collectively, these tests 
+            confirm that the automation backbone is stable enough to support downstream wet-lab 
+            studies.
+          </p>
+
+          <p>
+            In parallel, we performed theoretical and empirical validation of the titanium 
+            electrodes employed during electroporation. First, we simulated <i>in silicon</i> 
+            the electric field and average electric field strength at transfection membrane and 
+            found that across all meshes, the average electric field strength remained 
+            negligibly different (p > 0.99; Mean Square Difference < 0.1 V/m; 
+            <a href="#Figure-3">Fig.3c</a>Top Right). Next, theoretical computation confirmed pulsed 
+            operation under the anticipated voltage and buffer conditions induced negligible 
+            release of Ti<sup>4+</sup> ions, supporting the suitability of titanium as a 
+            biocompatible anode material within the RPMI-based electroporation environment.
+            Dimensional calibration of the mechanical assembly further verified that all 
+            modular components fall within their designed tolerance envelopes, ensuring that 
+            translational, rotational, and compression mechanisms operate without unintended 
+            mechanical interference. These combined validations establish that the device 
+            satisfies the machining precision and electrochemical safety requirements 
+            necessary for biological deployment.
+          </p>
+          <p>
+            With this foundation, the next stage of evaluation will focus on biological 
+            readiness. The first objective is to quantify cell and media recovery throughout 
+            the automated workflow, thereby demonstrating that the system can reliably execute
+            the fluidic and mechanical steps that precede electroporation. This begins with a
+            volume-recovery assay using water or PBS for rapid iteration and will be followed 
+            by recovery tests using Jurkat cells in the absence of nanostraw membranes or 
+            cargo to evaluate potential cell loss. Once recovery performance is confirmed, 
+            the platform will be used to perform full transfection assays. Jurkat cells will 
+            serve as the initial biological model, enabling verification that the device can 
+            deliver fluorescent dyes or reporter proteins with measurable efficiency. 
+            Subsequent experiments will extend to primary human T cells, where fluorescent 
+            and functional protein delivery will allow us to assess the translational
+            relevance of the system for immunotherapeutic manufacturing.
+          </p>
+
+          <p>
+            Together, the validated mechanical reliability, electrochemical safety, 
+            dimensional precision, and the structured biological testing pipeline position 
+            our platform as a wet-lab-ready prototype. The device is now functionally 
+            prepared for transfection-focused iteration and represents a solid foundation 
+            for future refinement toward clinically oriented non-viral engineering of CAR-T cells.
+          </p>
+        </div>
       </div>
 
       
 
-        <!-- This is an example of how you might use the image component -->
-        <!-- This is an example of how you might use the image component -->
-        <image-component tag="image" source="assets/requirement.png"
-          subtitle="Image 1: iDP suggested pathway"></image-component>
-      </div>
-    </div>
+      <figure class="svg-component" id="Figure-3">
+        <img src="Figures/Figure_3_updated.svg" alt="Figure 3">
+        <figcaption>
+          <b>Fig 3: Iteration on Transfection Plate</b> <b>(a.)</b>Schematics of the 
+          iterated tyransfection plate. The iteration re-considers the design of the 
+          electrode array (top) and transfection plate (bottom). <b>(b.)</b>Crossectional 
+          schematics of iterated transfection plate. The electroporation well is placed 
+          on top of the double layer conductive plates, whcih consists of the indium tin 
+          oxide (ITO) as top layer and metal plate on bottom. The structure is installed 
+          on a holder. Cargo can be loaded parallelly through the 8 channels on the right.
+          <b>(c.)</b>Iteration of electrode array. Non-uniform, hand-made, platinum 
+          electrode array has been iterated into a machine-grade, vertically aligned, 
+          titanium electrode array. The electrodes are fixed through a cylindrical screw 
+          holders and sealed at the back by cap soldering. Top left: Computational study on 
+          the electric field strength at the bottom of the electroporation well. Across all 
+          meshes, the electric field strength shows no difference between the two materials 
+          (p>0.99); Mean Square Difference <0.1 V/m.
+        </figcaption>
+        <div class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" src="Figures/Figure_3_updated.svg">
+          <div class="caption"></div>
+        </div>
+      </figure> 
 
-
-    <sl-divider></sl-divider>
-    <div class = "content">
-      <div id="Methodology">
-        <h2>2. Methodology</h2>
-        <p>
-          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-          aliquam sem.
-        </p>
-      </div>
-
-      <div id="sub-section-2-header-1">
-        <h3>2.1. Sub-section Header 1</h3>
-        <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac. <a href="#image">Link to the image above</a>
-        </p>
-
-        <!-- This is an example of how you might use the video component -->
-        <video-component tag="rick" source="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          subtitle="Video: Never gonna give you up?"></video-component>
-      </div>
-
-      <div id="sub-section-2-header-2">
-        <h3>2.2. Sub-section Header 2</h3>
-        <p>
-          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
-          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
-          habitant
-          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
-          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
-          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
-        </p>
-
-        <!-- This is an example of how you might use the table component -->
-        <table-component subtitle="Table: Demo table">
-          <div id="table-1"></div>
-        </table-component>
-      </div>
+      
     </div>
 
     <sl-divider></sl-divider>
-    <div class = "content">
-      <div id="Results">
-        <h2>3. Results</h2>
-        <p>
-          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-          aliquam sem.
-        </p>
-        <iframe src="Figures/Figure_1.pdf" width="100%" height="600px"></iframe>
-        
-      </div>
-
-      <div id="sub-section-2-header-1">
-        <h3>2.1. Sub-section Header 1</h3>
-        <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac. <a href="#image">Link to the image above</a>
-        </p>
-
-        <!-- This is an example of how you might use the video component -->
-        <video-component tag="rick" source="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          subtitle="Video: Never gonna give you up?"></video-component>
-      </div>
-
-      <div id="sub-section-2-header-2">
-        <h3>2.2. Sub-section Header 2</h3>
-        <p>
-          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
-          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
-          habitant
-          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
-          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
-          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
-        </p>
-
-        <!-- This is an example of how you might use the table component -->
-        <table-component subtitle="Table: Demo table">
-          <div id="table-1"></div>
-        </table-component>
-      </div>
-    </div>
-
-    <sl-divider></sl-divider>
-    <div class = "content">
+    <div class = "content-inner">
       <div id="Discussion">
         <h2>4. Discussion</h2>
-        <p>
-          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-          aliquam sem.
-        </p>
+        <div id="Limitations">
+          <p>
+            <b>Limitations</b> Meanwhile, we would like to point out the limitations of our work. 
+            First, the current prototype does not yet support automated control of the electrical 
+            pulse. In the present design, the electroporation voltage remains continuously 
+            applied, and the effective field strength experienced by cells is modulated 
+            indirectly by adjusting the distance between the titanium electrodes and the 
+            ITO substrate. While this quick fix enables preliminary testing, it provides 
+            limited temporal specificity and does not reflect the pulsed-field regimes required 
+            for optimal transfection efficiency. A more robust solution will involve integrating 
+            a GPIO-controlled, programmable power delivery module to enable precise timing, 
+            amplitude modulation, and waveform control during electroporation.
+          </p>
+
+          <p>
+            Second, a dimensional mismatch potentially remains between the electroporation 
+            substrate and the media transporter. At this stage, positional calibration relies 
+            on identifying appropriate coordinates in manual mode and subsequently updating the 
+            automated control script with manually tuned parameters. Although functional, this 
+            approach is not scalable and introduces susceptibility to small mechanical 
+            deviations. To minimize the risk of damaging the fragile titanium electrodes during 
+            alignment, we also employ low-cost steel prototypes during position tuning. Future 
+            iterations will require tighter dimensional standardization between subsystems or 
+            the incorporation of active sensing methods to ensure repeatable, self-correcting 
+            alignment.
+          </p>
+          <p>
+            A third potential limitation concerns the presence of residual media within the 
+            cargo channel or sampling interface. Variability in fluid acquisition and expulsion 
+            can arise from suboptimal springe motion profiles, leading to inconsistent recovery 
+            volumes or retention of trace liquid between cycles. This may be addressed by 
+            further refining movement speed, acceleration, and positioning parameters for each 
+            fluid-handling operation. Additionally, adopting disposable pipette tips as 
+            intermediate media carriers may enhance reliability and reduce cross-contamination 
+            risk while providing a more flexible and replaceable interface.
+          </p>
+          <p>
+            Overall, while these limitations do not compromise the functional readiness of the 
+            current prototype, addressing them will be critical for advancing the platform 
+            toward high-precision, reliable, and fully automated non-viral transfection 
+            suitable for routine experimental or translational use.
+          </p>
+        </div>
+        <div id="Future-Work">
+          <p>
+            <b>Future Work</b> Looking ahead, we will move beyond addressing the limitations 
+            outlined above to strengthen both the engineering rigor and biological performance 
+            of our platform, ensuring a smooth transition toward a robust, fully automated 
+            electroporation system. Our efforts will center on two parallel streams: validating 
+            the automated backbone and completing the engineering characterisation of the 
+            electroporation module. (1) we will quantitatively assess cell recovery across the 
+            entire workflow, confirming that media volume and cell number are preserved and 
+            that viability remains uncompromised, following standardized Trypan blue–based 
+            counting protocols. Once the stability of the automated backbone is confirmed, 
+            we will proceed with staged biological validation: We will first evaluate 
+            electroporation performance using Jurkat cells, delivering fluorescent dyes and 
+            fluorescent proteins as initial readouts. Optionally as a bonus, we will then 
+            extend these experiments to primary T cells, incorporating the same cargo plus 
+            functional proteins to assess the system’s translational potential. Detailed 
+            protocols for all experiments described here is provided in the Appendix. 
+            (2) Along with the <i>in vitro</i> experiment, we will undertake a comprehensive 
+            engineering evaluation of the electroporation subsystem, verifying uniform current 
+            distribution across the titanium electrodes, ensuring the absence of fluid seepage 
+            within the full consumables assembly (well plate, nanostraw membrane, cargo 
+            channel, and ITO substrate), and, where applicable, characterising electric-field 
+            uniformity across individual wells during Jurkat and T cell electroporation. In 
+            addition, we will re-examine their integration within the automated framework to 
+            ensure mechanical compatibility, electrical stability, fluidic reliability, and 
+            software–hardware synchronization prior to initiating the next iteration of 
+            prototyping.
+          </p>
+        </div>
       </div>      
-      <iframe src="Figures/Figure_2.pdf" width="100%" height="600px"></iframe>
+      
+      
 
-      <div id="sub-section-2-header-1">
-        <h3>2.1. Sub-section Header 1</h3>
-        <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac. <a href="#image">Link to the image above</a>
-        </p>
+      
 
-        <!-- This is an example of how you might use the video component -->
-        <video-component tag="rick" source="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          subtitle="Video: Never gonna give you up?"></video-component>
-      </div>
-
-      <div id="sub-section-2-header-2">
-        <h3>2.2. Sub-section Header 2</h3>
-        <p>
-          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
-          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
-          habitant
-          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
-          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
-          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
-        </p>
-
-        <!-- This is an example of how you might use the table component -->
-        <table-component subtitle="Table: Demo table">
-          <div id="table-1"></div>
-        </table-component>
-      </div>
+      
     </div>
 
-    <div class = "content">
-      <div id="Future-works">
-        <h2>5. Future Works</h2>
-        <p>
-          Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Mi proin sed libero enim sed faucibus turpis in
-          eu. Odio ut sem nulla pharetra diam sit. Nibh cras pulvinar mattis nunc sed blandit libero. Lacus sed viverra
-          tellus in hac habitasse platea dictumst vestibulum. At augue eget arcu dictum varius duis. Mauris ultrices
-          eros in cursus turpis massa (Lindberg, 1967). Libero nunc consequat interdum varius sit amet mattis. Ut ornare
-          lectus sit amet est placerat in egestas erat. Elementum curabitur vitae nunc sed. Proin nibh nisl condimentum
-          id venenatis a condimentum vitae sapien (Chamberlin et al., 2008). Vitae tempus quam pellentesque nec nam
-          aliquam sem.
-        </p>
-      </div>
-      <iframe src="Figures/Figure_3.pdf" width="100%" height="600px"></iframe>
-
-      <div id="sub-section-2-header-1">
-        <h3>2.1. Sub-section Header 1</h3>
-        <p>
-          Pellentesque nec nam aliquam sem et tortor consequat. Et netus et malesuada fames ac turpis egestas maecenas.
-          Eu tincidunt tortor aliquam nulla facilisi. Nunc aliquet bibendum enim facilisis gravida. Elementum pulvinar
-          etiam non quam lacus (Moll et al., 2011; Parker & Fox, 2010). Blandit cursus risus at ultrices mi. Arcu dui
-          vivamus arcu felis bibendum ut tristique. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-          Mauris in aliquam sem fringilla. Non quam lacus suspendisse faucibus. Tristique senectus et netus et malesuada
-          fames ac. <a href="#image">Link to the image above</a>
-        </p>
-
-        <!-- This is an example of how you might use the video component -->
-        <video-component tag="rick" source="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          subtitle="Video: Never gonna give you up?"></video-component>
-      </div>
-
-      <div id="sub-section-2-header-2">
-        <h3>2.2. Sub-section Header 2</h3>
-        <p>
-          Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Dignissim convallis aenean et tortor at
-          risus viverra adipiscing. Facilisi nullam vehicula ipsum a arcu cursus. Adipiscing elit pellentesque
-          habitant
-          morbi tristique senectus et netus. Turpis massa tincidunt dui ut ornare lectus. Suspendisse sed nisi lacus
-          sed. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Ut ornare lectus sit amet est
-          placerat in egestas. Magna fringilla urna porttitor rhoncus. Imperdiet dui accumsan sit amet.
-        </p>
-
-        <!-- This is an example of how you might use the table component -->
-        <table-component subtitle="Table: Demo table">
-          <div id="table-1"></div>
-        </table-component>
-      </div>
-    </div>
-
+    
     <!-- This is an example of how you can use the references component to create references -->
     <div id="references" class="references">
       <sl-divider></sl-divider>
       <h2>References</h2>
       <ul>
-        <li>
-          Brody, J. E. (2007, December 11). Mental reserves keep brain agile. The New York Times. Retrieved from
-          http://www.dowjones.com/factiva/
+        <li id="ref1">
+          Kitada, T., DiAndreth, B., Teague, B., Weiss, R.: Programming gene and
+          engineered-cell therapies with synthetic biology. Science 359(6376), 1067 (2018)
         </li>
-        <li>
-          Chamberlin, J., Novotney, A., Packard, E., & Price, M. (2008, May). Enhancing worker well-being: Occupational
-          health psychologists convene to share their research on work, stress, and health. Monitor on Psychology,
-          39(5), 26-29.
+        <li id="ref2">
+          Zugasti, I., Espinosa-Aroca, L., Fidyt, K., Mulens-Arias, V., Diaz-Beya, M., Juan,
+          M., Urbano-Ispizua, ´ A., Esteve, J., Velasco-Hernandez, T., Men´endez, P.: Car-t cell
+          therapy for cancer: current challenges and future directions. Signal Transduction
+          and Targeted Therapy 10(1), 210 (2025)
         </li>
-        <li>
-          Jones, T. J., & Fields, N. (2003). Emotional quotient and personality. E-Journal of Applied Psychology, 2(2),
-          38-45. Retrieved from http://ejournalappliedpsyc/index.php/ejap
+        <li id="ref3">
+          Neelapu, S.S., Locke, F.L., Bartlett, N.L., Lekakis, L.J., Miklos, D.B., Jacobson,
+          C.A., Braunschweig, I., Oluwole, O.O., Siddiqi, T., Lin, Y., et al.: Axicabtagene
+          ciloleucel car t-cell therapy in refractory large b-cell lymphoma. New England
+          Journal of Medicine 377(26), 2531–2544 (2017)
+        </li>
+        <li id="ref4">
+          Schuster, S.J., Bishop, M.R., Tam, C.S., Waller, E.K., Borchmann, P., McGuirk,
+          J.P., J¨ager, U., Jaglowski, S., Andreadis, C., Westin, J.R., et al.: Tisagenlecleucel
+          in adult relapsed or refractory diffuse large b-cell lymphoma. New England Journal
+          of Medicine 380(1), 45–56 (2019)
+        </li>
+        <li id="ref4">
+          Berdeja, J.G., Madduri, D., Usmani, S.Z., Jakubowiak, A., Agha, M., Cohen, A.D.,
+          Stewart, A.K., Hari, P., Htut, M., Lesokhin, A., et al.: Ciltacabtagene autoleucel,
+          a b-cell maturation antigen-directed chimeric antigen receptor t-cell therapy in
+          patients with relapsed or refractory multiple myeloma (cartitude-1): a phase 1b/2
+          open-label study. The Lancet 398(10297), 314–324 (2021)
+        </li>
+        <li id="ref4">
+          Munshi, N.C., Anderson Jr, L.D., Shah, N., Madduri, D., Berdeja, J., Lonial, S.,
+          Raje, N., Lin, Y., Siegel, D., Oriol, A., et al.: Idecabtagene vicleucel in relapsed and
+          refractory multiple myeloma. New England Journal of Medicine 384(8), 705–716
+          (2021)
+        </li>
+        <li id="ref4">
+          Albarr´an-Fern´andez, V., Angelats, L., Delgado, J., Gros, A., Urbano-Ispizua, ´ A.,
+          Guedan, S., Prat, A.: Unlocking the potential of engineered immune cell therapy
+          for solid tumors. nature communications 16(1), 1144 (2025)
+        </li>
+        <li id="ref4">
+          Kumar, A.R., Low, J., Lim, J., Myint, B., Sun, X., Wu, L., Cheng, H.S., Yip, S.,
+          Cheng, C.Z.M., Manoharan, T., et al.: Non-viral, high throughput genetic engineer
+          ing of primary immune cells using nanostraw-mediated transfection. Biomaterials
+          317, 123079 (2025)
+        </li>
+        <li id="ref4">
+          
         </li>
       </ul>
     </div>
@@ -491,7 +846,9 @@
 
   <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
   <script type="module" src="./components/table-component/table-component.js"></script>
-</body>
+  <script src="components/clickable-svg/svg-component.js"></script>
+
+
 
 </html>
 
