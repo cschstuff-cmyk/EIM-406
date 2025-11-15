@@ -34,6 +34,10 @@
 
   <link rel="stylesheet" href="components/clickable-svg/svg-component.css">
 
+  <meta charset="UTF-8">
+  <title>My Webpage with References</title>
+  <link rel="stylesheet" href="components/references/references_updated.css">
+
 
 
     <!-- Smooth scrolling -->
@@ -79,6 +83,9 @@
               <a href="#Project-Objective">Project-Objective</a>
             </sl-tree-item>
             <sl-tree-item>
+              <a href="#Table-1">Table 1: Preliminary Testing Concerns related to MVP Set Up</a>
+            </sl-tree-item>
+            <sl-tree-item>
               <a href="#Problem-Scope">Project Scope</a>
             </sl-tree-item>
             <sl-tree-item>
@@ -92,14 +99,63 @@
           <sl-tree-item  >
             <a href="#Methodology">2. Methodology</a>
             <sl-tree-item>
-              <a href="#Table-1">Table 1: Design considerations and options for automated cell-transport and electroporation system</a>
+              <a href="#Automation-Backbone">Design of the automation backbone</a>
+              <sl-tree-item>
+              <a href="#Table-2">Table 2: Design Specification for Automation Backbone</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Table-3">Table 3: Design considerations and options for automated cell-transport and electroporation system (automated backbone)</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Cell-Transport">Cell transportation between sample reservoir and 96-well plate</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Extract-Cell">Extraction and dispensing of cells</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Spatial-Layout">Spatial layout of automation modules</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Actuation-Strategy">Actuation strategy for plate transport</a>
+              </sl-tree-item>
+              
             </sl-tree-item>
+            
             <sl-tree-item>
-              <a href="#Table-2">Table 2: Reuse strategy for device components</a>
+              <a href="#Transfection-Plate">Transfection Plate</a>
+              <sl-tree-item>
+              <a href="#Table-4">Table 4: Design Specifications for Transfection Plates</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Table-5">Table 5: Design considerations and options for automated cell-transport and electroporation system (transfection plates)</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Cathode-Material">Material of cathode</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Cargo-Channel-Design">Design of cargo distribution channels</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Cargo-Channel-Material">Material of cargo channel</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Current-Delivery">Delivery of current to the ITO plate</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Attachment-Mechanism">Consumable attachment mechanism</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Adhesive-Selection">Adhesive selection for component bonding</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Table-6">Table 6: Reuse strategy for device components</a>
+              </sl-tree-item>
+              <sl-tree-item>
+                <a href="#Component-Reusability">Component Re-usability</a>
+              </sl-tree-item>
             </sl-tree-item>
-            <sl-tree-item>
-              <a href="#Table-3">Table 3: Design considerations and options for automated cell-transport and electroporation system</a>
-            </sl-tree-item>
+            
+            
             <sl-tree-item>
               <a href="#Figure-2">Figure 2: Design and Prototype</a>
             </sl-tree-item>
@@ -120,7 +176,10 @@
           </sl-tree-item>
 
           <sl-tree-item >
-            <a href="#Discussion">4. Discussion</a>
+            <a href="#Discussion">4. Discussion</a>            
+            <sl-tree-item>
+              <a href="#Summary-and-Analysis">Summary and Analysis</a>
+            </sl-tree-item>
             <sl-tree-item>
               <a href="#Limitations">Limitations</a>
             </sl-tree-item>
@@ -132,7 +191,20 @@
           
 
           <sl-tree-item>
-            <a href="#references">References</a>
+            <a href="#references-container">References</a>
+          </sl-tree-item>
+
+          <sl-tree-item>
+            <a href="#Appendix">Apendix</a>
+            <sl-tree-item>
+            <a href="#Simulation-Protocol">Simulation Protocol</a>
+            </sl-tree-item>
+            <sl-tree-item>
+            <a href="#Electrochemical-Analysis">Electrochemical Analysis</a>
+            </sl-tree-item>
+            <sl-tree-item>
+            <a href="#Future-Experiment-Protocol">Future Experiment Protocol</a>
+            </sl-tree-item>
           </sl-tree-item>
         </sl-tree>
       </aside>
@@ -152,9 +224,9 @@
         <p>
           <b>Research Context.</b> Engineered immune-cell therapies have transformed oncology
           by demonstrating that synthetic genetic reprogramming can endow effector cells with
-          potent, tumor-specific cytotoxicity <a href="#link">[1]</a>. Among these, chimeric antigen receptor (CAR)
+          potent, tumor-specific cytotoxicity <a href="#ref1">[1]</a>. Among these, chimeric antigen receptor (CAR)
           T-cell therapy stands as the most successful example—six products have gained 
-          regulatory approval to date for the treatment of aggressive malignancies <a href="#link">[2]</a>, such as
+          regulatory approval to date for the treatment of aggressive malignancies <a href="#ref2">[2]</a>, such as
           relapsed or refractory B-cell lymphoma <a href="#link">[3-4]</a> and multiple myeloma <a href="#link">[5-6]</a>. This 
           approach harnesses a patient’s own immune system to selectively recognize and 
           eliminate tumor cells, overcoming limitations of traditional cancer treatments 
@@ -212,39 +284,78 @@
         </div>
         <div id="Project-Objective">
         <p>
-          <b>Project Objective.</b> In this project, we aim to streamline and automate the
-          transfection workflow for producing allogeneic immune cells. Current manufacturing
-          pipelines for CAR-T therapy remain expensive, labour-intensive, and centralized, 
-          creating high costs, quality variability, and long production cycles. By developing an
-          integrated automated system, we seek to reduce production costs, ensure consistent
-          product quality, and shorten vein-to-vein time—ultimately enabling decentralized and
-          more accessible manufacturing of immune-cell therapies. Within the team, Tianmu
-          will lead the development of the automation backbone, focusing primarily on the
-          design and optimization of the media-transportation system. Celeste will concentrate
-          on engineering the transfection module. Both subsystems will be jointly integrated
-          into a cohesive automated platform.
+          <b>Project Objective.</b> In this project, we aim to streamline and 
+          automate the transfection workflow for producing allogeneic immune cells. 
+          Current manufacturing pipelines for CAR-T therapy remain expensive, 
+          labour-intensive, and centralized, creating high costs, quality variability, 
+          and long production cycles. By developing an integrated automated system, we 
+          seek to reduce production costs, ensure consistent product quality, and shorten 
+          vein-to-vein time—ultimately enabling decentralized and more accessible 
+          manufacturing of immune-cell therapies. 
+        </p>
+        <p>
+          Building on our MVP work which has demonstrated effective cell isolation 
+          (results not published) and single-well transfection~\cite{kumar2025non}, 
+          preliminary testing in the 96-well configuration revealed several challenges.
+                  <table class="design-table" id="Table-1">
+          <caption>Table 1: Preliminary Testing Concerns related to MVP Set Up</caption>
+          <thead>
+            <tr>
+              <th>Concern</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>(1a) Uneven cargo distribution</strong></td>
+              <td>Mid-section channels fill first in the one-input-to-eight-channel design, causing concentration imbalance.</td>
+            </tr>
+            <tr>
+              <td><strong>(1b) Electric field variation</strong></td>
+              <td>Inconsistent voltage and pulse parameters across wells.</td>
+            </tr>
+            <tr>
+              <td><strong>(1c) Uneven cell loading</strong></td>
+              <td>Cells are not evenly distributed across wells.</td>
+            </tr>
+            <tr>
+              <td><strong>(2a) Cell residue</strong></td>
+              <td>Residual cells remain in the well plate and reservoir.</td>
+            </tr>
+            <tr>
+              <td><strong>(2b) Viability during transport</strong></td>
+              <td>Cell viability decreases during movement between modules.</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <p>
+          Within the team, Tianmu will lead the development of the automation backbone, 
+          focusing primarily on the design and optimization of the media-transportation 
+          system. Celeste will concentrate on engineering the transfection module. 
+          Both subsystems will be jointly integrated into a cohesive automated platform.
         </p>
         </div>
         <div id="Project-Scope">
         <p>
-          <b>Project Scope.</b> Because the central objective is automation, our validation 
-          strategy emphasizes engineering performance rather than deep biological 
-          characterization. Specifically, our target milestones are: (1) improved recovery 
-          efficiency—minimizing residual volume and achieving a recovery rate greater than 50%; 
-          (2) robust, stable, and controllable system operation with a total processing time below 
-          10 minutes; and (3) low system-induced cell loss, maintaining cell viability above 70%
-          when operating without electroporation. Initial testing will be performed using Jurkat 
-          cells, an immortalized T-cell line with a rapid doubling time (approximately 1–2 days), 
-          making it suitable for repeated prototyping cycles. The combined evaluation across 
-          recovery, stability, and viability will determine whether the platform is ready for 
-          downstream optimization toward bedside or on-bench automated manufacturing of immune cells.
+          <b>Project Scope.</b> Because the central objective is automation, our 
+          validation strategy prioritizes engineering performance over deep biological 
+          characterisation. Our key milestones are: (1) improving recovery efficiency 
+          by minimizing residual volume and achieving a recovery rate above 50%; 
+          (2) ensuring robust, stable and controllable system operation with a total 
+          processing time under 10 minutes; and (3) minimizing system-induced cell 
+          loss, maintaining viability above 70% when operating without 
+          electroporation. Initial testing will use Jurkat cells, an immortalised 
+          T-cel line with a rapid doubling time (1-2 days), allowing frequent 
+          iterative prototyping. Performance across recovery, stability, and 
+          viability will determine readiness for downstream optimization toward 
+          bedside or on-bench automated immune-cell manufacturing. 
         </p>
         <p>
-          As an additional enhancement, we aim to incorporate experiments in vitro once the
-          engineering benchmarks are met. This may include optimizing system parameters for
-          transfection of primary human T cells using fluorescent dyes or non-functional protein
-          cargo, thereby producing a prototype that is immediately ready for future biologically
-          intensive refinement.
+          As a further step, once engineering benchmarks are met, we plan to 
+          incorporate in vitro experiments to refine system parameters for human 
+          T-cell transfection using fluorescent dyes or non-functional protien-cargo, 
+          producing a prototype positioned for biologically intensive refinement.
         </p>
         </div>
         <div id="Novelty-and-Contribution">
@@ -306,9 +417,59 @@
     <div class = "content-inner">
       <div id="Methodology">
         <h2>2. Methodology</h2>
-
-          <table class="design-table" id="Table-1-Extended">
-            <caption>Table 1: Design considerations and options for automated cell-transport and electroporation system</caption>
+        <h3>Design of the automation backbone</h3>
+          <table class="design-table" id="Table-2">
+            <caption>Table 2: Design Specification for Automation Backbone</caption>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Requirement / Feature</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Automation</strong></td>
+                <td>Setup can enable stable, controllable, programmable transportation at a desired speed.</td>
+              </tr>
+              <tr>
+                <td><strong>Manufacturing</strong></td>
+                <td>
+                  <ul style="margin: 0; padding-left: 1.5em;">
+                    <li>Electroporation array seamlessly incorporated and automatically controlled.</li>
+                    <li>Magnet can effectively attract cells to the nanostraw substrate.</li>
+                    <li>Sample transporter positioned away from magnet to avoid affecting magnetic Dynabeads-bound cells.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Performance</strong></td>
+                <td>Sample transporter is able to acquire cells and transport samples between reservoir and 96-well plate.</td>
+              </tr>
+              <tr>
+                <td><strong>Indirect Contact Cleanliness</strong></td>
+                <td>All surfaces indirectly contacting sterile workspace must be compatible with hospital-grade disinfectants (e.g., 70% ethanol, hydrogen peroxide).</td>
+              </tr>
+              <tr>
+                <td><strong>Design (Footprint)</strong></td>
+                <td>Setup designed for benchtop operation with footprint &lt; 600 mm × 1200 mm to fit on a standard laboratory table.</td>
+              </tr>
+              <tr>
+                <td><strong>Design (Weight)</strong></td>
+                <td>Total weight of the instrument &lt; 30 kg.</td>
+              </tr>
+              <tr>
+                <td><strong>Safety</strong></td>
+                <td>
+                  <ul style="margin: 0; padding-left: 1.5em;">
+                    <li>Protects operators and environment from shock, burns, and fire (e.g., protective earth, double insulation when required).</li>
+                    <li>Hardware and firmware enforce safe maximums that trigger emergency stop.</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="design-table" id="Table-3">
+            <caption>Table 3: Design considerations and options for automated cell-transport and electroporation system (automated backbone)</caption>
             <thead>
               <tr>
                 <th>Area of focus</th>
@@ -345,8 +506,358 @@
             </tbody>
           </table>
 
-        <table class="design-table" id="Table-2">
-          <caption>Table 2: Reuse strategy for device components</caption>
+          <p>
+            The automatic backbone aims to address cell loss and long production 
+            times, targeting issues (1c), (2a) and (2b) (<a href="#Table-1">Table 1</a>). 
+            It is expected to improve cell recovery, shorten the manufacturing 
+            cycle, and in turn enhance cell quality, increase output volume, and 
+            reduce the unit cost of CAR-T production. <a href="#Table-3">Table 3</a> 
+            summarizes the design exploration of the automation backbone.
+          </p>
+          <div id="Cell-Transport">
+          <p>
+            <b>Cell transportation between sample reservoir and 96-well plate</b>
+            To automate the transport of cells between the sample reservoir and the 
+            96-well plate, we systematically compared two concept solutions: 
+            (i) direct fluid transfer using peristaltic pumps and 
+            (ii) container-based transport using a mechanical conveyor 
+            (<i>transporter</i>). The primary design considerations were to 
+            minimise cell loss, reduce shear stress, preserve sterility, and 
+            ensure reproducible positioning over the nanostraw electroporation 
+            region.
+          </p>
+
+          <p>
+            Peristaltic pumps, although widely used in bioprocessing, impose 
+            repeated compression--relaxation cycles and high shear stresses at the 
+            tubing--roller interface. These conditions can decrease viability during 
+            repeated transfers, while tubing surfaces introduce opportunities for 
+            adhesion, entrapment in dead volumes, and uncontrolled residual loss. 
+            Maintaining sterility requires frequent tubing replacement or cleaning, 
+            adding operational complexity.
+          </p>
+
+          <p>
+            To avoid these limitations, we adopted a conveyor-based transporter that 
+            moves cells in fixed well-plate carriers with minimal bulk fluid 
+            transfer. In this configuration, cells remain confined within standard 
+            microplate wells, and only short, well-defined fluid paths are involved 
+            during loading and unloading. This reduces surface area for adhesion, 
+            eliminates cyclic compression, and minimises shear exposure, thereby 
+            preserving cell integrity and yield. Because the wells serve as 
+            disposable, closed carriers, sterility is maintained through consumable 
+            exchange rather than extensive cleaning-in-place procedures. 
+            Consequently, the transporter concept provides gentler handling, lower 
+            residual loss, and improved reproducibility compared with peristaltic 
+            pumping.
+          </p>
+          </div>
+          <div id="Extract-Cell">
+          <h3>Extraction and dispensing of cells</h3>
+          <p>
+            For extraction and dispensing of cells, we compared syringe-based 
+            displacement against pipette-tip based transfer. While both approaches 
+            can achieve accurate volumetric delivery, the dominant requirement was 
+            minimising residual cell volume while maintaining compatibility with the 
+            conveyor-based transport scheme.
+          </p>
+          <p>
+            Pipette tips are low-cost and common in laboratory workflows, but their 
+            long, tapered channels and air--liquid interfaces can trap small volumes 
+            of cell suspension near the tip orifice. This trapped residual varies 
+            with aspiration speed, immersion depth, and tip alignment, introducing 
+            uncertainty in the delivered dose. Frequent attachment and ejection of 
+            tips also increase mechanical complexity and risk misalignment within 
+            the constrained footprint of the automation backbone.
+          </p>
+          <p>
+            We therefore selected syringe-driven displacement as the primary 
+            extraction mechanism. The short and well-defined internal wetted 
+            volume enables near-complete evacuation with minimal dead volume. 
+            Piston-driven motion provides smooth, continuous flow profiles that 
+            reduce bubble formation and shear stress. Syringes can be rigidly 
+            integrated into the transport module, simplifying alignment with 
+            reservoir and plate wells while maintaining a closed, sterilisable 
+            flow path. Compared with pipette tips, syringe transfer offers lower 
+            residual loss, improved flow controllability, and superior mechanical 
+            integration.
+          </p>
+          </div>
+          <div id="Spatial-Layout">
+          <h3>Spatial layout of automation modules</h3>
+          <p>
+            The automation backbone integrates sample loading, plate transport, 
+            and electroporation within a compact benchtop footprint. We evaluated 
+            an L-shaped layout against a linear (``horizontal line'') configuration.
+          </p>
+
+          <p>
+            An L-shaped layout requires the plate to undergo a 90&deg; directional change, 
+            necessitating either a rotational stage or complex guiding features. These 
+            additions increase mechanical complexity, introduce vibration sources, and 
+            complicate cable routing. Directional changes may also induce sloshing, 
+            perturbing cell distribution immediately before electroporation.
+          </p>
+
+          <p>
+            The horizontal-line configuration, by contrast, aligns the loading region, 
+            electroporation zone, and unloading area along a single translational axis. 
+            This simplifies mechanical design, minimises acceleration events, and reduces 
+            inertial disturbances to the fluid. The linear layout also simplifies enclosure 
+            design and allows future expansion (e.g., washing or incubation modules) along 
+            the same axis. For these reasons, the horizontal-line configuration was 
+            selected.
+          </p>
+          </div>
+
+          <div id="#Actuation-Strategy">
+          <h3>Actuation strategy for plate transport</h3>
+          <p>To execute conveyor motion with sufficient smoothness and positional accuracy, 
+            we evaluated belt-driven linear actuators against lead-screw linear actuators. 
+            The key requirements included: (i) smooth, jerk-minimised motion, (ii) stable 
+            pausing without unwanted drift, and (iii) repeatable positioning over the 
+            nanostraw array.</p>
+          <p>
+            Belt-driven actuators offer high speed but introduce motion ripple and 
+            micro-vibrations due to belt elasticity and periodic tooth engagement. 
+            These effects are most problematic at low speeds and during start--stop 
+            transitions, when fluid agitation is most likely. Belt stretch and wear 
+            also compromise long-term positional stability.
+          </p>
+          <p>
+            Lead-screw actuators, in contrast, rely on continuous rolling contact between the 
+            threaded screw and nut, producing deterministic, vibration-free translation. Their 
+            mechanical advantage allows fine-grained control of velocity and acceleration. The 
+            self-locking nature of many lead-screw systems prevents unintended motion during 
+            pauses, crucial for stable electroporation. Accordingly, we selected a lead-screw 
+            linear actuator to ensure smooth transport, stable positioning, and high 
+            repeatability.
+          </p>
+          </div>
+          
+          
+
+          <h3>Transfection Plate</h3>
+            <table class="design-table" id="Table-4">
+              <caption>Table 4: Design Specifications for Transfection Plates</caption>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Key Requirements</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Electroporation Plate (96-well plate, cargo channel, ITO setup)</strong></td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Easy to manufacture and assemble.</li>
+                      <li>Can incorporate nanostraw membrane.</li>
+                      <li>Biocompatible (e.g., USP Class VI certified, non-cytotoxic).</li>
+                      <li>Free from leakage.</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Electrode Array (Cathode)</strong></td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Biocompatible (e.g., USP Class VI certified, non-cytotoxic).</li>
+                      <li>Resistant to corrosion.</li>
+                      <li>Low-cost electrodes.</li>
+                      <li>Resistant to electrolysis under 40 V in RPMI-1640 media.</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Power for Electroporation Process</strong></td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Target voltage: 40–50 V.</li>
+                      <li>Waveform: square wave pulses.</li>
+                      <li>Pulse width: 100 μs–2 ms.</li>
+                      <li>Capable of sustaining pulsed operation up to 2 minutes.</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="design-table" id="Table-5">
+              <caption>Table 5: Design considerations and options for automated cell-transport and electroporation system (transfection plates)</caption>
+              <thead>
+                <tr>
+                  <th>Area of focus</th>
+                  <th>Considerations</th>
+                  <th>Options</th>
+                  <th>Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Material of cathode</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Ensure material is non-corrosive</li>
+                      <li>Ensure biocompatibility</li>
+                    </ul>
+                  </td>
+                  <td>Platinum</td>
+                  <td class="highlighted"><strong>Titanium</strong></td>
+                </tr>
+                <tr>
+                  <td>Design of cargo channel</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Ensure channels allow cargo to be distributed uniformly</li>
+                      <li>To fill 8 channels</li>
+                    </ul>
+                  </td>
+                  <td>One input to Two channel</td>
+                  <td class="highlighted"><strong>One input to One channel</strong></td>
+                </tr>
+                <tr>
+                  <td>Material of Cargo channel</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Ensure biocompatibility</li>
+                      <li>Ensure chemically inert and electrically insulating throughout the process</li>
+                      <li>Smooth finishing to prevent protein adsorption and aggregation</li>
+                    </ul>
+                  </td>
+                  <td>Acrylic</td>
+                  <td class="highlighted"><strong>M2R-CL</strong></td>
+                </tr>
+                <tr>
+                  <td>Delivery of current to ITO plate</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Ensure reliable delivery of current</li>
+                      <li>Minimise risk of damaging ITO plate</li>
+                      <li>Only top surface coated with ITO</li>
+                    </ul>
+                  </td>
+                  <td>From side of ITO plate (similar to current set-up)</td>
+                  <td class="highlighted"><strong>From bottom of ITO plate</strong></td>
+                </tr>
+                <tr>
+                  <td>Consumable Attachment</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Prevent movement of consumables during production</li>
+                      <li>Avoid misalignment with internal components</li>
+                    </ul>
+                  </td>
+                  <td>Latch</td>
+                  <td class="highlighted"><strong>Interlock structures</strong></td>
+                </tr>
+                <tr>
+                  <td>Adhesive</td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Form a well-sealed boundary to prevent leakage</li>
+                      <li>Ensure medical-grade quality</li>
+                    </ul>
+                  </td>
+                  <td>Double-sided tape</td>
+                  <td class="highlighted"><strong>Glue</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          <p>
+            The transfection set up aims to address viral-vector CAR-T challenges and 
+            scalability limits, targeting (1a) and (1b) (<a href="#Table-1">Table 1</a>). It 
+            supports the translation of the protocol for both clinical and research, 
+            enabling scalable cell production, and robust cargo delivery and 
+            nano-electroporation.
+          </p>
+          <p>
+            <a href="#Table-5">Table 5</a> summarizes the design idea of the transfection 
+            plate. The design of the transfection plate was guided by the above 
+            requirements, along with sterility, and compatibility with the automated 
+            workflow. Design alternatives for each functional component were evaluated 
+            systematically, and the chosen solutions are justified below
+          </p>
+
+          <div id="Cathode-Material">
+          <h3>Material of cathode</h3>
+          <p>
+            Titanium was selected over platinum as the cathode material. Although 
+            platinum offers excellent electrochemical stability, titanium provides 
+            comparable biocompatibility and corrosion resistance at significantly 
+            lower cost. Its naturally forming TiO<sub>2</sub> passivation layer 
+            ensures stable performance under repeated electrical pulsing at 40-50V 
+            in buffered media such as RPMI-1640, with demonstrated low cytotoxicity 
+            in Jurkat or primary human T cells~\cite{santra2016dielectric, ossowska2021effect}. 
+          </p>
+          </div>
+
+          <div id="Cargo-Channel-Design">
+          <h3>Design of cargo distribution channels</h3>
+          <p>
+            Two designs were assessed: a one-input-to-one-channel configuration and a 
+            one-input-to-two-channel configuration. Although the latter reduces the 
+            number of filling steps, the presence of bifurcation junctions increases 
+            the risk of stagnation, coagulation, and uneven hydraulic resistance. 
+            These issues directly compromise volume and concentration uniformity 
+            across channels. The one-input-to-one-channel design was therefore 
+            selected, as it ensures consistent, obstruction-free filling and stable 
+            concentration delivery to each well.
+          </p>
+          </div>
+          <div id="Cargo-Channel-Material">
+          <h3>Material of cargo channel</h3>
+          <p>
+            We compared acrylic with M2R-CL, a medical-grade resin. Acrylic fabrication 
+            typically requires multiple bonded layers, creating seams that trap proteins 
+            and introduce alignment variability. M2R-CL, in contrast, enables the channel 
+            module to be moulded as a single integrated structure with built-in alignment 
+            features for the 96-well plate and ITO substrate. Its chemical inertness, 
+            smooth surface, and mechanical robustness reduce protein adsorption and 
+            enhance reproducibility in electroporation. Thus, M2R-CL was selected.
+          </p>
+          </div>
+          <div id="Current-Delivery">
+          <h3>Delivery of current to the ITO plate</h3>
+          <p>
+            Current delivery from the side of the ITO substrate was considered but 
+            rejected due to the risk of scraping or damaging the fragile conductive 
+            coating. Side-contact methods also tend to introduce edge-concentrated 
+            current paths, reducing field uniformity across wells. A bottom-contact 
+            configuration was chosen instead. This protects the ITO layer from 
+            mechanical damage, supports uniform electrical distribution, and 
+            simplifies assembly for the user.
+          </p>
+          </div>
+          <div id="Attachment-Mechanism">
+          <h3>Consumable attachment mechanism</h3>
+          <p>
+            Latch-based mechanisms were compared with passive interlock structures. 
+            Latches introduce moving components that increase assembly complexity, 
+            tolerance stack-up, and risk of mis-seating—critical concerns when 
+            aligning consumables above nanoscale electroporation structures. 
+            Interlock geometries integrated directly into the cargo-channel 
+            moulding provide stable, repeatable, and alignment-preserving attachment 
+            without requiring user adjustments. This approach supports consistent 
+            operation and facilitates automation.
+          </p>
+          </div>
+          <div id="Adhesive-Selection">
+          <h3>Adhesive selection for component bonding</h3>
+          <p>
+            Double-sided tape was considered due to its ease of use, but it exhibits 
+            variable sealing performance based on applied pressure and environmental 
+            conditions. Medical-grade adhesive was chosen instead for forming a 
+            continuous, hermetic, biocompatible seal. Its chemical stability ensures 
+            resistance to electrical pulsing, prevents fluid leakage, and reduces 
+            contamination risk, supporting consistent multi-layer bonding integrity.
+          </p>
+          </div>
+
+        
+
+        <table class="design-table" id="Table-6">
+          <caption>Table 6: Reuse strategy for device components</caption>
           <thead>
             <tr>
               <th>Component</th>
@@ -410,88 +921,30 @@
             </tr>
           </tbody>
         </table>
+        <div id="Component-Reusability">
+        <h3>Component Re-usability</h3>
+        <p>
+          <a href="#Table-6">Table 6</a> summarizes the component resuability 
+          considerations. The transfection plate comprises multiple layers that 
+          directly contact patient-derived samples or form critical microfluidic and 
+          electrical interfaces. Components that are permanently bonded or contain 
+          micro-scale crevices—specifically the nano-straw membrane, well plate, cargo 
+          channel, and ITO substrate—are unsuitable for reuse due to difficulties in 
+          sterilisation, risk of contamination, and mechanical damage during 
+          disassembly. These parts are therefore designated as single-use consumables 
+          to ensure sterility and consistent electroporation performance.
+        </p>
+        <p>
+          The anode (titanium electrode), however, is a monolithic metallic component 
+          integrated into the device frame. Its smooth surface, corrosion resistance, 
+          and absence of internal crevices enable reliable cleaning and disinfection 
+          without compromising structural or electrical integrity. As such, the anode 
+          is reusable, balancing material cost with safe and reproducible operation.
+        </p>
+        </div>
 
-        <table class="design-table" id="Table-3">
-          <caption>Table 3: Design considerations and options for automated cell-transport and electroporation system</caption>
-          <thead>
-            <tr>
-              <th>Area of focus</th>
-              <th>Considerations</th>
-              <th>Options</th>
-              <th>Options</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Material of cathode</td>
-              <td>
-                <ul style="margin: 0; padding-left: 1.5em;">
-                  <li>Ensure material is non-corrosive</li>
-                  <li>Ensure biocompatibility</li>
-                </ul>
-              </td>
-              <td>Platinum</td>
-              <td class="highlighted"><strong>Titanium</strong></td>
-            </tr>
-            <tr>
-              <td>Design of cargo channel</td>
-              <td>
-                <ul style="margin: 0; padding-left: 1.5em;">
-                  <li>Ensure channels allow cargo to be distributed uniformly</li>
-                  <li>To fill 8 channels</li>
-                </ul>
-              </td>
-              <td>One input to Two channel</td>
-              <td class="highlighted"><strong>One input to One channel</strong></td>
-            </tr>
-            <tr>
-              <td>Material of Cargo channel</td>
-              <td>
-                <ul style="margin: 0; padding-left: 1.5em;">
-                  <li>Ensure biocompatibility</li>
-                  <li>Ensure chemically inert and electrically insulating throughout the process</li>
-                  <li>Smooth finishing to prevent protein adsorption and aggregation</li>
-                </ul>
-              </td>
-              <td>Acrylic</td>
-              <td class="highlighted"><strong>M2R-CL</strong></td>
-            </tr>
-            <tr>
-              <td>Delivery of current to ITO plate</td>
-              <td>
-                <ul style="margin: 0; padding-left: 1.5em;">
-                  <li>Ensure reliable delivery of current</li>
-                  <li>Minimise risk of damaging ITO plate</li>
-                  <li>Only top surface coated with ITO</li>
-                </ul>
-              </td>
-              <td>From side of ITO plate (similar to current set-up)</td>
-              <td class="highlighted"><strong>From bottom of ITO plate</strong></td>
-            </tr>
-            <tr>
-              <td>Consumable Attachment</td>
-              <td>
-                <ul style="margin: 0; padding-left: 1.5em;">
-                  <li>Prevent movement of consumables during production</li>
-                  <li>Avoid misalignment with internal components</li>
-                </ul>
-              </td>
-              <td>Latch</td>
-              <td class="highlighted"><strong>Interlock structures</strong></td>
-            </tr>
-            <tr>
-              <td>Adhesive</td>
-              <td>
-                <ul style="margin: 0; padding-left: 1.5em;">
-                  <li>Form a well-sealed boundary to prevent leakage</li>
-                  <li>Ensure medical-grade quality</li>
-                </ul>
-              </td>
-              <td>Double-sided tape</td>
-              <td class="highlighted"><strong>Glue</strong></td>
-            </tr>
-          </tbody>
-        </table>
+
+        
 
 
 
@@ -543,7 +996,7 @@
     <div class = "content-inner">
       <div id="Results">
         <h2>3. Results</h2>
-        <div id="#Device-Fabrication">
+        <div id="Device-Fabrication">
            
           <p>
             <b>Device Fabrication.</b> We successfully designed, manufactured, assembled, 
@@ -705,6 +1158,33 @@
     <div class = "content-inner">
       <div id="Discussion">
         <h2>4. Discussion</h2>
+        <div id="Summary-and-Analysis">
+          <p>
+            <b>Summary and Analysis.</b> Our work demonstrates that a fully automated, non-viral 
+            transfection platform for large-scale immune-cell engineering is both technically 
+            feasible and operationally robust. Through systematic prototyping and iterative 
+            testing, we established that the automation backbone—comprising conveyor-based 
+            well-plate transport, syringe-driven media handling, and a custom electroporation 
+            substrate—can already execute complete processing cycles with high stability and 
+            reproducibility. Across thirty consecutive automated runs, the system maintained 
+            consistent temporal performance with only a single failure, whose root cause was 
+            identified and resolved. This confirms that our mechanical design, motion-control 
+            strategy, and software--hardware integration are sufficiently mature to support 
+            downstream biological experimentation.
+          </p>
+          <p>
+            Parallel evaluation of the electroporation module further validated key theoretical 
+            and engineering assumptions underpinning the device. Computational analysis revealed 
+            that titanium and platinum electrodes generate indistinguishable electric-field 
+            distributions at the transfection interface, and mesh-refinement studies confirmed 
+            numerical convergence, indicating that our field predictions are physically reliable. 
+            Experimental calibration of the titanium array verified uniform electrode length, 
+            structural stability, and safe electrical behaviour in RPMI-based conditions, 
+            supporting its suitability as a reusable anode. Together, these findings confirm 
+            that the core mechanisms required for uniform field delivery—electrode alignment, 
+            current continuity, and substrate integrity—are already in place.
+          </p>
+        </div>
         <div id="Limitations">
           <p>
             <b>Limitations</b> Meanwhile, we would like to point out the limitations of our work. 
@@ -750,31 +1230,23 @@
         </div>
         <div id="Future-Work">
           <p>
-            <b>Future Work</b> Looking ahead, we will move beyond addressing the limitations 
-            outlined above to strengthen both the engineering rigor and biological performance 
-            of our platform, ensuring a smooth transition toward a robust, fully automated 
-            electroporation system. Our efforts will center on two parallel streams: validating 
-            the automated backbone and completing the engineering characterisation of the 
-            electroporation module. (1) we will quantitatively assess cell recovery across the 
-            entire workflow, confirming that media volume and cell number are preserved and 
-            that viability remains uncompromised, following standardized Trypan blue–based 
-            counting protocols. Once the stability of the automated backbone is confirmed, 
-            we will proceed with staged biological validation: We will first evaluate 
-            electroporation performance using Jurkat cells, delivering fluorescent dyes and 
-            fluorescent proteins as initial readouts. Optionally as a bonus, we will then 
-            extend these experiments to primary T cells, incorporating the same cargo plus 
-            functional proteins to assess the system’s translational potential. Detailed 
-            protocols for all experiments described here is provided in the Appendix. 
-            (2) Along with the <i>in vitro</i> experiment, we will undertake a comprehensive 
-            engineering evaluation of the electroporation subsystem, verifying uniform current 
-            distribution across the titanium electrodes, ensuring the absence of fluid seepage 
-            within the full consumables assembly (well plate, nanostraw membrane, cargo 
-            channel, and ITO substrate), and, where applicable, characterising electric-field 
-            uniformity across individual wells during Jurkat and T cell electroporation. In 
-            addition, we will re-examine their integration within the automated framework to 
-            ensure mechanical compatibility, electrical stability, fluidic reliability, and 
-            software–hardware synchronization prior to initiating the next iteration of 
-            prototyping.
+            <b>Future Work</b> Looking ahead, we will strengthen both the engineering 
+            rigor and biological performance of our platform to support a robust, 
+            fully automated electroporation system. Our efforts will focus on two 
+            parallel streams: (a.)Biological validation: We will quantitatively assess cell recovery across the workflow, confirming 
+            preservation of media volume, cell number, and viability using 
+            standardized Trypan blue–based counting. Once the automated backbone 
+            is confirmed stable, electroporation performance will be evaluated using 
+            Jurkat cells with fluorescent dyes and proteins, and optionally extended 
+            to primary T cells to assess translational potential. Detailed protocols 
+            are provided in the Appendix <a href="#Simulation-Protocol">Protocol</a>>. (b.)Engineering characterization: We will verify uniform current distribution across 
+            titanium electrodes, ensure no fluid seepage within the consumables 
+            assembly (well plate, nanostraw membrane, cargo channel, ITO substrate), 
+            and characterize electric-field uniformity across wells during 
+            electroporation. Integration within the automated framework will be 
+            re-examined to confirm mechanical compatibility, electrical stability, 
+            fluidic reliability, and software–hardware synchronization before the 
+            next prototyping iteration.
           </p>
         </div>
       </div>      
@@ -786,64 +1258,213 @@
       
     </div>
 
+
     <div class = "content-inner">
-      <!-- This is an example of how you can use the references component to create references -->
-      <div id="references" class="references">
-        <sl-divider></sl-divider>
-        <h2>References</h2>
-        <ul>
-          <li id="ref1">
-            Kitada, T., DiAndreth, B., Teague, B., Weiss, R.: Programming gene and
-            engineered-cell therapies with synthetic biology. Science 359(6376), 1067 (2018)
-          </li>
-          <li id="ref2">
-            Zugasti, I., Espinosa-Aroca, L., Fidyt, K., Mulens-Arias, V., Diaz-Beya, M., Juan,
-            M., Urbano-Ispizua, ´ A., Esteve, J., Velasco-Hernandez, T., Men´endez, P.: Car-t cell
-            therapy for cancer: current challenges and future directions. Signal Transduction
-            and Targeted Therapy 10(1), 210 (2025)
-          </li>
-          <li id="ref3">
-            Neelapu, S.S., Locke, F.L., Bartlett, N.L., Lekakis, L.J., Miklos, D.B., Jacobson,
-            C.A., Braunschweig, I., Oluwole, O.O., Siddiqi, T., Lin, Y., et al.: Axicabtagene
-            ciloleucel car t-cell therapy in refractory large b-cell lymphoma. New England
-            Journal of Medicine 377(26), 2531–2544 (2017)
-          </li>
-          <li id="ref4">
-            Schuster, S.J., Bishop, M.R., Tam, C.S., Waller, E.K., Borchmann, P., McGuirk,
-            J.P., J¨ager, U., Jaglowski, S., Andreadis, C., Westin, J.R., et al.: Tisagenlecleucel
-            in adult relapsed or refractory diffuse large b-cell lymphoma. New England Journal
-            of Medicine 380(1), 45–56 (2019)
-          </li>
-          <li id="ref4">
-            Berdeja, J.G., Madduri, D., Usmani, S.Z., Jakubowiak, A., Agha, M., Cohen, A.D.,
-            Stewart, A.K., Hari, P., Htut, M., Lesokhin, A., et al.: Ciltacabtagene autoleucel,
-            a b-cell maturation antigen-directed chimeric antigen receptor t-cell therapy in
-            patients with relapsed or refractory multiple myeloma (cartitude-1): a phase 1b/2
-            open-label study. The Lancet 398(10297), 314–324 (2021)
-          </li>
-          <li id="ref4">
-            Munshi, N.C., Anderson Jr, L.D., Shah, N., Madduri, D., Berdeja, J., Lonial, S.,
-            Raje, N., Lin, Y., Siegel, D., Oriol, A., et al.: Idecabtagene vicleucel in relapsed and
-            refractory multiple myeloma. New England Journal of Medicine 384(8), 705–716
-            (2021)
-          </li>
-          <li id="ref4">
-            Albarr´an-Fern´andez, V., Angelats, L., Delgado, J., Gros, A., Urbano-Ispizua, ´ A.,
-            Guedan, S., Prat, A.: Unlocking the potential of engineered immune cell therapy
-            for solid tumors. nature communications 16(1), 1144 (2025)
-          </li>
-          <li id="ref4">
-            Kumar, A.R., Low, J., Lim, J., Myint, B., Sun, X., Wu, L., Cheng, H.S., Yip, S.,
-            Cheng, C.Z.M., Manoharan, T., et al.: Non-viral, high throughput genetic engineer
-            ing of primary immune cells using nanostraw-mediated transfection. Biomaterials
-            317, 123079 (2025)
-          </li>
-          <li id="ref4">
-            
-          </li>
-        </ul>
-      </div>
+      <!-- Container for references -->
+      <h2>References</h2>
+      <div id="references-container"></div>
+
+      <!-- Script to load references from separate file -->
+      <script>
+        fetch('components/references/references.html')
+          .then(response => response.text())
+          .then(html => {
+            document.getElementById('references-container').innerHTML = html;
+          })
+          .catch(err => console.error('Error loading references:', err));
+      </script>
     </div>
+
+    <div class = "content-inner">
+      <!-- Container for Appendix -->
+      <div id="Appendix">
+        <h2>Appendix</h2>
+        <div id="Simulation-Protocol">
+          <h3>Simulation Protocol</h3>
+          <p>
+          We performed <i>in silicon</i> simulation with COMSOL multiphyics&trade; 
+          on electric field distribution in a single well. We assign staninless steel at 
+          the plate material, pure Titanium as the electrode material, and RPMI-1640 as the 
+          media. Setup dimension follows standard 96 well plate in <i>in vitro</i>
+          experiment. We ignore the cell-induced change in media physic property. 
+          COMSOL source file can be found: <a>https://drive.google.com/file/d/1c7R-vwOzrDp02cw1erP_ud3_XpHydPfI/view?usp=sharing</a>.
+          </p>
+          <figure class="svg-component" id="fig_simulation">
+            <img src="Figures/simulation_setup.svg" alt="fig_simulation">
+            <figcaption>
+              <b>Fig. 1: Overview of CAR-T Therapy</b> The 96-well geometry was simplified 
+              to a single-well configuration, assuming minimal inter-well interaction. Short, 
+              red arrows indicate the electric field, whose boldness indicates the magnitude.
+
+            </figcaption>
+            <div class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" src="Figures/simulation_setup.svg">
+              <div class="caption"></div>
+            </div>
+          </figure> 
+        </div>
+        <div id="Electrochemical-Analysis">
+          <h3>Electrochemical Analysis</h3>
+          <p>
+            To upper-bound the extent of titanium dissolution during electroporation, we modelled the anode as a 0.5 mm-radius titanium disk immersed in a cylindrical RPMI-1640 domain of radius 6 mm and height 3 mm. Titanium operated within its passive electrochemical regime under near-neutral buffered conditions, allowing dissolution to be approximated by a constant passive current density <i>j</i><sub>pass</sub>. Published values for passivated Ti surfaces in aqueous media typically lie within 10<sup>&minus;7</sup>–10<sup>&minus;6</sup> A cm<sup>&minus;2</sup>; we adopted the conservative upper bound of 10<sup>&minus;6</sup> A cm<sup>&minus;2</sup>.
+          </p>
+
+          <p>
+            The geometric surface area of the electrode is
+          </p>
+
+          <p style="text-align: center; font-family: monospace; margin: 20px 0;">
+            <i>A</i><sub>e</sub> = π <i>r</i><sub>e</sub><sup>2</sup> = π (0.05 cm)<sup>2</sup> = 7.85 × 10<sup>&minus;3</sup> cm<sup>2</sup>
+          </p>
+
+          <p>
+            yielding a total anodic current of
+          </p>
+
+          <p style="text-align: center; font-family: monospace; margin: 20px 0;">
+            <i>I</i> = <i>j</i><sub>pass</sub> <i>A</i><sub>e</sub> = (10<sup>&minus;6</sup> A cm<sup>&minus;2</sup>)(7.85 × 10<sup>&minus;3</sup> cm<sup>2</sup>) = 7.85 × 10<sup>&minus;9</sup> A
+          </p>
+
+          <p>
+            Titanium dissolution proceeds through the four-electron oxidation reaction:
+          </p>
+
+          <p style="text-align: center; font-family: monospace; margin: 20px 0;">
+            Ti → Ti<sup>4+</sup> + 4e<sup>&minus;</sup>
+          </p>
+
+          <p>
+            so that the molar dissolution rate obeys Faraday's law,
+          </p>
+
+          <p style="text-align: center; font-family: monospace; margin: 20px 0;">
+            ṅ<sub>Ti</sub> = <i>I</i> / <i>zF</i>
+          </p>
+
+          <p>
+            with charge number <i>z</i> = 4 and Faraday constant <i>F</i> = 96485 C mol<sup>&minus;1</sup>. Over a 120-s pulsing cycle (40 V, 500 Hz), the total charge passed is
+          </p>
+
+          <p style="text-align: center; font-family: monospace; margin: 20px 0;">
+            <i>Q</i> = <i>It</i> = (7.85 × 10<sup>&minus;9</sup> A)(120 s) = 9.42 × 10<sup>&minus;7</sup> C
+          </p>
+
+          <p>
+            corresponding to only
+          </p>
+
+          <p style="text-align: center; font-family: monospace; margin: 20px 0;">
+            <i>n</i><sub>Ti</sub> = <i>Q</i> / <i>zF</i> = (9.42 × 10<sup>&minus;7</sup>) / (4 × 96485) = 2.4 × 10<sup>&minus;12</sup> mol of Ti<sup>4+</sup>
+          </p>
+
+          <p>
+            The surrounding RPMI volume is
+          </p>
+
+          <p style="text-align: center; font-family: monospace; margin: 20px 0;">
+            <i>V</i> = π <i>R</i><sup>2</sup> <i>h</i> = π (0.6 cm)<sup>2</sup>(0.3 cm) = 3.39 × 10<sup>&minus;4</sup> L
+          </p>
+
+          <p>
+            then yields a maximal bulk concentration of
+          </p>
+
+          <p style="text-align: center; font-family: monospace; margin: 20px 0;">
+            <i>C</i><sub>Ti</sub> = <i>n</i><sub>Ti</sub> / <i>V</i> = (2.4 × 10<sup>&minus;12</sup> mol) / (3.39 × 10<sup>&minus;4</sup> L) = 7.2 × 10<sup>&minus;9</sup> M
+          </p>
+          <p>
+            Even under this intentionally conservative model—continuous passive current, full mixing, and no
+            re-precipitation of hydrolysed Ti(IV) species—the predicted titanium concentration remains in the
+            single-digit nanomolar range. Such levels are several orders of magnitude below physiological ion
+            strengths in RPMI-1640 and are unlikely to exert measurable cytotoxic or functional effects on
+            Jurkat or primary human T cells. The actual effects could be even lower since here we 
+            assume 100% electrolysis on Titanium, however in reality, water usually 
+            overwhelmingly wins over titanium dissolution under near-neutral biological 
+            conditions~\cite{munoz2011pourbaix}.
+          </p>
+        </div>
+
+        <div id="Future-Experiment-Protocol">
+          <h3>Future Experiment Protocol</h3>
+          <p>
+            All experiments will be performed using a single row of eight wells to 
+            minimise reagent consumption while enabling statistically meaningful 
+            evaluation of transport and transfection performance. Unless stated 
+            otherwise, all procedures will be conducted under sterile conditions in a 
+            Class~II biosafety cabinet, and all cell suspensions will be handled using 
+            low-retention sterile plasticware. Jurkat E6--1 cells (ATCC~TIB{-}152) and 
+            primary human CD3<sup>+</sup> T cells (Stemcell Technologies or Lonza), 
+            either freshly isolated or thawed from cryopreserved stocks, will 
+            be maintained according to the manufacturer’s recommendations before 
+            experimentation.
+          </p>
+          <p>
+            <b>Jurkat cell recovery assay</b> To quantify recovery efficiency 
+            following automated fluidic transport, exponentially growing Jurkat 
+            cells will be harvested, washed once with phosphate-buffered saline 
+            (PBS; pH7.4, Ca<sup>2+</sup>/Mg<sup>2+</sup>-free), and 
+            resuspended at 1×10<sup>6</sup> cells/mL in 8 mL PBS to generate a 
+            total input of 8×10<sup>6</sup> cells.
+            The suspension will be transferred into the instrument’s sample reservoir, and the automated transport 
+            script will be executed across all eight wells. At the end of the run, 
+            the recovered cells from each well will be collected, 
+            centrifuged at 350g for 5min at room temperature, and resuspended 
+            gently in PBS. Viable cell numbers will be determined using 0.4% trypan 
+            blue and manual haemocytometry or automated cell counting. Recovery 
+            efficiency will be calculated as the ratio of live cells recovered to 
+            live cells input.
+          </p>
+          <p>
+            <b>Jurkat cell transfection with fluorescent dye (Optional)</b>
+            Jurkat cells will be harvested during mid-log phase, washed twice with 
+            PBS, and resuspended at 1×10<sup>7</sup> cells/mL in electroporation-grade 
+            RPMI-1640 (HEPES-buffered, serum-free). Fluorescent dye cargo will be 
+            prepared immediately before use, with 
+            Calcein-AM diluted to 1–2&nbsp;&mu;M final concentration or FITC–dextran (10 kDa) prepared at 1 mg/mL. 
+            Cells and cargo will be combined gently, and 1×10<sup>6</sup> cells (100&nbsp;&mu;L) 
+            will be dispensed into each well using the automated loading script. The programmed 
+            electroporation cycle (40 V, 500 Hz, 2 min pulsed operation) will then be executed. 
+            Following pulsing, each well will receive 900&nbsp;&mu;L of pre-warmed complete RPMI 
+            containing 10% FBS, and the cells will be incubated at 37&deg;C and 5% CO<sub>2</sub> 
+            for 30–60 min. Dye uptake will be quantified by flow 
+            cytometry using 488-nm excitation or by epifluorescence microscopy.
+          </p>
+          <p>
+            <b>Jurkat cell transfection with fluorescent protein (Optional)</b>
+            For protein delivery, Jurkat cells will be prepared as above and resuspended at 1×10<sup>7</sup>&nbsp;cells/mL in electroporation buffer. 
+            Endotoxin-free recombinant fluorescent protein (e.g., GFP or mCherry) will be diluted to 100–300&nbsp;&mu;g/mL in a protein-compatible low-salt buffer. 
+            Cell suspensions and protein solution will be mixed 1:1 to achieve a final concentration of 50–150&nbsp;&mu;g/mL. 
+            One million cells will be dispensed per well and subjected to the standard pulsed-field protocol (40&nbsp;V, 500&nbsp;Hz, 2&nbsp;min). 
+            Immediately after electroporation, cells will be supplemented with 1&nbsp;mL warm complete medium and incubated for 4–6&nbsp;h to allow cytosolic distribution and proper protein maturation. 
+            Transfection efficiency will be assessed using flow cytometry or confocal microscopy.
+          </p>
+          <p>
+            <b>Primary human T-cell transfection with fluorescent dye (Optional).</b>    
+            Primary CD3<sup>+</sup> T cells will be activated for 48&nbsp;h using CTS&nbsp;ImmunoCult reagents in CTS&nbsp;OpTmizer T-cell expansion medium. 
+            Activated T cells will be washed twice with PBS and resuspended in electroporation buffer at 8–10×10<sup>6</sup>&nbsp;cells/mL. 
+            Fluorescent dye will be prepared as described for Jurkat cells, and cells will be mixed with the dye immediately prior to loading. 
+            One million cells will be dispensed into each well and subjected to the programmed electroporation waveform. 
+            At the end of pulsing, 1&nbsp;mL of pre-warmed OpTmizer medium will be added to each well, and cells will be incubated under 37&deg;C and 5% CO<sub>2</sub>. 
+            Dye uptake will be assessed by microscopy or flow cytometry 30–60&nbsp;min after electroporation.
+          </p>
+
+          <p><b>Primary human T-cell transfection with fluorescent protein (Optional).</b>
+            Activated primary T cells will be processed in parallel for protein delivery. 
+            After washing and resuspension at 8–10×10<sup>6</sup>&nbsp;cells/mL, cells will be combined with recombinant fluorescent protein at a final concentration of 50–150&nbsp;&mu;g/mL. 
+            A total of 1×10<sup>6</sup> cells will be loaded into each well and subjected to the electroporation cycle. 
+            Following electroporation, cells will be immediately transferred into OpTmizer medium and incubated for 4–6&nbsp;h to permit intracellular protein maturation and equilibrium. 
+            Transfection efficiency will be quantified by flow cytometry, complemented by confocal imaging where required. 
+            Cell viability for both dye and protein experiments will be determined using trypan blue or a fixable viability dye.
+          </p>
+        </div>
+        
+
+      
+
+    </div>
+
+    
   </div>
 
   <!-- This is the code to display the scroll to top button for ergonomic -->
@@ -858,6 +1479,6 @@
   <script src="components/clickable-svg/svg-component.js"></script>
 
 
-
+</body>
 </html>
 

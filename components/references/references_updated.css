@@ -1,0 +1,32 @@
+/* Reference list styling */
+.reference-list {
+  list-style: none; /* remove bullets */
+  padding: 0;
+  margin: 1em 0;
+}
+
+.reference-item {
+  display: flex; /* number on left, text on right */
+  align-items: flex-start;
+  margin-bottom: 0.5em;
+}
+
+.ref-number {
+  width: 2em; /* fixed width for alignment */
+  font-weight: bold;
+  margin-right: 0.5em;
+  cursor: default;       /* makes it look non-clickable */
+  color: black;          /* ensure static color */
+  text-decoration: none; /* remove underline if inherited */
+}
+
+.ref-text {
+  flex: 1; /* text takes remaining width */
+}
+
+/* In-text citations remain clickable */
+sup a {
+  text-decoration: none;
+  color: blue;
+  cursor: pointer; /* optional, shows clickable cursor */
+}
