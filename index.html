@@ -273,9 +273,9 @@
         
 
         <figure class="svg-component" id="Figure-1">
-          <img src="Figures/Figure_1_svg.svg" alt="Figure 1">
+          <img src="Figures/Figure_1_svg.svg" alt="Fig. 1: Overview of CAR-T Therapy">
           <figcaption>
-            <b>Fig 1: Overview of CAR-T Therapy</b> <b>(a.)</b>Cycle of CAR-T therapy. 
+            <b>Fig. 1: Overview of CAR-T Therapy</b> <b>(a.)</b>Cycle of CAR-T therapy. 
               Blood samples are often drawn from Patient, from which primary human T cells are 
               isolated. Cargoes are transfected into the T cells to introduce CAR phonotype. 
               Outter rings summarize the time CAR-T manufacturing can take. <b>(b.)</b>User cases.
@@ -307,36 +307,43 @@
       <div id="Methodology">
         <h2>2. Methodology</h2>
 
-        <table class="design-table" id="Table-1">
-          <caption>Table 1: Design considerations and options for automated cell-transport and electroporation system</caption>
-          <thead>
-            <tr>
-              <th>Area of focus</th>
-              <th>Consideration</th>
-              <th colspan="2">Options</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Transportation of cells from sample reservoir to 96-well plate and vice versa</td>
-              <td>Ensure cell loss is minimal during transportation</td>
-              <td class="highlighted"><strong>Transporter</strong></td>
-              <td>Peristaltic pumps</td>
-            </tr>
-            <tr>
-              <td>Extraction of cells from sample reservoir to well plates</td>
-              <td>Ensure minimal residue of cells in system during extraction/dispensing</td>
-              <td class="highlighted"><strong>Syringes</strong></td>
-              <td>Pipette tips</td>
-            </tr>
-            <tr>
-              <td>Layout of components (sample loading, well-plate filling, electroporation region)</td>
-              <td>Ensure footprint stays within specification; ensure efficient operation to minimise total time</td>
-              <td>L-shape</td>
-              <td class="highlighted"><strong>Horizontal line</strong></td>
-            </tr>
-          </tbody>
-        </table>
+          <table class="design-table" id="Table-1-Extended">
+            <caption>Table 1: Design considerations and options for automated cell-transport and electroporation system</caption>
+            <thead>
+              <tr>
+                <th>Area of focus</th>
+                <th>Consideration</th>
+                <th>Options</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Transportation of cells from sample reservoir to 96-well plate and vice versa</td>
+                <td>Ensure cell loss is minimal during transportation</td>
+                <td class="highlighted"><strong>Transporter</strong></td>
+                <td>Peristaltic pumps</td>
+              </tr>
+              <tr>
+                <td>Extraction of cells from sample reservoir to well plates</td>
+                <td>Ensure minimal residue of cells in system during extraction/dispensing</td>
+                <td class="highlighted"><strong>Syringes</strong></td>
+                <td>Pipette tips</td>
+              </tr>
+              <tr>
+                <td>Layout of components (sample loading, well-plate filling, electroporation region)</td>
+                <td>Ensure footprint stays within specification; ensure efficient operation to minimise total time</td>
+                <td>L-shape</td>
+                <td class="highlighted"><strong>Horizontal line</strong></td>
+              </tr>
+              <tr>
+                <td>Actuator type for transport of cells</td>
+                <td>Ensure that movement of load is smooth; ensure that movement can be paused stably without introducing unwanted fluid disturbances</td>
+                <td>Belt-driven actuator</td>
+                <td class="highlighted"><strong>Ball screw linear actuator</strong></td>
+              </tr>
+            </tbody>
+          </table>
 
         <table class="design-table" id="Table-2">
           <caption>Table 2: Reuse strategy for device components</caption>
@@ -489,9 +496,9 @@
 
 
         <figure class="svg-component" id="Figure-2">
-          <img src="Figures/Figure_2_svg.svg" alt="Figure 2">
+          <img src="Figures/Figure_2_svg.svg" alt="Fig. 2: Design and Prototype">
           <figcaption>
-            <b>Fig 2: Design and Prototype</b> <b>(a.)</b>Fabrication of Nanostraw. Nanostrw 
+            <b>Fig. 2: Design and Prototype</b> <b>(a.)</b>Fabrication of Nanostraw. Nanostrw 
             membranes were fabricated through a multistep process beginning with track-etched
             <i>poly(ethylene terephthalate)</i>(PETE) films (Step~1), in which ion-irradiation 
             and chemical etching generate uniformly distributed, high-aspect-ratio nanopores. 
@@ -502,7 +509,7 @@
             alumina lining within the pores. In Step~4, directional oxygen plasma reactive-ion 
             etching (O<sub>2</sub> RIE) or CF<sub>4</sub>/CHF<sub>3</sub>-based plasma steps to
             precisely sculpt the exposed structures. Reproduced from Arun et. al.
-            <a href="#ref1">[1]</a><b>Design Overview</b>The device consists of a conveyor, 
+            <a href="#ref1">[1]</a>. <b>Design Overview</b>The device consists of a conveyor, 
             sample transporter, sample platform which holds both the sample reservoir and the transfection
             plate, electroporation array and magnet. Bottom left: Electrode Array Schematics. (i) Schematics 
             of layers of the nanoelectroporation substrate. Reproduced from Arun et. al.<a href="#ref1">[1]</a>
@@ -537,10 +544,11 @@
       <div id="Results">
         <h2>3. Results</h2>
         <div id="#Device-Fabrication">
+           
           <p>
             <b>Device Fabrication.</b> We successfully designed, manufactured, assembled, 
             and tested a fully automated electroporation prototype that forms the mechanical 
-            backbone of our non-viral immune-cell engineering platform <a href="#Figure-2">Fig2</a>. 
+            backbone of our non-viral immune-cell engineering platform <a href="#Figure-2">Fig.2</a>. 
             The system integrates four major subsystems: a linear conveyor belt driven by a 
             stepper motor with a positional precision of 0.1~mm, a reaction platform designed 
             to secure the sample reservoir and standard 96-well electroporation plates, a 
@@ -626,7 +634,7 @@
             the electric field and average electric field strength at transfection membrane and 
             found that across all meshes, the average electric field strength remained 
             negligibly different (p > 0.99; Mean Square Difference < 0.1 V/m; 
-            <a href="#Figure-3">Fig.3c</a>Top Right). Next, theoretical computation confirmed pulsed 
+            <a href="#Figure-3">Fig.3c</a> Top Right). Next, theoretical computation confirmed pulsed 
             operation under the anticipated voltage and buffer conditions induced negligible 
             release of Ti<sup>4+</sup> ions, supporting the suitability of titanium as a 
             biocompatible anode material within the RPMI-based electroporation environment.
@@ -666,7 +674,7 @@
       
 
       <figure class="svg-component" id="Figure-3">
-        <img src="Figures/Figure_3_updated.svg" alt="Figure 3">
+        <img src="Figures/Figure_3_updated.svg" alt="Fig. 3: Iteration on Transfection Plate">
         <figcaption>
           <b>Fig 3: Iteration on Transfection Plate</b> <b>(a.)</b>Schematics of the 
           iterated tyransfection plate. The iteration re-considers the design of the 
