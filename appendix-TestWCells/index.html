@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Verification test - with Cathode Array</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+
+  <link rel="stylesheet" href="./index.css">
+
+  <link rel="stylesheet" href="../components/team-member/team-member.css">
+  <script type="module" src="../components/team-member/team-member.js"></script>
+
+  <link rel="stylesheet" href="../components/table-of-content/table-of-content.css">
+
+  <script type="module" src="../components/image/image-component.js"></script>
+
+  <script type="module" src="../components/video/video.js"></script>
+
+  <link rel="stylesheet" href="../components/references/references.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+
+  <script src="../components/table-component/table-component.js"></script>
+
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../components/clickable-svg/svg-component.css">
+
+  <meta charset="UTF-8">
+  <title>My Webpage with References</title>
+  <link rel="stylesheet" href="../components/references/references_updated.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+    <!-- Smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <sl-button href="../">Back</sl-button>
+
+    
+</body>
+
+<body>
+    <div class="content">
+        <div class="content-inner" id="Objective">
+            <h2>Objective</h2>
+            <p>To observe impact on cells during full electroporation run using the designed set up.</p>
+        </div>
+
+        <div class="content-inner" id="Methodology">
+            <h2>Methodology</h2>
+            <p>Execute full electroporation cycle (refer to <a href="./appendix-TransfectionProtocol/index.html">Transfection Protocol</a> for details), with fully assembled set up and Arduino-based pulse generator providing voltage of 40 V peak voltage, 200 µs pulse width, and 40 Hz frequency for 2 minutes. </p>
+            <p>Conduct analysis of post-experiment Jurkat cells using automated cell counter, flow cytometry and fluorescence microscopy.</p>
+            <p>Monitor output signal with oscilloscope on peak voltage, pulse width, frequency and shape of waveform.</p>
+            <p>When relevant, process recoded data by calculating mean for each parameter; evaluate accuracy using absolute error and percentage error, and precision using standard deviation and coefficient of variation.</p>
+
+            <p>Coefficient of Variation is calculated as such:</p>
+            <table class="design-table" id="Table-coefficient-of-variation">
+                <thead>
+                <tr>
+                    <th>CV(%)</th>
+                    <th>Variation Level</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Less than 10%</td>
+                    <td>Low</td>
+                </tr>
+                <tr>
+                    <td>10 - 20%</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td>More than 20%</td>
+                    <td>High</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>Likewise, Percentage Error is classified as such:</p>
+            <table class="design-table" id="Table-percentage-error">
+                <thead>
+                <tr>
+                    <th>PE(%)</th>
+                    <th>Error Level</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Less than 10%</td>
+                    <td>Low</td>
+                </tr>
+                <tr>
+                    <td>10 - 20%</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td>More than 20%</td>
+                    <td>High</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-inner" id="Results">
+            <h2>Results</h2>
+            <div id="voltage-readings">
+                
+                <table class="design-table" id="Table-cells-voltage-raw-data">      
+                    <thead>
+                        <tr>
+                        <th>Parameter</th>
+                        <th>1st Reading</th>
+                        <th>2nd Reading</th>
+                        <th>3rd Reading</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Peak Volatage (V)</td>
+                        <td>37.6</td>
+                        <td>35.2</td>
+                        <td>36.0</td>
+                        </tr>
+                        <tr>
+                        <td>Pulse Width (µs)</td>
+                        <td>207.0</td>
+                        <td>226.0</td>
+                        <td>220.0</td>
+                        </tr>
+                        <tr>
+                        <td>Frequency (Hz)</td>
+                        <td>40.16</td>
+                        <td>40.10</td>
+                        <td>40.12</td>
+                        </tr>
+                        <tr>
+                        <td>Square Waveform</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <table class="design-table" id="Table-cells-voltage-analysis">            
+                    <thead>
+                        <tr>
+                        <th>Parameter</th>
+                        <th>Mean</th>
+                        <th>Target</th>
+                        <th>AE</th>
+                        <th>PE (%)</th>
+                        <th>Error Level</th>
+                        <th>SD </th>
+                        <th>CV (%)</th>
+                        <th>Variation Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Peak Voltage (V)</td>
+                        <td>36.27</td>
+                        <td>40</td>
+                        <td>3.73</td>
+                        <td>9.33</td>
+                        <td>Low</td>
+                        <td>1.22</td>
+                        <td>3.37</td>
+                        <td>Low</td>
+                        </tr>
+                        <tr>
+                        <td>Pulse Width (µs)</td>
+                        <td>217.67</td>
+                        <td>200</td>
+                        <td>17.67</td>
+                        <td>8.83</td>
+                        <td>Low</td>
+                        <td>9.71</td>
+                        <td>4.46</td>
+                        <td>Low</td>
+                        </tr>
+                        <tr>
+                        <td>Frequency (Hz)</td>
+                        <td>40.13</td>
+                        <td>40</td>
+                        <td>0.13</td>
+                        <td>0.32</td>
+                        <td>Low</td>
+                        <td>0.03</td>
+                        <td>0.08</td>
+                        <td>Low</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><b>Observations:</b>Peak voltage above target with low percentage error (AE = 3.73 V, PE = 9.33%) and low variation (CV = 3.37%). Pulse width slightly above 200 µs with low percentage error (AE = 17.67 µs, PE = 8.83%) and low variation (CV = 4.46%). Frequency is stable (40.13 Hz ± 0.03 Hz, CV = 0.08%). Square waveform was present.</p>
+                <p>The system produces a stable voltage output; however, the peak voltage is below both the target and previous measurements. This may be due to air gaps from cell seepage reducing fluid height and disrupting contact with the titanium electrode, as well as air bubbles in the FITC-dextran solution increasing voltage drop.</p>
+            </div>
+
+            <div id="cells">
+                <p><b>Before experiment</b></p>
+                <table class="design-table" id="Table-cells-before-experiment">      
+                    <thead>
+                        <tr>
+                        <th>Cell Viability (%)</th>
+                        <th>Estimated cell count per 8 wells</th>
+                        <th>Live cell count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>99</td>
+                        <td>1,140,000</td>
+                        <td>1,128,600</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <p><b>After experiment</b></p>
+                <p><u>Results on cell viability</u></p>
+                <table class="design-table" id="Table-cells-after-experiment-viability-raw-data">      
+                    <thead>
+                        <tr>
+                        <th></th>
+                        <th>Cell Viability (%)</th>
+                        <th>Estimated cell count per 8 wells</th>
+                        <th>Live cell count</th>
+                        <th>Recovery Ratio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Sample 1</td>
+                        <td>79.00</td>
+                        <td>883,000</td>
+                        <td>696,570</td>
+                        <td>0.62</td>
+                        </tr>
+                        <tr>
+                        <td>Sample 2</td>
+                        <td>81.00</td>
+                        <td>1,280,000</td>
+                        <td>1,036,800</td>
+                        <td>0.92</td>
+                        </tr>
+                        <td>Sample 3</td>
+                        <td>79.00</td>
+                        <td>1,280,000</td>
+                        <td>1,011,200</td>
+                        <td>0.90</td>
+                        </tr>
+                        <tr>
+                        <td>Sample 4</td>
+                        <td>59.00</td>
+                        <td>586,000</td>
+                        <td>345,740</td>
+                        <td>0.31</td>
+                        </tr>
+                        <tr>
+                        <td>Sample 5</td>
+                        <td>89.00</td>
+                        <td>3,560,000</td>
+                        <td>3,168,400</td>
+                        <td>2.81</td>
+                        </tr>
+                        <tr>
+                        <td>Sample 6</td>
+                        <td>74.00</td>
+                        <td>3,820,000</td>
+                        <td>2,826,800</td>
+                        <td>2.50</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                
+                <p><u>Results on cell viability</u></p>
+                <table class="design-table" id="Table-cells-after-experiment-viability-analysis">      
+                    <thead>
+                        <tr>
+                        <th></th>
+                        <th>Mean (x&#772;)</th>
+                        <th>SD</th>
+                        <th>CV(%)</th>
+                        <th>Variation Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Viability</td>
+                        <td>76.83</td>
+                        <td>0.10</td>
+                        <td>13.03</td>
+                        <td>Moderate</td>
+                        </tr>
+                        <tr>
+                        <td>Live Cell Count</td>
+                        <td>1,514,418</td>
+                        <td>1,077,992</td>
+                        <td>71.18</td>
+                        <td>High</td>
+                        </tr>
+                        <tr>
+                        <td>Recovery Ratio</td>
+                        <td>1.34</td>
+                        <td>1.05</td>
+                        <td>77.98</td>
+                        <td>High</td>
+                        </tr>                        
+
+                    </tbody>
+                </table>
+
+                <p>The mean post experimental cell viability is 76.83% (± 10%) from baseline 99%. A CV of 13.03% suggests that the impact of the electroporation cycle on the cells is moderately consistent.</p>
+                <p>A mean recovery ratio of 1.34 suggests that the protocol is generally non-lethal. However, it has a high CV of above 70% that can be attributed to leakage of cells between the well plate and nanostraws, due to damage at certain regions of the adhesive tape during the pasting process. For instance, sample 4 which has the lowest cell count, was obtained from the 7th row of the well plate, where it uses the peripheral holes of the tape.[CC11.1] Samples 5 and 6 have abnormally high cell count obtained, likely due to clumping of cells after a while of filling the wells preceding them and insufficient trituration.</p>
+
+
+                <p><u>Results on flow cytometry</u></p>
+                <table class="design-table" id="Table-cells-after-experiment-flow-cytometry-raw-data">      
+                    <thead>
+                        <tr>
+                        <th></th>
+                        <th>Cell gate (R1%)</th>
+                        <th>Singlet (R3%)</th>
+                        <th>Transfection (R5%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Negative Control</td>
+                        <td>84.66</td>
+                        <td>90.35</td>
+                        <td>0.09</td>
+                        </tr>
+                        <tr>
+                        <td>Sample 1</td>
+                        <td>51.42</td>
+                        <td>93.86</td>
+                        <td>9.08</td>
+                        </tr>
+                        <tr>
+                        <td>Sample 2</td>
+                        <td>64.75</td>
+                        <td>89.19</td>
+                        <td>3.60</td>
+                        </tr>
+                        <tr>
+                        <td>Sample 3</td>
+                        <td>63.32</td>
+                        <td>89.45</td>
+                        <td>4.04</td>
+                        </tr>
+                        <tr>
+                        <td>Sample 4</td>
+                        <td>71.85</td>
+                        <td>87.45</td>
+                        <td>8.53</td>
+                        </tr>
+                        <tr>
+                        <td>Sample 5</td>
+                        <td>71.80</td>
+                        <td>87.45</td>
+                        <td>7.87</td>
+                        </tr>
+                        <tr>
+                        <td>Sample 6</td>
+                        <td>69.77</td>
+                        <td>87.19</td>
+                        <td>6.69</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="design-table" id="Table-cells-after-experiment-flow-cytometry-analysis">      
+                    <thead>
+                        <tr>
+                        <th></th>
+                        <th>Mean (x&#772;)</th>
+                        <th>SD</th>
+                        <th>CV(%)</th>
+                        <th>Variation Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Cell Gate (R1%)</td>
+                        <td>65.49%</td>
+                        <td>7.77</td>
+                        <td>11.86</td>
+                        <td>Moderate</td>
+                        </tr>         
+                        
+                        <tr>
+                        <td>Singlet Purity (R3%)</td>
+                        <td>89.10</td>
+                        <td>2.52</td>
+                        <td>2.83</td>
+                        <td>Low</td>
+                        </tr>
+
+                        <tr>
+                        <td>Transfection Efficiency (R5%)</td>
+                        <td>6.63</td>
+                        <td>2.32</td>
+                        <td>35.03</td>
+                        <td>High</td>
+                        </tr>
+                        
+                                    
+
+                    </tbody>
+                </table>
+
+                <p>With a mean singlet purity (R3) of 89.10% and CV of 2.83%, cell handling and gating are approximately identical across the samples. However, mean transfection efficiency (R5) was 6.63% with a CV of 35.03%. This is likely due to inconsistencies resulted from the leakages and possible handling errors when working with the nanostraws, where the tacky nature of the adhesive and flimsy nature of the nanostraws + adhesive tape made it highly susceptible to accidental contact.</p>
+                <p>Green fluorescence was observed in a minority sub-population within a sample, with no detectable signal present in the Negative Control. In image xx FITC signal was localized within the cytoplasmic space and fluorescence activity was distinct from extracellular environment, which indicates successful membrane penetration. The transfected cells maintained a healthy, rounded morphology similar to negative control, which proves that the voltage output can achieve delivery without causing universal cell lysis.</p>
+
+
+            </div>
+
+            <p><b>Overall remarks: </b>Analysis of cell viability and morphology of cells under fluorescence microscopy proves that the device is safe for cells. Analysis of transfection efficiency from the flow cytometry and transfected cells observed under fluorescence microscopy proves that the device is capable of delivering molecules into the cells. Device is able to generate relatively stable voltage output, with further modifications required to fine tune it. As such, the device is likely to work but requires further optimization and modifications done to the processes to achieve more reliable results.</p>
+
+            
+                
+
+            
+
+            <p><b>Observations: </b>No seepage was observed, proving that tape is able to support a leak-proof set up.</p>
+
+        </div>
+
+
+        <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
+        <sl-icon name="arrow-up" label="Settings"></sl-icon>
+        </sl-button>
+        
+    </div>    
+</body>
+
+</html>

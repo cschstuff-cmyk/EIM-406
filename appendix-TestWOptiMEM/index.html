@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Verification test - with resistors</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+
+  <link rel="stylesheet" href="./index.css">
+
+  <link rel="stylesheet" href="../components/team-member/team-member.css">
+  <script type="module" src="../components/team-member/team-member.js"></script>
+
+  <link rel="stylesheet" href="../components/table-of-content/table-of-content.css">
+
+  <script type="module" src="../components/image/image-component.js"></script>
+
+  <script type="module" src="../components/video/video.js"></script>
+
+  <link rel="stylesheet" href="../components/references/references.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+
+  <script src="../components/table-component/table-component.js"></script>
+
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../components/clickable-svg/svg-component.css">
+
+  <meta charset="UTF-8">
+  <title>My Webpage with References</title>
+  <link rel="stylesheet" href="../components/references/references_updated.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+    <!-- Smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <sl-button href="../">Back</sl-button>
+
+    
+</body>
+
+<body>
+    <div class="content">
+        <div class="content-inner" id="Objective">
+            <h2>Objective</h2>
+            <p>To verify that output of pulse generator remains as a square wave, at 40Hz and 200us, at 96 wellplate configuration with OptiMEM present.</p>
+        </div>
+
+        <div class="content-inner" id="Methodology">
+            <h2>Methodology</h2>
+            <p>To run Arduino-based pulse generator through cargo channel and cargo wells that are assembled and filled with OptiMEM. 
+                Pulse generator circuit is programmed to produce square waveform with target parameters of 40 V peak voltage, 200 µs pulse 
+                width, and 40 Hz frequency for 2 minutes. 
+            </p>
+            <p>Three readings were recorded for each parameter to assess repeatability. The mean value was calculated, while accuracy was 
+                evaluated using absolute and percentage error. Precision was assessed using standard deviation and coefficient of variation.
+            </p>
+
+            <p>Coefficient of Variation is calculated as such:</p>
+            <table class="design-table" id="Table-coefficient-of-variation">
+                <thead>
+                <tr>
+                    <th>CV(%)</th>
+                    <th>Variation Level</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Less than 10%</td>
+                    <td>Low</td>
+                </tr>
+                <tr>
+                    <td>10 - 20%</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td>More than 20%</td>
+                    <td>High</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>Likewise, Percentage Error is classified as such:</p>
+            <table class="design-table" id="Table-percentage-error">
+                <thead>
+                <tr>
+                    <th>PE(%)</th>
+                    <th>Error Level</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Less than 10%</td>
+                    <td>Low</td>
+                </tr>
+                <tr>
+                    <td>10 - 20%</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td>More than 20%</td>
+                    <td>High</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>This methodology enables evaluation of the system's ability to maintain consistent output performance in 96-hole well plate configuration with OptiMEM present.</p>
+        </div>
+
+        <div class="content-inner" id="Results">
+            <h2>Results</h2>
+            <table class="design-table" id="Table-OptiMEM-96well-results">      
+            <thead>
+                <tr>
+                <th>Parameter</th>
+                <th>1st Reading</th>
+                <th>2nd Reading</th>
+                <th>3rd Reading</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Peak Volatage (V)</td>
+                <td>43.2</td>
+                <td>43.6</td>
+                <td>43.2</td>
+                </tr>
+                <tr>
+                <td>Pulse Width (µs)</td>
+                <td>200.0</td>
+                <td>200.0</td>
+                <td>208.0</td>
+                </tr>
+                <tr>
+                <td>Frequency (Hz)</td>
+                <td>40.18</td>
+                <td>40.15</td>
+                <td>40.15</td>
+                </tr>
+                <tr>
+                <td>Square Waveform</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <table class="design-table" id="Table-OptiMEM-96well-analysis">
+
+            
+            <thead>
+                <tr>
+                <th>Parameter</th>
+                <th>Mean</th>
+                <th>Target</th>
+                <th>AE</th>
+                <th>PE (%)</th>
+                <th>Error Level</th>
+                <th>SD </th>
+                <th>CV (%)</th>
+                <th>Variation Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Peak Voltage (V)</td>
+                <td>43.3</td>
+                <td>40</td>
+                <td>3.30</td>
+                <td>8.33</td>
+                <td>Low</td>
+                <td>0.231</td>
+                <td>0.53</td>
+                <td>Low</td>
+                </tr>
+                <tr>
+                <td>Pulse Width (µs)</td>
+                <td>202.67</td>
+                <td>200</td>
+                <td>2.67</td>
+                <td>1.33</td>
+                <td>Low</td>
+                <td>4.62</td>
+                <td>2.28</td>
+                <td>Low</td>
+                </tr>
+                <tr>
+                <td>Frequency (Hz)</td>
+                <td>40.16</td>
+                <td>40</td>
+                <td>0.16</td>
+                <td>0.40</td>
+                <td>Low</td>
+                <td>0.017</td>
+                <td>0.04</td>
+                <td>Low</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <p><b>Observations: </b>Peak voltage is slightly above the target of 40 V, with a low percentage error (AE  = 3.33, PE = 8.33%) and low variation (CV = 0.53 %). Pulse width is slightly above 200 µs, with low variation (CV = 2.3 %). Frequency is extremely stable (40.16 Hz) with minimal deviation (CV = 0.04 %). Overall, the system maintains its square waveform and demonstrates good stability and closeness to the design targets at 40 V input.</p>
+            <p><b>Remarks: </b>Peak voltage observed is lower than recorded when using resistors to simulate the load, suggesting further voltage drop possible during full transfection run.</p>
+        </div>
+
+
+        <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
+        <sl-icon name="arrow-up" label="Settings"></sl-icon>
+        </sl-button>
+        
+    </div>    
+</body>
+
+</html>

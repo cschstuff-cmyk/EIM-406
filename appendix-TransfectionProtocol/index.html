@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Verification test - with Cathode Array</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+
+  <link rel="stylesheet" href="./index.css">
+
+  <link rel="stylesheet" href="../components/team-member/team-member.css">
+  <script type="module" src="../components/team-member/team-member.js"></script>
+
+  <link rel="stylesheet" href="../components/table-of-content/table-of-content.css">
+
+  <script type="module" src="../components/image/image-component.js"></script>
+
+  <script type="module" src="../components/video/video.js"></script>
+
+  <link rel="stylesheet" href="../components/references/references.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+
+  <script src="../components/table-component/table-component.js"></script>
+
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../components/clickable-svg/svg-component.css">
+
+  <meta charset="UTF-8">
+  <title>My Webpage with References</title>
+  <link rel="stylesheet" href="../components/references/references_updated.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+    <!-- Smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <sl-button href="../">Back</sl-button>
+
+    
+</body>
+
+<body>
+    <div class="content">
+        <div class="content-inner" id="TransfectionProtocol">
+            <h2>Transfection of FITC into Jurkat Cells</h2>
+            <h3>Sterilization Stage</h3>
+            <ol>
+                <li>Fill the assembled wells with 70% ethanol for ~15min. (i.e. nanostraws attached to it) </li>
+                <li>Remove the ethanol, rinse the wells twice with 1X PBS.</li>
+                <li>Fill the wells with 1X PBS (third time), UV sterilize for at least 15min.</li>
+            </ol>
+
+            <h3>Seeding cells into the wells</h3>
+            <ol>
+                <li>Remove the PBS from the previous step. Rinse the wells once with OptiMEM.</li>
+                <li>Seed Jurkat cells at ~150K live cells per well in ~220uL of OptiMEM.</li>
+                <li>Incubate the well plate with the cells for at least 2h in the incubator.</li>
+            </ol>
+
+            <h3>Electroporation</h3>
+            <ol>
+                <li>Take the well plate from the incubator, centrifuge the well plate at 600g for 5 min.</li>
+                <li>In the BSC, add FITC solution (3mg/mL) into the cargo reservoir, place NExT well plate on top, avoiding bubbles as much as possible. Allow to incubate at room temperature for 10min (can bring the plate out to the bench for electroporation).</li>
+                <li>Lower electrode array into the wells.</li>
+                <li>Pulse electric field and observe the electric pulse generated on the oscilloscope</li>
+                <li>Leave the well plate to incubate with the cargo reservoir at room temperature for another 10min after electroporation.</li>
+                <li>Remove the well plate from the cargo reservoir, place into the incubator to incubate overnight.</li>
+                <li>Evaluate transfection efficiency and cell viability ~24h after transfection.</li>
+            </ol>
+        </div>
+
+        <div class="content-inner" id="PreparationForFlowCytometry">
+            <h2>Preparation of cells for Flow Cytometry</h2>
+            <ol>
+                <li>Resuspend cells in the NExT wells by pipetting vigorously with a 100/200uL pipette tip at least 10 times. Wash the NExT wells twice with OptiMEM and add the wash to the collected cell solution.</li>
+                <li>Transfer the collected cell solution into 15mL tubes. Spin at 350g for 5min to pellet.</li>
+                <li>Resuspend cell pellets in 1mL of OptiMEM, perform cell count and viability analysis using Trypan blue.</li>
+                <li>Transfer ~1M cells from the 15mL tubes into 1.5mL microcentrifuge tubes. Spin at 600g for 5min to pellet.</li>
+                <li>Wash the cell pellet with cold 1X PBS – resuspend the cell pellet in PBS, spin it down again and remove the supernatant.</li>
+                <li>Resuspend the cell pellet in 200uL cold PBS.</li>
+                <li>Run the cell samples through the flow cytometer.</li>
+            </ol>
+
+        </div>
+
+        <div class="content-inner" id="PreparationForFluorescenceMicroscopy">
+            <h2>Preparation of cells for Fluorescence Microscopy</h2>
+            <ol>
+                <li>Retrieve cells into a 1.5mL microcentrifuge tube, spin at 600g for 5min to pellet, remove the supernatant.</li>
+                <li>Wash with 0.5mL PBS twice. </li>
+                <li>Image cells under the fluorescence microscope.</li>
+            </ol>
+
+        </div>
+
+        
+
+
+        <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
+        <sl-icon name="arrow-up" label="Settings"></sl-icon>
+        </sl-button>
+        
+    </div>    
+</body>
+
+</html>

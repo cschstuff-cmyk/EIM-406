@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Verification test - with resistors</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+
+  <link rel="stylesheet" href="./index.css">
+
+  <link rel="stylesheet" href="../components/team-member/team-member.css">
+  <script type="module" src="../components/team-member/team-member.js"></script>
+
+  <link rel="stylesheet" href="../components/table-of-content/table-of-content.css">
+
+  <script type="module" src="../components/image/image-component.js"></script>
+
+  <script type="module" src="../components/video/video.js"></script>
+
+  <link rel="stylesheet" href="../components/references/references.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+
+  <script src="../components/table-component/table-component.js"></script>
+
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../components/clickable-svg/svg-component.css">
+
+  <meta charset="UTF-8">
+  <title>My Webpage with References</title>
+  <link rel="stylesheet" href="../components/references/references_updated.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+    <!-- Smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <sl-button href="../">Back</sl-button>
+
+    
+</body>
+
+<body>
+  <div class="content">
+    <div class="content-inner">
+      <h1 id="Objective">Objective</h1>
+      <p>
+        To verify that output of Arduino-based pulse generator produces a reliable square wave, 
+        at 40Hz and 200us at set voltages and load.
+      </p>
+
+      
+
+    </div>
+
+    <div class="content-inner">
+
+      <h1 id="Methodology">Methodology</h1>
+      <p>
+        To connect resistors to Arduino-based pulse generator to simulate a specific configuration of well plates 
+        (1-hole, 6-hole, 12-hole, 24-hole, 48-hole and 96-hole) based on their calculated effective resistance 
+        (refer to calculations below).
+      </p>
+      <p>
+        The system was tested at input voltages of 5 V, 10 V, 20 V, and 40 V, with emphasis on 40 V as the intended operating condition. 
+        Pulse generator circuit is programmed to produce square waveform with target parameters of 40 V peak voltage, 200 µs pulse width, 
+        and 40 Hz frequency for 5 seconds, and initiated for each readings obtained. 
+      </p>
+      <p>
+        For each configuration, key output parameters were measured using an oscilloscope, including peak voltage, pulse width,
+        frequency, and waveform shape to observe for deviation from input parameters. 
+      </p>
+      <p>
+        Three readings were recorded for each parameter at 40V input to assess repeatability. The mean value was calculated, 
+        while accuracy was evaluated using absolute (AE) and percentage error (PE). Precision was assessed using standard deviation (S.D) 
+        and coefficient of variation (CV).
+      </p>
+  
+      <p>Coefficient of Variation is calculated as such:</p>
+      <table class="design-table" id="Table-coefficient-of-variation">
+        <thead>
+          <tr>
+            <th>CV(%)</th>
+            <th>Variation Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Less than 10%</td>
+            <td>Low</td>
+          </tr>
+          <tr>
+            <td>10 - 20%</td>
+            <td>Moderate</td>
+          </tr>
+          <tr>
+            <td>More than 20%</td>
+            <td>High</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Likewise, Percentage Error is classified as such:</p>
+      <table class="design-table" id="Table-percentage-error">
+        <thead>
+          <tr>
+            <th>PE(%)</th>
+            <th>Error Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Less than 10%</td>
+            <td>Low</td>
+          </tr>
+          <tr>
+            <td>10 - 20%</td>
+            <td>Moderate</td>
+          </tr>
+          <tr>
+            <td>More than 20%</td>
+            <td>High</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>For datasets with only one reading, SD and CV could not be calculated, and variation could not be quantitatively assessed.</p>
+
+      <div id="Calculations">
+        <h2>Calculations</h2>
+        <p>
+          To determine the appropriate resistors to use in simulating each well plate configuration, the resistance per well is required. This is given by the formula 
+        </p>
+        <p>
+          $$R_{\text{well}} = \frac{d}{\sigma A}$$
+        </p>
+
+        <p>Whereby:</p>
+
+        <ul>
+          <li>\( d \) = distance between electrodes</li>
+          <li>\( \sigma \) = conductivity of buffer solution</li>
+          <li>\( A \) = effective cross-sectional area through which current flows between the electrodes</li>
+        </ul>
+
+        <p>This expression follows the standard relation R = \(\rho \frac{d}{A} \) where resistivity \(\rho\) <a href="">source</a>" is replaced using \(\rho =\frac{1}{\sigma} \)</p>
+        <!-- Source: D. Halliday, R. Resnick, and J. Walker, Fundamentals of physics, 7Th, extend. Hoboken, NJ: Wiley, 2005;2004;-->
+        
+        <h3 id="Calculating-the-value-of-d">Calculating the value of \( d \)</h3>
+        <p>The distance between the electrodes is dependent on the height of the cargo channel walls and the height between the nanostraws and base of the titanium wire. 
+        </p>
+
+        <p>In the original protocol (cite), the base of the wire rests just on the surface of the cell suspension within the well. This serves to ensure a more uniform electric field throughout the well, as opposed to cells closer to the wire receiving a higher electric field compared to those along the walls of the well, due to the hotspot effect.  </p>
+        <p>Each well has a diameter of 6.96mm (radius= 3.48mm), and a height of 10mm; while the height of each cargo channel is 1mm. </p>
+        <p>In the protocol, 150k cells suspended in ~220ul of OptiMEM is added into each well. </p>
+        <p>Given that the volume of a flat-based cylinder well is \(V=\pi r^2h\)</p>
+        <p>This results in the following calculations:</p>
+        <p> Volume occupied by 220ul cell suspended in OptiMEM \( = 220m\operatorname{m}^3\)</p>
+        <p> Height of cell suspension when filled in the well \( (h) =\frac{V}{\pi r^2\ }=\frac{220}{\pi\left({3.48}^2\right)}\ \cong\ 5.78mm \) </p>
+
+        <h3 id="Calculating-the-value-of-sigma">Calculating the value of \( \sigma \)</h3>
+        <p><b>The relationship between osmolality and conductivity in Opti-MEM</b></p>
+        <p>The electrical conductivity of Opti-MEM Reduced Serum Medium can be estimated from its osmolality because both properties depend on the concentration of dissolved ionic species. While <b>osmolality</b> measures the total number of solute particles per kilogram of solvent, <b>conductivity</b> reflects the ability of ions in solution to carry electrical current.</p>
+        <p>In physiological media such as Opti-MEM, these properties are dominated by strong electrolytes, primarily sodium chloride (NaCl), which dissociates completely in water:</p>
+        <p>$$ NaCl\rightarrow \operatorname{Na}^++C\operatorname{l}^- $$</p>
+
+        <p><b>Osmolality and Electrolyte Concentration</b></p>
+        <p>The relationship between osmolality and solute concentration can be described using the thermodynamic expression for osmotic pressure:</p>
+        <p>$$ \Pi=R\cdot T\cdot b\cdot\nu\cdot\Phi $$ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11120308/">source</a></p>
+        <p>Here, the behaviour of the solution is determined by the total number of effective solute particles. Since Rand Tare constants (for a given system and temperature), osmotic pressure is directly proportional to the term \( b\cdot\nu\cdot\Phi\), which represents the concentration of osmotically active species.</p>
+        <p>Thus, isolating the concentration-dependent term gives the effective osmolality:</p>
+        <p>$$Osm\approx b\cdot\nu\cdot\Phi$$</p>
+        <p>Adopting standard notation, with \(c\approx b \)(molarity ≈ molality for dilute aqueous solutions), \( i\equiv\nu \)(Van’t Hoff factor), and \( \phi\equiv\Phi \)(osmotic coefficient), gives:</p>
+        <p>$$Osm\approx i\cdot\phi\cdot c$$</p>
+        <p>For strong electrolytes such as NaCl, which dissociate into two ions:</p>
+        <p>$$ NaCl\rightarrow \operatorname{Na}^++C\operatorname{l}^- $$</p>
+        <p>i=2, so the osmolality is approximately twice the molar concentration, with \( \phi \) accounting for non-ideal behaviour.</p>
+
+        <p><b>Conductivity and Molar Conductivity</b></p>
+        <p>Electrical conductivity is related to ion concentration through the molar conductivity:</p>
+        <p>$$\Lambda_m=\frac{\sigma}{c}$$ <a href="https://en.wikipedia.org/wiki/Molar_conductivity">source</a></p>
+        <p>or equivalently:</p>
+        <p>$$\sigma=\Lambda_m\cdot c$$</p>
+        <p>Where:</p>
+
+        <ul>
+          <li>\( \Lambda_m \) = is the <b>molar conductivity</b></li>
+          <li>\( \sigma \) = is the electrical conductivity of the buffer solution</li>
+          <li>\( c \) = is the molar concentration</li>
+        </ul>
+
+        <p><b>Linking osmolality and conductivity</b></p>
+        <p>Since both osmolality and conductivity depend on the same ion concentration, we can combine the two relationships to eliminate c:</p>
+        <p>$$\sigma=\frac{\Lambda_m}{i\cdot\phi}\cdot Osm $$</p>
+        <p>This introduces an estimation factor:</p>
+        <p>$$k=\frac{\sigma}{Osm}=\frac{\Lambda_m}{i\cdot\phi}$$</p>
+
+        <p><b>Why This Approximation Works for Opti-MEM</b></p>
+        <ul>
+          <li><b>Ionic Dominance:</b> 	Although Opti-MEM contains proteins and nutrients, its osmotic and electrical properties are largely governed by \( N\operatorname{a}^+and C\operatorname{l}^- \)ions. </li>
+          <li><b>Near-linerity</b>Within physiological ranges (≈280–320 mOsm/kg), the relationship 
+            between osmolality and conductivity is approximately linear, making this estimation reliable. 
+            <a href="https://www.researchgate.net/publication/287260691_Comparison_of_concentration_measurement_technologies_in_bioprocess_solutions">[source]</a>
+          </li>
+        </ul>
+
+        <p><b>Estimating Conductivity of Opti-MEM</b></p>
+        <p>The reported osmolality of Opti-MEM is approximately: \( 299mOsm/kg\approx0.299Osm/L \) <a href="https://documents.thermofisher.com/TFS-Assets/certificate/GRIS/COA/COA_31985047_01142026030029_3248487_1.pdf">[source]</a></p>
+        <p>Using the osmotic relation: \( c=\frac{\operatorname{Osm}}{i\cdot\phi} \) with \( i\)=2 and \( \phi \)=0.93:</p>
+        <p>$$c=\frac{0.299}{2\times0.93}\approx0.161mol/L$$</p>
+        <p>This corresponds to an equivalent electrolyte concentration of about 161 mM NaCl.</p> 
+        <p>For NaCl at physiological concentrations: \(\Lambda_m\approx0.010S\operatorname{m}^2 mo\operatorname{l}^{-1} \)</p>
+        <p>Convert concentration: \( 0.161 mol/L=161 mol/\operatorname{m}^3 \)</p>
+        <p>The conductivity is then: \( \sigma=\Lambda_m\cdot c=0.010\times161\approx1.61 S/m \) <b>\( \approx1.6S/m \)</b></p>
+        <p>Thus, the conductivity of Opti-MEM can be reasonably estimated from its osmolality using the molar conductivity of its dominant electrolyte.</p>
+
+        <h3 id="Calculating-the-value-of-a">Calculating the value of \( a\)</h3>
+        <p>The effective cross-sectional area through which current flows between the electrodes is 
+          determined by the area of the titanium wires, where it is the limiting factor of the electric field. 
+        </p>
+        <p>As the diameter of the titanium wire is 0.5mm, it gives an area of \( \pi \times (0.25)^2 = 1.963 \times 10^{-7} \operatorname{m}^2 \)</p>
+
+        <p>Hence, the resistance of each well = \( \frac{5.78\ast{10}^{-3}m}{1.6S/m\ast\left(1.963\ast{10}^{-7}\right)m^2}\ =\ 18kohms \)</p>
+        <p>When scaled, to well plates of 1, 6, 12, 24, 48 and 96, the following total resistance in the set up is as follows:</p>
+        
+        <table class="design-table" id="Table-of-effective-resistance">
+          <thead>
+            <tr>
+              <th>Configuration</th>
+              <th>Effective Resistance</th>
+              <th>Equivalent Resistor load</th>             
+            </tr>
+          </thead>
+          <tbody>
+            <tr> 
+              <td>1-hole</td>
+              <td>1 x 18kΩ</td>
+              <td>18kΩ</td>
+            </tr>
+            <tr> 
+              <td>6-hole</td>
+              <td>6 x 18kΩ \( \rightarrow \) 3kΩ</td>
+              <td>3kΩ</td>
+            </tr>
+            <tr> 
+              <td>12-hole</td>
+              <td>12 x 18kΩ \( \rightarrow \) 1.5kΩ</td>
+              <td>1.5kΩ</td>
+            </tr>
+            <tr> 
+              <td>24-hole</td>
+              <td>24 x 18kΩ \( \rightarrow \) 750Ω</td>
+              <td>770Ω</td>
+            </tr>
+            <tr> 
+              <td>48-hole</td>
+              <td>48 x 18kΩ \( \rightarrow \) 375Ω</td>
+              <td>380Ω</td>
+            </tr>
+            <tr> 
+              <td>96-hole</td>
+              <td>96 x 18kΩ \( \rightarrow \) 187.5Ω</td>
+              <td>190Ω</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        
+      
+      
+
+    </div>
+
+
+    
+    <div class="content-inner">
+      <h1 id="Results">Results</h1>
+
+      <div id="Resistance-18kOhm"> 
+        <!-- 1 well plate-->
+        <h2>Resistance = 18kOhm (1 well)</h2>
+        <p><b>At 5V input:</b></p>
+        <table class="design-table" id="Table-5V-1well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>6.56</td>
+              <td>5</td>
+              <td>1.56</td>
+              <td>31.20</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>207.8</td>
+              <td>200</td>
+              <td>7.8</td>
+              <td>3.90</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.16</td>
+              <td>40</td>
+              <td>0.16</td>
+              <td>0.40</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 10V input:</b></p>
+        <table class="design-table" id="Table-10V-1well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>11.6</td>
+              <td>10</td>
+              <td>1.6</td>
+              <td>16.00</td>
+              <td>Moderate</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>212.5</td>
+              <td>200</td>
+              <td>12.5</td>
+              <td>6.25</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.1</td>
+              <td>40</td>
+              <td>0.1</td>
+              <td>0.25</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 20V input:</b></p>
+        <table class="design-table" id="Table-20V-1well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>23.2</td>
+              <td>20</td>
+              <td>3.2</td>
+              <td>16.00</td>
+              <td>Moderate</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>214</td>
+              <td>200</td>
+              <td>14</td>
+              <td>7.00</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.13</td>
+              <td>40</td>
+              <td>0.13</td>
+              <td>0.33</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations (across 5V, 10V and 20V input): </b>  Peak voltage increases with input voltage, with moderate-high error levels that is less pronounced at higher voltage input. Pulse width slightly above 200 µs. Frequency extremely stable (~40 Hz) and square waveform was present. </p>
+
+        <p><b>At 40V input:</b></p>
+        <table class="design-table" id="Table-40V-1well-raw-data">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>1st Reading</th>
+              <th>2nd Reading</th>
+              <th>3rd Reading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>51.6</td>
+              <td>48.0</td>
+              <td>51.6</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>217.6/td>
+              <td>219.9</td>
+              <td>217.6</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.11/td>
+              <td>40.06</td>
+              <td>40.11</td>
+            </tr>
+            <tr>
+              <td>Square Waveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="design-table" id="Table-40V-1well-analysis">
+
+        
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Mean</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>SD </th>
+              <th>CV (%)</th>
+              <th>Variation Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Voltage (V)</td>
+              <td>50.4</td>
+              <td>40</td>
+              <td>10.4</td>
+              <td>26.00</td>
+              <td>High</td>
+              <td>2.08</td>
+              <td>4.12</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>218.4</td>
+              <td>200</td>
+              <td>18.37</td>
+              <td>9.18</td>
+              <td>Low</td>
+              <td>1.33</td>
+              <td>0.61</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.09</td>
+              <td>40</td>
+              <td>0.09</td>
+              <td>0.23</td>
+              <td>Low</td>
+              <td>0.03</td>
+              <td>0.07</td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations: </b> Peak voltage is above the 40 V target with high level of error (AE = 10.40 V, PE = 26%) but low variation (CV = 4.12%). Pulse width slightly exceeds 200 µs (AE = 18.37 µs, PE = 9.18%) with low variation (CV = 0.61%). Frequency is extremely stable (40.09 Hz ± 0.09 Hz, CV = 0.07%). Square waveform was present.</>
+      </div>
+          
+      <div id="Resistance-3kOhm">
+        <!-- 6 well plate-->
+        <h2 id="Resistance-3kOhm">Resistance = 3kOhm (6 well)</h2>
+        <p><b>At 5V input:</b></p>
+        <table class="design-table" id="Table-5V-6well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>6.72</td>
+              <td>5</td>
+              <td>1.72</td>
+              <td>34.40</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>207.1</td>
+              <td>200</td>
+              <td>7.1</td>
+              <td>3.55</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.1</td>
+              <td>40</td>
+              <td>0.1</td>
+              <td>0.25</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 10V input:</b></p>
+        <table class="design-table" id="Table-10V-6well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>12.6</td>
+              <td>10</td>
+              <td>2.6</td>
+              <td>26.00</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>209.5</td>
+              <td>200</td>
+              <td>9.5</td>
+              <td>4.75</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.16</td>
+              <td>40</td>
+              <td>0.16</td>
+              <td>0.40</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 20V input:</b></p>
+        <table class="design-table" id="Table-20V-6well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>25</td>
+              <td>20</td>
+              <td>5</td>
+              <td>25.00</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>216.7</td>
+              <td>200</td>
+              <td>16.7</td>
+              <td>8.35</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.06</td>
+              <td>40</td>
+              <td>0.06</td>
+              <td>0.15</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations (across 5V, 10V and 20V input): </b>  Peak voltage rises with input voltage, with a high percentage error that decreases with higher voltage input. Pulse width slightly above 200 µs. Frequency extremely stable and square waveform was present. </p>
+
+        <p><b>At 40V input:</b></p>
+        <table class="design-table" id="Table-40V-6well-raw-data">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>1st Reading</th>
+              <th>2nd Reading</th>
+              <th>3rd Reading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>48.0</td>
+              <td>47.2</td>
+              <td>57.2</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>193.4</td>
+              <td>214.4</td>
+              <td>202.2</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.13</td>
+              <td>40.14</td>
+              <td>40.09</td>
+            </tr>
+            <tr>
+              <td>Square Waveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="design-table" id="Table-40V-6well-analysis">
+
+        
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Mean</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>SD </th>
+              <th>CV (%)</th>
+              <th>Variation Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Voltage (V)</td>
+              <td>50.8</td>
+              <td>40</td>
+              <td>10.80</td>
+              <td>27.00</td>
+              <td>High</td>
+              <td>5.56</td>
+              <td>10.94</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>203.33</td>
+              <td>200</td>
+              <td>3.33</td>
+              <td>1.67</td>
+              <td>Low</td>
+              <td>10.55</td>
+              <td>5.19</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.12</td>
+              <td>40</td>
+              <td>0.12</td>
+              <td>0.30</td>
+              <td>Low</td>
+              <td>0.03</td>
+              <td>0.07</td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations: </b> Peak voltage is above the 40 V target with high level of error (AE = 10.80 V, PE = 27%) and moderate variation (CV = 10.94%). Pulse width slightly above 200 µs (AE = 3.33 µs, PE = 1.67%) with low variation (CV = 5.19%). Frequency remains extremely stable (40.12 Hz ± 0.03 Hz, CV = 0.07%). Square waveform was present.</p>
+        
+      </div>
+      
+      <div id="Resistance-1.5kOhm"> 
+        <!-- 12 well plate-->
+        <h2 >Resistance = 1.5kOhm (12 well)</h2>
+        <p><b>At 5V input:</b></p>
+        <table class="design-table" id="Table-5V-12well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>6.64</td>
+              <td>5</td>
+              <td>1.64</td>
+              <td>32.80</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>197.5</td>
+              <td>200</td>
+              <td>2.5</td>
+              <td>1.25</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.09</td>
+              <td>40</td>
+              <td>0.09</td>
+              <td>0.23</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 10V input:</b></p>
+        <table class="design-table" id="Table-10V-12well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>12.6</td>
+              <td>10</td>
+              <td>2.6</td>
+              <td>26.00</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>197.1</td>
+              <td>200</td>
+              <td>2.9</td>
+              <td>1.45</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.17</td>
+              <td>40</td>
+              <td>0.17</td>
+              <td>0.43</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 20V input:</b></p>
+        <table class="design-table" id="Table-20V-12well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>26</td>
+              <td>20</td>
+              <td>6</td>
+              <td>30.00</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>200.6</td>
+              <td>200</td>
+              <td>0.6</td>
+              <td>0.30</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.15</td>
+              <td>40</td>
+              <td>0.15</td>
+              <td>0.37</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations (across 5V, 10V and 20V): </b>Peak voltage rises with input voltage, with a high percentage error. Pulse width near 200 µs. Frequency extremely stable and square waveform was present.</p>
+
+        <p><b>At 40V input:</b></p>
+        <table class="design-table" id="Table-40V-12well-raw-data">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>1st Reading</th>
+              <th>2nd Reading</th>
+              <th>3rd Reading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>45.6</td>
+              <td>51.2</td>
+              <td>45.6</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>201.9</td>
+              <td>203.2</td>
+              <td>213</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.1</td>
+              <td>40.13</td>
+              <td>40.16</td>
+            </tr>
+            <tr>
+              <td>Square Waveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="design-table" id="Table-40V-12well-analysis">
+
+        
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Mean</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>SD </th>
+              <th>CV (%)</th>
+              <th>Variation Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Voltage (V)</td>
+              <td>47.47</td>
+              <td>40</td>
+              <td>7.47</td>
+              <td>18.67</td>
+              <td>Moderate</td>
+              <td>3.23</td>
+              <td>6.81</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>206.03</td>
+              <td>200</td>
+              <td>6.03</td>
+              <td>3.02</td>
+              <td>Low</td>
+              <td>6.07</td>
+              <td>2.95</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.13</td>
+              <td>40</td>
+              <td>0.13</td>
+              <td>0.33</td>
+              <td>Low</td>
+              <td>0.03</td>
+              <td>0.07</td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations: </b> Peak voltage is above target with moderate error level (AE = 7.47 V, PE = 18.67%) and low variation (CV = 6.81%). Pulse width slightly exceeds 200 µs (AE = 6.03 µs, PE = 3.02%) with low variation (CV = 2.95%). Frequency is extremely stable (40.13 Hz ± 0.03 Hz, CV = 0.07%). Square waveform was present.</p>
+        
+      </div>
+      
+      <!-- 24 well plate-->
+      <div id="Resistance-770Ohm">
+        <h2>Resistance = 770Ohm (24 well)</h2>
+        <p><b>At 5V input:</b></p>
+        <table class="design-table" id="Table-5V-24well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>5.6</td>
+              <td>5</td>
+              <td>0.6</td>
+              <td>12.00</td>
+              <td>Moderate</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>193.7</td>
+              <td>200</td>
+              <td>6.3</td>
+              <td>3.15</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.08</td>
+              <td>40</td>
+              <td>0.08</td>
+              <td>0.20</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 10V input:</b></p>
+        <table class="design-table" id="Table-10V-24well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>12.8</td>
+              <td>10</td>
+              <td>2.8</td>
+              <td>28.00</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>212.6</td>
+              <td>200</td>
+              <td>12.6</td>
+              <td>6.30</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.34</td>
+              <td>40</td>
+              <td>0.34</td>
+              <td>0.85</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 20V input:</b></p>
+        <table class="design-table" id="Table-20V-24well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>22.8</td>
+              <td>20</td>
+              <td>2.8</td>
+              <td>14.00</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>204.5</td>
+              <td>200</td>
+              <td>4.5</td>
+              <td>2.25</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.08</td>
+              <td>40</td>
+              <td>0.08</td>
+              <td>0.20</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations (across 5V, 10V and 20V input): </b> Peak voltage rises with input voltage, with generally moderate percentage error. Pulse width slightly above 200 µs for 10 V and 20 V; 5 V slightly below. Frequency extremely stable (~40 Hz) and square waveform was present.</p>
+
+        <p><b>At 40V input:</b></p>
+        <table class="design-table" id="Table-40V-24well-raw-data">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>1st Reading</th>
+              <th>2nd Reading</th>
+              <th>3rd Reading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>44.0</td>
+              <td>51.2</td>
+              <td>44.8</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>207.8</td>
+              <td>203.2</td>
+              <td>213</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.16</td>
+              <td>40.08</td>
+              <td>40.16</td>
+            </tr>
+            <tr>
+              <td>Square Waveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="design-table" id="Table-40V-24well-analysis">
+
+        
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Mean</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>SD </th>
+              <th>CV (%)</th>
+              <th>Variation Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Voltage (V)</td>
+              <td>46.67</td>
+              <td>40</td>
+              <td>6.67</td>
+              <td>16.67</td>
+              <td>Moderate</td>
+              <td>3.95</td>
+              <td>8.46</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>208.0</td>
+              <td>200</td>
+              <td>8.0</td>
+              <td>4.0</td>
+              <td>Low</td>
+              <td>4.90</td>
+              <td>2.36</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.13</td>
+              <td>40</td>
+              <td>0.13</td>
+              <td>0.33</td>
+              <td>Low</td>
+              <td>0.05</td>
+              <td>0.12</td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations: </b>Peak voltage above target with moderate percentage error (AE = 6.67 V, PE = 16.67%) and low variation (CV = 8.46%). Pulse width slightly above 200 µs (AE = 8.00 µs, PE = 4.00%) with low variation (CV = 2.36%). Frequency is extremely stable (40.13 Hz ± 0.05 Hz, CV = 0.12%). Square waveform was present.</p>
+        
+      
+      
+    
+      </div>
+
+      <!-- 48 well plate-->
+      <div id="Resistance-380Ohm">
+        <h2>Resistance = 380Ohm (48 well)</h2>
+        <p><b>At 5V input:</b></p>
+        <table class="design-table" id="Table-5V-48well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>5.76</td>
+              <td>5</td>
+              <td>0.76</td>
+              <td>15.20</td>
+              <td>Moderate</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>207.9</td>
+              <td>200</td>
+              <td>7.9</td>
+              <td>3.95</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.08</td>
+              <td>40</td>
+              <td>0.08</td>
+              <td>0.20</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 10V input:</b></p>
+        <table class="design-table" id="Table-10V-48well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>12.8</td>
+              <td>10</td>
+              <td>2.8</td>
+              <td>28.00</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>196.5</td>
+              <td>200</td>
+              <td>3.5</td>
+              <td>1.75</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.08</td>
+              <td>40</td>
+              <td>0.08</td>
+              <td>0.20</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 20V input:</b></p>
+        <table class="design-table" id="Table-20V-48well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>25.6</td>
+              <td>20</td>
+              <td>5.6</td>
+              <td>28.00</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>202.8</td>
+              <td>200</td>
+              <td>2.8</td>
+              <td>1.40</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.09</td>
+              <td>40</td>
+              <td>0.09</td>
+              <td>0.23</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations (across 5V, 10V and 20V input): </b> Peak voltage rises with input voltage, with a high percentage error. Pulse width slightly above or below 200 µs depending on voltage. Frequency extremely stable (~40 Hz). Square waveform was present.</p>
+
+        <p><b>At 40V input:</b></p>
+        <table class="design-table" id="Table-40V-48well-raw-data">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>1st Reading</th>
+              <th>2nd Reading</th>
+              <th>3rd Reading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>48.8</td>
+              <td>45.6</td>
+              <td>50.4</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>202.4</td>
+              <td>200.4</td>
+              <td>203.4</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.08</td>
+              <td>40.10</td>
+              <td>40.09</td>
+            </tr>
+            <tr>
+              <td>Square Waveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="design-table" id="Table-40V-48well-analysis">
+
+        
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Mean</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>SD </th>
+              <th>CV (%)</th>
+              <th>Variation Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Voltage (V)</td>
+              <td>48.27</td>
+              <td>40</td>
+              <td>8.27</td>
+              <td>20.68</td>
+              <td>Moderate</td>
+              <td>2.44</td>
+              <td>5.06</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>202.07</td>
+              <td>200</td>
+              <td>2.07</td>
+              <td>1.04</td>
+              <td>Low</td>
+              <td>1.53</td>
+              <td>0.76</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.09</td>
+              <td>40</td>
+              <td>0.09</td>
+              <td>0.23</td>
+              <td>Low</td>
+              <td>0.01</td>
+              <td>0.02</td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations: </b>Peak voltage above target with moderate-high percentage error(AE = 8.27 V, PE = 20.67%) and low variation (CV = 5.06%). Pulse width slightly above 200 µs (AE = 2.07 µs, PE = 1.03%) with low variation (CV = 0.76%). Frequency is extremely stable (40.09 Hz ± 0.09 Hz, CV = 0.02%). Square waveform was present.</p>
+        
+      
+      
+    
+      </div>
+
+
+      <!-- 96 well plate-->
+      <div id="Resistance-190Ohm">
+        <h2>Resistance = 190Ohm (96 well)</h2>
+        <p><b>At 5V input:</b></p>
+        <table class="design-table" id="Table-5V-96well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>5.44</td>
+              <td>5</td>
+              <td>0.44</td>
+              <td>8.80</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>205.9</td>
+              <td>200</td>
+              <td>5.9</td>
+              <td>2.95</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.08</td>
+              <td>40</td>
+              <td>0.08</td>
+              <td>0.20</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 10V input:</b></p>
+        <table class="design-table" id="Table-10V-96well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>12.8</td>
+              <td>10</td>
+              <td>2.8</td>
+              <td>28.00</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>200</td>
+              <td>200</td>
+              <td>0</td>
+              <td>0</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.08</td>
+              <td>40</td>
+              <td>0.08</td>
+              <td>0.20</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>At 20V input:</b></p>
+        <table class="design-table" id="Table-20V-96well">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Reading</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>24.8</td>
+              <td>20</td>
+              <td>4.8</td>
+              <td>24.00</td>
+              <td>High</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>209.6</td>
+              <td>200</td>
+              <td>9.6</td>
+              <td>4.80</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.07</td>
+              <td>40</td>
+              <td>0.07</td>
+              <td>0.18</td>
+              <td>Low</td>
+              <td>Single reading</td>
+            </tr>
+            <tr>
+              <td>SquareWaveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>  
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations (across 5V, 10V and 20V input): </b> Peak voltage rises with input voltage, with a generally high percentage error; readings slightly above target, most pronounced at 20 V. Pulse width slightly above 200 µs at 5 V and 20 V; 10 V exactly at 200 µs. Frequency extremely stable (~40 Hz). Square waveform was present.</p>
+
+        <p><b>At 40V input:</b></p>
+        <table class="design-table" id="Table-40V-96well-raw-data">      
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>1st Reading</th>
+              <th>2nd Reading</th>
+              <th>3rd Reading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Volatage (V)</td>
+              <td>48.8</td>
+              <td>44.0</td>
+              <td>51.2</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>211.0</td>
+              <td>191.8</td>
+              <td>199.3</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.07</td>
+              <td>40.08</td>
+              <td>40.08</td>
+            </tr>
+            <tr>
+              <td>Square Waveform</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="design-table" id="Table-40V-96well-analysis">
+
+        
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Mean</th>
+              <th>Target</th>
+              <th>AE</th>
+              <th>PE (%)</th>
+              <th>Error Level</th>
+              <th>SD </th>
+              <th>CV (%)</th>
+              <th>Variation Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peak Voltage (V)</td>
+              <td>48.0</td>
+              <td>40</td>
+              <td>8.00</td>
+              <td>20.00</td>
+              <td>Moderate</td>
+              <td>3.67</td>
+              <td>7.64</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Pulse Width (µs)</td>
+              <td>200.7</td>
+              <td>200</td>
+              <td>0.70</td>
+              <td>0.35</td>
+              <td>Low</td>
+              <td>9.68</td>
+              <td>4.82</td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Frequency (Hz)</td>
+              <td>40.08</td>
+              <td>40</td>
+              <td>0.08</td>
+              <td>0.20</td>
+              <td>Low</td>
+              <td>0.01</td>
+              <td>0.01</td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><b>Observations: </b>Peak voltage above target with moderate percentage error (AE = 8.00 V, PE = 20%) and low variation (CV = 7.64%). Pulse width slightly above 200 µs (AE = 0.70 µs, PE = 0.35%) with low variation (CV = 4.82%). Frequency is extremely stable (40.08 Hz ± 0.01 Hz, CV = 0.01%). Square waveform was present.</p>
+        
+      
+      
+    
+      </div>
+
+      <!-- Overall remarks-->
+      <div id="Overall-remarks">
+        <h2>Overall Remarks</h2>
+        <p>Across all test with 40V input voltage, peak voltage observed is slightly above the 40V target, with moderate-high percentage error (AE 6.67-10.80 V, PE 16 -27%) and low variation (CV 4 - 10%). Pulse width is slightly above 200 µs (AE 0.70 - 18.37 µs, PE 0.35 - 9.2%), with low variation (CV 0.64 - 5.16%). Frequency is extremely stable across all datasets (CV &lt 0.1%, AE ≤ 0.13 Hz).</p>
+        <p>Overall, the system shows predictable, repeatable and stable performance across loads of varying resistance and voltage inputs, though minor peak voltage calibration could improve accuracy relative to the 40 V target.</p>
+      </div>
+        <!-- Add more content as needed -->
+
+    </div>
+    <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
+      <sl-icon name="arrow-up" label="Settings"></sl-icon>
+    </sl-button>
+  </div>
+
+  
+</body>
+
+</html>
