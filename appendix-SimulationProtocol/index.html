@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Simulation Protocol</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+
+  <link rel="stylesheet" href="./index.css">
+
+  <link rel="stylesheet" href="../components/team-member/team-member.css">
+  <script type="module" src="../components/team-member/team-member.js"></script>
+
+  <link rel="stylesheet" href="../components/table-of-content/table-of-content.css">
+
+  <script type="module" src="../components/image/image-component.js"></script>
+
+  <script type="module" src="../components/video/video.js"></script>
+
+  <link rel="stylesheet" href="../components/references/references.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+
+  <script src="../components/table-component/table-component.js"></script>
+
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../components/clickable-svg/svg-component.css">
+
+  <meta charset="UTF-8">
+  <title>My Webpage with References</title>
+  <link rel="stylesheet" href="../components/references/references_updated.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+    <!-- Smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <sl-button href="../">Back</sl-button>
+
+    
+</body>
+
+<body>
+    <div class="content">
+        <div class="content-inner" id="Simulation-Protocol">
+          <h2>Simulation Protocol</h2>
+          <p>
+          We performed <i>in silicon</i> simulation with COMSOL multiphyics&trade; 
+          on electric field distribution in a single well. We assign staninless steel at 
+          the plate material, pure Titanium as the electrode material, and RPMI-1640 as the 
+          media. Setup dimension follows standard 96 well plate in <i>in vitro</i>
+          experiment. We ignore the cell-induced change in media physic property. 
+          COMSOL source file can be found: <a href="https://drive.google.com/file/d/1c7R-vwOzrDp02cw1erP_ud3_XpHydPfI/view?usp=sharing">here</a>.
+          </p>
+          <figure class="svg-component" id="fig_simulation">
+            <img src="../Figures/simulation_setup_1.svg" alt="fig_simulation">
+            <figcaption>
+              <b>Fig. S1 Overview of the simulated electric field.</b> The 96-well geometry was simplified to a single-well configuration, assuming minimal inter-well interaction.Short, red arrows indicate the electric field, whose boldness indicates the magnitude
+            </figcaption>
+            <div class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" src="../Figures/simulation_setup_1.svg">
+              <div class="caption"></div>
+            </div>
+          </figure> 
+        </div>
+
+        </div>
+
+
+        <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
+        <sl-icon name="arrow-up" label="Settings"></sl-icon>
+        </sl-button>
+        
+    </div>    
+</body>
+
+</html>

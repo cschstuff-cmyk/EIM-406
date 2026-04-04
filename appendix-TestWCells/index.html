@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Verification test - with Cathode Array</title>
+  <title>Verification test - with Cells</title>
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
@@ -33,6 +33,7 @@
   <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="../components/clickable-svg/svg-component.css">
+  <script type="module" src="../components/clickable-svg/svg-component.js"></script>
 
   <meta charset="UTF-8">
   <title>My Webpage with References</title>
@@ -125,6 +126,7 @@
 
         <div class="content-inner" id="Results">
             <h2>Results</h2>
+            <p><u>Results on voltage output</u></p>
             <div id="voltage-readings">
                 
                 <table class="design-table" id="Table-cells-voltage-raw-data">      
@@ -221,8 +223,9 @@
             </div>
 
             <div id="cells">
-                <p><b>Before experiment</b></p>
+                <p><u>Results on cell viability and count</u></p>
                 <table class="design-table" id="Table-cells-before-experiment">      
+                    <caption>Table X: Cell viability and count data obtained from automated cell counter (Before Experiment)</caption>
                     <thead>
                         <tr>
                         <th>Cell Viability (%)</th>
@@ -240,9 +243,9 @@
                 </table>
 
 
-                <p><b>After experiment</b></p>
-                <p><u>Results on cell viability</u></p>
+                
                 <table class="design-table" id="Table-cells-after-experiment-viability-raw-data">      
+                    <caption>Table X: Cell viability and count data obtained from automated cell counter (After Experiment)</caption>
                     <thead>
                         <tr>
                         <th></th>
@@ -298,8 +301,9 @@
                     </tbody>
                 </table>
                 
-                <p><u>Results on cell viability</u></p>
+               
                 <table class="design-table" id="Table-cells-after-experiment-viability-analysis">      
+                    <caption>Table X: Analysis of cell viability and count data obtained from automated cell counter (After Experiment)</caption>
                     <thead>
                         <tr>
                         <th></th>
@@ -339,8 +343,10 @@
                 <p>A mean recovery ratio of 1.34 suggests that the protocol is generally non-lethal. However, it has a high CV of above 70% that can be attributed to leakage of cells between the well plate and nanostraws, due to damage at certain regions of the adhesive tape during the pasting process. For instance, sample 4 which has the lowest cell count, was obtained from the 7th row of the well plate, where it uses the peripheral holes of the tape.[CC11.1] Samples 5 and 6 have abnormally high cell count obtained, likely due to clumping of cells after a while of filling the wells preceding them and insufficient trituration.</p>
 
 
-                <p><u>Results on flow cytometry</u></p>
-                <table class="design-table" id="Table-cells-after-experiment-flow-cytometry-raw-data">      
+                
+                <p><u>Results from flow cytometry</u></p>
+                <table class="design-table" id="Table-cells-after-experiment-flow-cytometry-raw-data">     
+                    <caption>Table X: Flow cytometry data obtained from analysis of post-experiment Jurkat cells</caption> 
                     <thead>
                         <tr>
                         <th></th>
@@ -396,6 +402,7 @@
                 </table>
 
                 <table class="design-table" id="Table-cells-after-experiment-flow-cytometry-analysis">      
+                    <caption>Table X: Analysis of flow cytometry data obtained from analysis of post-experiment Jurkat cells</caption>
                     <thead>
                         <tr>
                         <th></th>
@@ -434,8 +441,37 @@
 
                     </tbody>
                 </table>
+                <figure class="svg-component" id="Figure-FlowCytometryGatingStrategy">
+                    <img src="/Figures/cells_flowCytometry.svg" alt="Fig. X: Flow cytometry - Gating Strategy">
+                    <figcaption>
+                    <b>Fig. X: Flow cytometry - Gating Strategy</b>
+                    Flow cytometry data were analysed using a sequential gating strategy. All events were first gated on forward and side scatter 
+                    (FSC-A vs SSC-A) to exclude debris (R1). Doublets were excluded by gating on FSC-H versus FSC-A, and single cells were retained (R3). 
+                    Dextran–FITC uptake was assessed within the singlet population. Gates for FITC positivity were defined using the negative control sample 
+                    and subsequently applied to the experimental samples.
+
+                    </figcaption>
+                    <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" src="/Figures/cells_flowCytometry.svg">
+                    <div class="caption"></div>
+                    </div>
+                </figure>  
 
                 <p>With a mean singlet purity (R3) of 89.10% and CV of 2.83%, cell handling and gating are approximately identical across the samples. However, mean transfection efficiency (R5) was 6.63% with a CV of 35.03%. This is likely due to inconsistencies resulted from the leakages and possible handling errors when working with the nanostraws, where the tacky nature of the adhesive and flimsy nature of the nanostraws + adhesive tape made it highly susceptible to accidental contact.</p>
+                <P><u>Results from Fluorescence Microscopy</u></P>
+                <figure class="svg-component" id="Figure-ITOMetalPlate">
+                    <img src="../Figures/cells_fluroscence_microscopy_upload.svg" alt="Fig. X: Fluoroscence Microscopy of Transfected Cells">
+                    <figcaption-center>
+                    <b>Fig. X: Fluorescence Microscopy of Transfected Cells</b>
+
+                    </figcaption-center>
+                    <div class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" src="../Figures/cells_fluroscence_microscopy_upload.svg">
+                    <div class="caption"><b>Fig. X: Fluorescence Microscopy of Transfected Cells</b></div>
+                    </div>
+                </figure>  
                 <p>Green fluorescence was observed in a minority sub-population within a sample, with no detectable signal present in the Negative Control. In image xx FITC signal was localized within the cytoplasmic space and fluorescence activity was distinct from extracellular environment, which indicates successful membrane penetration. The transfected cells maintained a healthy, rounded morphology similar to negative control, which proves that the voltage output can achieve delivery without causing universal cell lysis.</p>
 
 

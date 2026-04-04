@@ -17,6 +17,13 @@
   text-align: justify;
 }
 
+.svg-component figcaption-center {
+  font-size: 0.8rem;
+  color: #000000;
+  margin-top: 5px;
+  text-align: center;
+}
+
 /* Modal overlay */
 .svg-component .modal {
   display: none; 

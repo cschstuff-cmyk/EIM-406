@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Verification test - with Anode Array</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+
+  <link rel="stylesheet" href="./index.css">
+
+  <link rel="stylesheet" href="../components/team-member/team-member.css">
+  <script type="module" src="../components/team-member/team-member.js"></script>
+
+  <link rel="stylesheet" href="../components/table-of-content/table-of-content.css">
+
+  <script type="module" src="../components/image/image-component.js"></script>
+
+  <script type="module" src="../components/video/video.js"></script>
+
+  <link rel="stylesheet" href="../components/references/references.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+
+  <script src="../components/table-component/table-component.js"></script>
+
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../components/clickable-svg/svg-component.css">
+  <script type="module" src="../components/clickable-svg/svg-component.js"></script>
+
+  <meta charset="UTF-8">
+  <title>My Webpage with References</title>
+  <link rel="stylesheet" href="../components/references/references_updated.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+    <!-- Smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <sl-button href="../">Back</sl-button>
+
+    
+</body>
+
+<body>
+    <div class="content">
+        <div class="content-inner" id="Objective">
+            <h2>Objective</h2>
+            <p>To validate that voltage drop does not occur and is delivered uniformly</p>
+        </div>
+
+        <div class="content-inner" id="Methodology">
+            <h2>Methodology</h2>
+
+            <figure class="svg-component" id="Figure-ITOMetalPlate">
+                <img src="../Figures/ITOMetalPlate_upload.svg" alt="Fig. X: ITO + Metal Plate Voltage Drop Test">
+                <figcaption-center>
+                <b>Fig. X: ITO + Metal Plate setup - Voltage Drop Test</b>
+
+                </figcaption-center>
+                <div class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" src="../Figures/ITOMetalPlate_upload.svg">
+                <div class="caption"></div>
+                </div>
+            </figure>  
+
+
+
+            
+            <p>Connected cathode array to power supply and obtained readings from chosen points to determine if the presence of voltage drop in anode region.</p>
+            <p>Each output voltage reading is obtained a distance away from the centre which positive terminal is connected to, as illustrated in image X.</p>
+            <p>Recorded readings for each point, with input voltage of 5V, 10V, 20V and 40V.</p>
+
+        </div>
+
+        <div class="content-inner" id="Results">
+            <h2>Results</h2>
+            <div id="voltage-input-5V">
+                <p><b>Voltage Input: 5V</b></p>
+                <table class="design-table" id="voltage-input-5V">      
+                <thead>
+                    <tr>
+                    <th>Point</th>
+                    <th>1st Reading</th>
+                    <th>2nd Reading</th>
+                    <th>3rd Reading</th>
+                    <th>Mean</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Top</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    </tr>
+                    <tr>
+                    <td>Bottom</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    </tr>
+                    <tr>
+                    <td>Left</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    </tr>
+                    <tr>
+                    <td>Right</td>
+                    <td>5</td>      
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    </tr>
+                    <tr>
+                    <td>Middle</td>    
+                    <td>5</td>
+                    <td>5</td>  
+                    <td>5</td>
+                    <td>5</td>
+                    </tr>
+                </tbody>
+                </table>
+
+            </div>
+
+
+            <div id="voltage-input-10V">
+                <p><b>Voltage Input: 10V</b></p>
+                <table class="design-table" id="voltage-input-10V">      
+                <thead>
+                    <tr>
+                    <th>Point</th>
+                    <th>1st Reading</th>
+                    <th>2nd Reading</th>
+                    <th>3rd Reading</th>
+                    <th>Mean</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Top</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    </tr>
+                    <tr>
+                    <td>Bottom</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    </tr>
+                    <tr>
+                    <td>Left</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    </tr>
+                    <tr>
+                    <td>Right</td>
+                    <td>10</td>      
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    </tr>
+                    <tr>
+                    <td>Middle</td>    
+                    <td>10</td>
+                    <td>10</td>  
+                    <td>10</td>
+                    <td>10</td>
+                    </tr>
+                </tbody>
+                </table>
+
+            </div>
+
+            <div id="voltage-input-20V">
+                <p><b>Voltage Input: 20V</b></p>
+                <table class="design-table" id="voltage-input-20V">      
+                <thead>
+                    <tr>
+                    <th>Point</th>
+                    <th>1st Reading</th>
+                    <th>2nd Reading</th>
+                    <th>3rd Reading</th>
+                    <th>Mean</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Top</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    </tr>
+                    <tr>
+                    <td>Bottom</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    </tr>
+                    <tr>
+                    <td>Left</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    </tr>
+                    <tr>
+                    <td>Right</td>
+                    <td>20</td>      
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    </tr>
+                    <tr>
+                    <td>Middle</td>    
+                    <td>20</td>
+                    <td>20</td>  
+                    <td>20</td>
+                    <td>20</td>
+                    </tr>
+                </tbody>
+                </table>
+
+            </div>
+            
+            <div id="voltage-input-40V">
+                <p><b>Voltage Input: 40V</b></p>
+                <table class="design-table" id="voltage-input-40V">      
+                <thead>
+                    <tr>
+                    <th>Point</th>
+                    <th>1st Reading</th>
+                    <th>2nd Reading</th>
+                    <th>3rd Reading</th>
+                    <th>Mean</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Top</td>
+                    <td>40</td>
+                    <td>40</td>
+                    <td>40</td>
+                    <td>40</td>
+                    </tr>
+                    <tr>
+                    <td>Bottom</td>
+                    <td>40</td>
+                    <td>40</td>
+                    <td>40</td>
+                    <td>40</td>
+                    </tr>
+                    <tr>
+                    <td>Left</td>
+                    <td>40</td>
+                    <td>40</td>
+                    <td>40</td>
+                    <td>40</td>
+                    </tr>
+                    <tr>
+                    <td>Right</td>
+                    <td>40</td>      
+                    <td>40</td>
+                    <td>40</td>
+                    <td>40</td>
+                    </tr>
+                    <tr>
+                    <td>Middle</td>    
+                    <td>40</td>
+                    <td>40</td>  
+                    <td>40</td>
+                    <td>40</td>
+                    </tr>
+                </tbody>
+                </table>
+
+            </div>
+
+            
+
+            
+
+            <p><b>Observations: </b>Across all tested voltage inputs, the measured voltage at every point on the plate electrode was equal to the applied input voltage.</p>
+            <p><ul>
+                <li>At 5V, the measured voltage was consistently 5V across all points.</li>
+                <li>At 10V, the measured voltage was consistently 10V across all points.</li>
+                <li>At 20V, the measured voltage was consistently 20V across all points.</li>
+                <li>At 40V, the measured voltage was consistently 40V across all points.</li>
+            </ul></p>
+            <p>No variation was observed between different positions or repeated measurements.</p>
+        </div>
+
+
+        <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
+        <sl-icon name="arrow-up" label="Settings"></sl-icon>
+        </sl-button>
+        
+    </div>    
+</body>
+
+</html>

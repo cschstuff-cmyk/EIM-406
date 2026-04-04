@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Verification test - with Cathode Array</title>
+  <title>Verification test - Seepage Test</title>
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
@@ -33,6 +33,7 @@
   <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="../components/clickable-svg/svg-component.css">
+  <script type="module" src="../components/clickable-svg/svg-component.js"></script>
 
   <meta charset="UTF-8">
   <title>My Webpage with References</title>
@@ -64,11 +65,14 @@
     <div class="content">
         <div class="content-inner" id="Objective">
             <h2>Objective</h2>
-            <p>Verify seepage does not occur within cargo channel set up</p>
+            <p>Verify seepage does not occur within cargo channel set up.</p>
         </div>
 
         <div class="content-inner" id="Methodology">
             <h2>Methodology</h2>
+
+            
+            
             <p>Cargo channel part was assembled with ITO plate and filled with water at alternate channels, such that liquid formed stable menisci that extended above the channel openings due to capillary effects.</p>
             <p>Cargo channel was left on bench, with observations conducted at 30 minutes intervals (over a total duration of 1.5 hours) to identify presence of seepage. </p>
             <p>Observations obtained were: </p>
@@ -81,9 +85,10 @@
 
         <div class="content-inner" id="Results">
             <h2>Results</h2>
-            <div id="voltage-input-5V">
-                <p><b>Voltage Input: 5V</b></p>
-                <table class="design-table" id="voltage-input-5V">      
+            <div id="seepage-test">
+                
+                <table class="design-table" id="seepage-test">      
+                    <caption>Height of meniscus from surface of cargo channel walls(mm) over time</caption>
                 <thead>
                     <tr>
                     <th></th>
@@ -95,11 +100,11 @@
                 </thead>
                 <tbody>
                     <tr>
-                    <td>Height of meniscus from surface of cargo channel walls (mm)</td>
-                    <td>~1</td>
-                    <td>~1</td>
-                    <td>~1</td>
-                    <td>~1</td>
+                    <td>Estimated height of meniscus from surface of cargo channel walls (mm)</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
                     </tr>
                     
                 </tbody>
@@ -108,6 +113,18 @@
             </div>
 
             <p>images obtained:</p>
+            <figure class="svg-component" id="Figure-ITOMetalPlate">
+                <img src="../Figures/seepage_test_upload.svg" alt="Fig. X: Seepage Test">
+                <figcaption-center>
+                <b>Fig. X: Seepage Test</b>
+
+                </figcaption-center>
+                <div class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" src="../Figures/seepage_test_upload.svg">
+                <div class="caption">Fig. X: Seepage Test</div>
+                </div>
+            </figure> 
 
 
            
