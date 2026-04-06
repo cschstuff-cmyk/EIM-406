@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Acquisition and Cell Recovery Protocol</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace-autoloader.js"></script>
+
+  <link rel="stylesheet" href="./index.css">
+
+  <link rel="stylesheet" href="../components/team-member/team-member.css">
+  <script type="module" src="../components/team-member/team-member.js"></script>
+
+  <link rel="stylesheet" href="../components/table-of-content/table-of-content.css">
+
+  <script type="module" src="../components/image/image-component.js"></script>
+
+  <script type="module" src="../components/video/video.js"></script>
+
+  <link rel="stylesheet" href="../components/references/references.css">
+
+  <link rel="stylesheet" href="../components/scroll-to-top/scroll-to-top.css">
+  <script src="../components/scroll-to-top/scroll-to-top.js"></script>
+
+  <script src="../components/table-component/table-component.js"></script>
+
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../components/clickable-svg/svg-component.css">
+
+  <link rel="stylesheet" href="../components/references/references_updated.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <sl-button href="../">Back</sl-button>
+  </div>
+
+  <div class="content">
+    <div class="content-inner" id="MediumAcquisition">
+
+      <h2>Protocol for Medium Acquisition Test</h2>
+
+      <ol>
+        <li>Load the specified volume of distilled water into the sample reservoir.</li>
+        <li>Execute the automated acquisition script.</li>
+        <li>Collect the re-acquired liquid from the system output.</li>
+        <li>Measure the recovered volume using calibrated instrumentation.</li>
+        <li>Compute the acquisition efficiency according to Eq. (1).</li>
+      </ol>
+
+      <p>
+        \[
+        \text{Acquisition Rate} = \frac{\text{Recovered Volume}}{\text{Input Volume}} \tag{1}
+        \]
+      </p>
+
+      <p>
+        The input volume assigned to each experimental group is specified in Fig. 5c.
+      </p>
+
+    </div>
+
+    <div class="content-inner" id="CellRecovery">
+
+      <h2>Protocol for Cell Recovery Experiments</h2>
+
+      <ol>
+        <li>Harvest the required number of cells from culture under standard conditions.</li>
+        <li>Resuspend cells to the target concentration, ensuring each sample has a final volume of 4.2 mL.</li>
+        <li>Load the sample into the system and initiate the automated cell recovery script.</li>
+        <li>Collect the processed cell suspension.</li>
+        <li>Quantify total cell number and assess viability.</li>
+        <li>Compute the recovery efficiency according to Eq. (2).</li>
+      </ol>
+
+      <p>
+        \[
+        \text{Recovery Rate} = \frac{\text{Output Cell Number}}{\text{Input Cell Number}} \tag{2}
+        \]
+      </p>
+
+    </div>
+
+    <div class="content-inner" id="SpecialNotes">
+
+      <h2>Special Notes and Standardization</h2>
+
+      <ul>
+        <li>
+          For all experiments within the cell delivery system, only two rows (16 wells in total) are utilized to ensure consistent loading conditions.
+        </li>
+        <li>
+          Cell quantification follows standardized counting procedures:
+          <ul>
+            <li>Samples are centrifuged at 300g for 5 minutes to pellet cells.</li>
+            <li>The supernatant is carefully removed to minimize cell loss.</li>
+            <li>10 μL of cell suspension is mixed with 10 μL of trypan blue for viability assessment.</li>
+            <li>Cell counting is performed using a microfluidic cell counting chip.</li>
+            <li>Total cell number and viability are recorded for downstream analysis.</li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+    <sl-button class="scroll-to-top" variant="primary" size="medium" circle onclick="scrollToTop()">
+      <sl-icon name="arrow-up"></sl-icon>
+    </sl-button>
+
+  </div>
+
+</body>
+
+</html>
