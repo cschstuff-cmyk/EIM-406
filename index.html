@@ -106,20 +106,25 @@
               <a href="#Problem-Statement">Problem Statement</a>
             </sl-tree-item>
             <sl-tree-item>
-              <a href="#Project-Objective">Project-Objective</a>
+              <a href="#Project-Objective-and-scope">Project Objective and Scope</a>
             </sl-tree-item>
+            <!--
             <sl-tree-item>
               <a href="#Table-1">Table 1: Preliminary Testing Concerns related to MVP Set Up</a>
             </sl-tree-item>
+            
             <sl-tree-item>
               <a href="#Problem-Scope">Project Scope</a>
             </sl-tree-item>
+            -->
             <sl-tree-item>
               <a href="#Novelty-and-Contribution">Novelty and Contribution</a>
             </sl-tree-item> 
+            <!--
             <sl-tree-item>
               <a href="#Figure-1">Figure 1: Overview of CAR_T Therapy</a>
-            </sl-tree-item>         
+            </sl-tree-item>  
+            -->       
           </sl-tree-item>
 
           <sl-tree-item>
@@ -1475,7 +1480,7 @@
                 <figcaption>
                 <b>Fig. 11: Verification Test with Elecrodes</b> 
                 Heatmaps generated from percentage error (PE) of input voltage vs measured voltage at different locations of 
-                ITO + copper plate set up <b>(6A)</b> and titanium array <b>(6B)</b> exhibit zero percentage error, indicating uniform
+                ITO + copper plate set up <b>(11A)</b> and titanium array <b>(11B)</b> exhibit zero percentage error, indicating uniform
                   spatial and voltage-independent accuracy.                            
                 
 
@@ -1554,7 +1559,8 @@
               Results showed predictable voltage scaling with input; however, a consistent voltage overshoot of 
               approximately 16-27% was observed across tested voltages (5-40 V). Despite this, 
               characteristics of the signal remained highly stable, with pulse width maintained near 200 µs 
-              (PE &lt; 10%), frequency near 40 Hz (error &lt; 1%, CV &lt; 0.3%) and a square waveform across varying resistance and voltages (refer to <a href="Figure-resistors-voltage-output">Fig. 12</a>). 
+              (PE &lt; 10%), frequency near 40 Hz (error &lt; 1%, CV &lt; 0.3%) and a square waveform across varying resistance and voltages (refer to <a href="Figure-resistors-voltage-output">Fig. 12</a>)
+              . 
             </p>
 
            
@@ -1576,12 +1582,13 @@
             <p><u>In the second test,</u> the circuit was integrated into the full electroporation setup and operated with 
               Opti-MEM-filled channels and wells. Under these conditions, peak voltage more closely matched the target 
               (43.33 V at 40 V input, ~8.3% error), indicating improved accuracy. Pulse width (≈202.67 µs, CV = 2.28%, PE = 1.33%) and 
-              frequency (≈40.16 Hz, CV = 0.04%, PE = 0.4%) remained highly stable, and waveform integrity was preserved.
+              frequency (≈40.16 Hz, CV = 0.04%, PE = 0.4%) remained highly stable, and waveform integrity was preserved (<a href="#Figure-OptiMEM-voltage-output">fig. 13</a>, 
+              <a href="appendix-TestWOptiMEM/">Appendix - verification test with Opti-MEM</a>).
             </p>
 
             <p>Overall, while resistive testing revealed a systematic voltage overshoot, performance under fluid loading more accurately 
               reflects actual operating conditions, demonstrating improved voltage accuracy together with stable pulse width, frequency, 
-              and waveform characteristics.
+              and waveform characteristics .
             </p>
 
             
@@ -1717,7 +1724,7 @@
               The transfection efficiency - validated by both flow cytometry and fluorescence microscopy - proves the 
               device's capability to deliver molecules into the intracellular space. While the voltage output is stable, 
               further optimization of electrical parameters and process-level modifications are required to achieve more 
-              reproducible and high-yield results.
+              reproducible and high-yield results (refer to <a href="appendix-TestWCells/">Appendix - verification test with cells</a>).
             </p>
           </div>
 
