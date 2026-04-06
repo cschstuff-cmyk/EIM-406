@@ -1875,86 +1875,113 @@
 
     <div class="content-inner" id="Discussion">
         
-        <h2>4. Discussion - to be modified</h2>
+        <h2>4. Discussion</h2>
         <div id="Summary-and-Analysis" class="content-inner">
-          <p>
-            <b>INCLUDE OVERALL PIC OF DEVICE HERE</b>
+          <p><b> Summary and Impact. </b> Here we present a functionally validated prototype that establishes what automated 
+            cell engineering can achieve at the level of its core modules (<b>Table 14</b>). The cell delivery subsystem 
+            can preserve high cell viability (&gt;80%, exceeding 90% under optimized conditions), demonstrating 
+            that automated handling can maintain cellular integrity and effectively replace manual processing. 
+            It can further achieve efficient cell recovery (&gt;80%) with reduced adhesion, indicating reliable 
+            transport and retention of cells, while low-variance operation (coefficient of variation &lt;10%) 
+            shows that cell loading can be controlled and reproducible, enabling standardized upstream preparation. 
+            The electroporation subsystem can generate stable, programmable square-wave electric fields, enabling 
+            a uniform voltage distribution across 96 wells. Moreover, It maintains substantial post-electroporation viability 
+            (~76%) after fluorescent intracellular delivery, i.e., FITC-dextran transfection into Jurkat cells, which 
+            highlights effective transfection with minimal cellular perturbation. Together, these results show that 
+            the system can couple high-viability cell handling with controlled electroporation, enabling, in principle, 
+            an integrated platform for programmable, automated, and scalable end-to-end cell engineering.</p>
 
-          </p> 
-          <p>The key milestones in <a href="#key-milestones">table 2</a> has been addressed in the following:</p>
+          <p><b>Limitations and Future Work.</b> While the current system demonstrates functional integration potential between 
+            automated cell handling and programmable electroporation, it remains a proof-of-concept prototype and 
+            has not yet been validated in a closed-loop workflow for therapeutic cargo delivery into primary cells. 
+            In particular, transfection performance is presently limited, with low delivery efficiency despite confirmed 
+            intracellular uptake, indicating that the electroporation module, although capable of generating stable 
+            and uniform electric fields, requires further optimization in waveform design, electrode configuration, 
+            and cell–substrate interfacing to achieve clinically relevant performance. More fundamentally, the 
+            platform is not yet a fully closed system. Although the cell delivery module minimizes handling-induced 
+            loss and enables reproducible operation, it still relies on an open setup that may necessitate a 
+            biosafety cabinet (BSC) environment for sterile operation. This limits scalability and translational 
+            deployment. Future iterations will therefore focus on (i) establishing a fully integrated closed-loop workflow 
+            for end-to-end processing of primary cells, (ii) optimizing electroporation parameters and hardware to 
+            improve delivery efficiency while preserving viability, and (iii) redesigning the system architecture 
+            toward a sealed, self-contained, portable platform to enable sterile, automated cell manufacturing without 
+            external environmental dependence.</p>
 
           <table class="design-table" id="addressing-key-milestones">
-          <caption>Table 14: Key milestones of Project</caption>
-          <thead>
-            <tr>
-              <th>Focus</th>
-              <th>Key Milestone</th>
-              <th>How it was Addressed</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Cell delivery system</td>
-              <td>validation of high cell viability.</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Minimization of handling-induced cell loss.</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                Controlled and repeatable cell loading.
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Electroporation system</td>
-              <td>Validation of reduced cellular stress.</td>
-              <td>
-                Electroporation system displayed reduced cellular stress with cell viability of ~76%
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Validation of transfection efficiency</td>
-              <td>
-                <p>While transfection efficiency observed from flow cytometry is low (mean = 6.63%), observations from flow cytometry illustrates successful transfection of FITC-dextran into the cells.</p>
-                <p>Further evaluation is required, with consideration of improvements suggested in table X</p>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Stable and repeatable electric field generation.</td>
-              <td>
-                Achieved by circuit generating stable, reproducible 
-                square-wave pulses (~40 V, ~200 μs pulse width, ~40 Hz) 
-                for 2 minutes, that is triggered by CNC controller of main device. 
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Well to well uniformity.</td>
-              <td>
-                <p>As highlighted in table X, the electrodes has been tested to distribute voltage evenly across the electrodes with pulses that has been verified and validated extensively.</p>
-                <p>Well to well uniformity is mainly hindered by limitations identified in table X.</p>
-              </td>
-            </tr>
-            <tr>
-              <td>Integrated-system performance</td>
-              <td>High throughput</td>
-              <td>Supported by parallel operation and independent validation of cell-delivery and electroporation system, both demonstrating capabilities in stable multi-well operation.  However, full integrated throughput is expected to be limited by current constraints identified in electroporation system.</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>End-to-end process robustness</td>
-              <td>Partially addressed at subsystem level. Integrated robustness remains to be demonstrated, as limitations identified in cell delivery system and electroporation system, have yet to be resolved.</td>
-            </tr>
+            <caption>Table 14: Key milestones of Project</caption>
+            <thead>
+              <tr>
+                <th>Focus</th>
+                <th>Key Milestone</th>
+                <th>How it was Addressed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="3">Cell delivery system</td>
+                <td>Validation of high cell viability.</td>
+                <td>
+                  <ul>
+                    <li>Cell viability maintained &gt;80%, reaching &gt;90% under optimal conditions.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Minimization of handling-induced cell loss.</td>
+                <td>
+                  <ul>
+                    <li>Multi-channel syringe design minimizes adhesion by reducing sample transfer steps.</li>
+                    <li>Effective recovery (&gt;80%) demonstrated under optimized conditions.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Controlled and repeatable cell loading.</td>
+                <td>
+                  <ul>
+                    <li>Automated workflow ensures reproducibility (coefficient of variation &lt;10%).</li>
+                  </ul>
+                </td>
+              </tr>
 
-          </tbody>
-        </table>
+              <tr>
+                <td rowspan="4">Electroporation system</td>
+                <td>Validation of reduced cellular stress.</td>
+                <td>
+                  <ul>
+                    <li>Post-electroporation viability ~76%, indicating controlled membrane perturbation.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Validation of transfection efficiency</td>
+                <td>
+                  <ul>
+                    <li>FITC-dextran uptake confirms successful intracellular delivery.</li>
+                    <li>Current efficiency remains low (mean 6.63%), defining an optimization window.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Stable and repeatable electric field generation.</td>
+                <td>
+                  <ul>
+                    <li>Consistent square-wave pulses (~40 V, ~200 &micro;s, ~40 Hz, 2 min) achieved.</li>
+                    <li>Programmable and reproducible via CNC-triggered control.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Well to well uniformity.</td>
+                <td>
+                  <ul>
+                    <li>Uniform voltage distribution validated across electrodes.</li>
+                    <li>Residual variability attributed to system-level constraints.</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
           
         </div>
         <div id="limitations-and-future-work">
