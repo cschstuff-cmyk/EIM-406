@@ -74,9 +74,15 @@
     
     <div id="Abstract" class="content-inner">
         <h2>Abstract</h2>
-        <p>
-          Engineered immune-cell therapies remain constrained by high-cost, labour-intensive, and centralized manufacturing pipelines, with non-viral transfection representing a major bottleneck. To address this, we developed a fully automated, non-viral transfection platform designed as a universal backbone for scalable, off-the-shelf immune-cell manufacturing. Our system integrates conveyor-based plate transport, syringe-driven media handling, and a redesigned electroporation module incorporating a nanostraw substrate and a machine-aligned titanium electrode array. Across thirty automated cycles, the device demonstrated robust mechanical stability, reproducible timing (556 ± 12 s per run), and mesh-independent electric-field uniformity between titanium and platinum electrodes (MSE &lt; 0.1 V/m). Electrochemical analysis confirmed the safety of titanium operation in RPMI, and dimensional validation verified consistent alignment across modules. Together, these results establish a wet-lab-ready automated transfection backbone capable of supporting high-throughput, low-perturbation engineering of immune cells, laying the foundation for decentralized, scalable, and clinically compatible non-viral manufacturing of next-generation allogeneic therapies.
-        </p>
+        <p>Engineered immune-cell therapies remain constrained by high-cost, labour-intensive and centralized manufacturing pipelines, with 
+          non-viral transfection representing a major bottleneck. Here we present an automated, modular 96-well bioreactor that integrates a 
+          low-loss cell delivery system with a programmable electroporation platform for scalable non-viral cell engineering. The cell delivery 
+          module enables efficient medium acquisition and transport with minimal residue while preserving cell integrity, achieving &gt;80% 
+          recovery and up to ~90% viability under optimized conditions. The electroporation system delivers stable, uniform square-wave pulses 
+          (~40 V, ~200 &micro;s, ~40 Hz), maintaining ~76% post-electroporation viability while enabling functional intracellular delivery. Together, 
+          these results establish a platform that couples high-viability cell handling with controlled membrane perturbation, enabling, in principle, 
+          programmable and automated end-to-end cell manufacturing. Future work will focus on closed-loop integration, sterile system design and 
+          parameter optimization for primary-cell therapeutic workflows.</p>
     </div>
 
     <div id="Acknowledgements" class="content-inner">
@@ -140,7 +146,7 @@
           <sl-tree-item >
             <a href="#Discussion">4. Discussion</a>            
             <sl-tree-item>
-              <a href="#Summary-and-Analysis">Summary and Analysis</a>
+              <a href="#Summary-and-Impact">Summary and Impact</a>
             </sl-tree-item>
             <sl-tree-item>
               <a href="#limitations-and-future-work">Limitations & Future Work</a>
@@ -164,7 +170,7 @@
               <li><a href="./appendix-ElectrochemicalAnalysis/index.html">Electrochemical Analysis</a></li>
             </sl-tree-item>
             <sl-tree-item>
-              <li><a href="./appendix-TestWAnodeArray/index.html">Verification Testing with Anode Array</a></li>
+              <li><a href="./appendix-TestWAnodeArray/index.html">Verification Testing with Titanium Array</a></li>
             </sl-tree-item>
             <sl-tree-item>
               <li><a href="./appendix-TestWItoplateAndMetalplate/index.html">Verification Testing with ITO and Metal Plates</a></li>
@@ -185,9 +191,12 @@
             <sl-tree-item>
               <li><a href="./appendix-TransfectionProtocol/index.html">Transfection Protocol</a></li>
             </sl-tree-item>
+            <!--
             <sl-tree-item>
               <li><a href="./appendix-Nanostraw-Fabrication/index.html">Nanostraw Fabrication Process</a></li>
             </sl-tree-item>
+            -->
+
             <sl-tree-item>
               <li><a href="./appendix-Cell_Delivery_Tests_Protocol/index.html">Cell Delivery Protocols</a></li>
             </sl-tree-item>
@@ -343,75 +352,62 @@
           following key milestones (<a href="#key-milestones">Table 2</a> ). 
         </p>
         <table class="design-table" id="key-milestones">
-          <caption>Table 2: Key milestones of Project</caption>
-          <thead>
-            <tr>
-              <th>Focus</th>
-              <th>Key Milestone</th>
-              <th>Milestone Definition</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Cell delivery system</td>
-              <td>validation of high cell viability.</td>
-              <td>Cell-delivery process does not introduce significant variability loss compared to pre-delivery baseline.</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Minimization of handling-induced cell loss.</td>
-              <td>Delivery pathway enables consistent cell recovery with minimal cell accumulation or leakage within the system.</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                Controlled and repeatable cell loading.
-              </td>
-              <td>System delivers consistent volume and cell suspension to each well with minimal variation.</td>
-            </tr>
-            <tr>
-              <td>Electroporation system</td>
-              <td>Validation of reduced cellular stress.</td>
-              <td>Post-experimental observations indicating preserved 
-                short-term cell viability, with electric parameters 
-                operating below bulk electroporation field intensities.
-                (Current research indicates that cell viability of Jurkat cells
-                - cells which were used during testing - have a cell viabilty ranging from ~25% to 70%
-                in bulk electroporation. <a href="#ref19">[19]</a>
-                <a href="#ref20">[20]</a>.)
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Validation of transfection efficiency</td>
-              <td>Detectable delivery of payload, confirming functional electroporation capability without optimization for maximum biological performance.</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Stable and repeatable electric field generation.</td>
-              <td>
-                System consistently delivers programmed electrical parameters
-                target voltage of 40V; square-wave pulses; 200 μs pulse width ; runs up to 2 minutes.
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>Well to well uniformity.</td>
-              <td>Uniform voltage delivery is maintained across all wells.</td>
-            </tr>
-            <tr>
-              <td>Integrated-system performance</td>
-              <td>High throughput</td>
-              <td>The integrated system processes all wells simultaneously within a single automated run.</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>End-to-end process robustness</td>
-              <td>Workflow operates reliably without manual intervention.</td>
-            </tr>
+        <caption>Table 2: Key milestones of Project</caption>
+        <thead>
+          <tr>
+            <th>Focus</th>
+            <th>Key Milestone</th>
+            <th>Milestone Definition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="3">Cell delivery system</td>
+            <td>validation of high cell viability.</td>
+            <td>Cell-delivery process does not introduce significant variability loss compared to pre-delivery baseline.</td>
+          </tr>
+          <tr>
+            <td>Minimization of handling-induced cell loss.</td>
+            <td>Delivery pathway enables consistent cell recovery with minimal cell accumulation or leakage within the system.</td>
+          </tr>
+          <tr>
+            <td>Controlled and repeatable cell loading.</td>
+            <td>System delivers consistent volume and cell suspension to each well with minimal variation.</td>
+          </tr>
 
-          </tbody>
-        </table>
+          <tr>
+            <td rowspan="4">Electroporation system</td>
+            <td>Validation of reduced cellular stress.</td>
+            <td>
+              Post-experimental observations indicating preserved 
+              short-term cell viability, with electric parameters 
+              operating below bulk electroporation field intensities.
+              (Current research indicates that cell viability of Jurkat cells
+              - cells which were used during testing - have a cell viabilty ranging from ~25% to 70%
+              in bulk electroporation. <a href="#ref19">[19]</a>
+              <a href="#ref20">[20]</a>.)
+            </td>
+          </tr>
+          <tr>
+            <td>Validation of transfection efficiency</td>
+            <td>Detectable delivery of payload, confirming functional electroporation capability without optimization for maximum biological performance.</td>
+          </tr>
+          <tr>
+            <td>Stable and repeatable electric field generation.</td>
+            <td>
+              System consistently delivers programmed electrical parameters
+              target voltage of 40V; square-wave pulses; 200 μs pulse width ; runs up to 2 minutes.
+            </td>
+          </tr>
+          <tr>
+            <td>Well to well uniformity.</td>
+            <td>Uniform voltage delivery is maintained across all wells.</td>
+          </tr>
+
+          
+
+        </tbody>
+      </table>
         </div>
         
         <div id="Novelty-and-Contribution">
@@ -705,11 +701,11 @@
               plasma reactive-ion etching (O<sub>2</sub> RIE) is applied to vertically remove the PETE matrix surrounding the 
               protected alumina, yielding vertically protruding alumina nanostraws. Additional tuning of nanostraw height can 
               be achieved using sequential O<sub>2</sub> RIE or CF<sub>4</sub>/CHF<sub>3</sub>-based plasma steps to precisely 
-              sculpt the exposed structures. Reproduced from Arun et. al. [kumar2025non]. <b>(b).</b> Device Overview. The 
+              sculpt the exposed structures. Reproduced from Arun et. al. <a href="#ref8">[8]</a>. <b>(b).</b> Device Overview. The 
               device consists of conveyor, sample transporter, sample platform which holds both the sample reservoir and the 
               transfection plate, electroporation array and magnet. Bottom left: Electrode Array Schematics. (i) Schematics of 
-              layers of the nanoelectroporation substrate. Reproduced from Arun et. al. [kumar2025non]. (ii) Schematics of 
-              nanoelectroporation. Reproduced from Arun et. al. [kumar2025non]. <b>(c).</b> Automated transfection protocol. 
+              layers of the nanoelectroporation substrate. Reproduced from Arun et. al. <a href="#ref8">[8]</a>. (ii) Schematics of 
+              nanoelectroporation. Reproduced from Arun et. al. <a href="#ref8">[8]</a>. <b>(c).</b> Automated transfection protocol. 
               Cells are (i) input into sample reservoir, (ii, iii) translate to transfection plate, (iv) electroporated, 
               (v) re-collected and (vi) output.
 
@@ -767,7 +763,7 @@
           </figure> 
         </div>
 
-            <p><b>Voltage generator outputs stable rectangular waves at medium and low frequencies.</b> Steady voltage toggling is essential 
+            <p><b>A voltage generator sourced from a supplier outputs stable rectangular waves at medium and low frequencies.</b> Steady voltage toggling is essential 
             for achieving consistent transfection while preserving cell viability. To ensure waveform stability, we adopted a two-module 
             architecture comprising a DC voltage generator (bottom) and a voltage regulator (top), where the DC input is modulated into a 
             rectangular waveform (<b>Fig. 4</b>a). This modular design enables straightforward troubleshooting, independent optimization of 
@@ -777,9 +773,8 @@
             (Fig. 4b–c) and progressively amplify with increasing frequency. Empirically, the upper limit for stable rectangular wave generation 
             was ~50 <i>Hz</i>. We attribute this instability to the limited dynamic response of the regulator, which prevents complete switching 
             within each cycle at elevated frequencies, resulting in waveform distortion. Collectively, these results establish that the current 
-            generator reliably supports the typical electroporation regime (~40 <i>Hz</i>). In the transfection section, we further refine the 
-            system to reduce device footprint and enhance programmability, thereby improving compatibility with automated and scalable transfection 
-            workflows.
+            generator reliably supports the typical electroporation regime (~40 <i>Hz</i>). This serves as a baseline for a working platform for 
+            subsequent integration and working platform for achieving the voltage parameters in the electroporation system.
             </p>
           
           <figure class="svg-component" id="Figure-4">
@@ -1141,15 +1136,15 @@
                 in Jurkat or primary human T cells <a href="#ref21">[21,</a><a href="#ref22">22]</a>. 
               </p>
               <figure class="svg-component" id="Figure-titanium_platinum">
-                <img src="Figures/titanium_platinum_figure.svg" alt="Fig. 3: In silico simulation - Titanium vs Platinum" style="max-width: 60%; height: auto;display: block; margin: 0 auto;">
+                <img src="Figures/titanium_platinum_figure.svg" alt="Fig. 7: In silico simulation - Titanium vs Platinum" style="max-width: 60%; height: auto;display: block; margin: 0 auto;">
                 <figcaption-center>
-                <b>Fig. 3: In silico simulation - Titanium vs Platinum</b>
+                <b>Fig. 7: In silico simulation - Titanium vs Platinum</b>
 
                 </figcaption-center>
                 <div class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" src="Figures/titanium_platinum_figure.svg">
-                <div class="caption">Fig. 3: In silico simulation - Titanium vs Platinum</div>
+                <div class="caption">Fig. 7: In silico simulation - Titanium vs Platinum</div>
                 </div>
             </figure> 
 
@@ -1157,7 +1152,7 @@
                 The suitability of titanium electrodes for electroporation was validated through theoretical and empirical 
                 validation analysis. 
                 In silico simulations showed that the average electric field at the transfection membrane was unchanged across 
-                all meshes (p &lt; 0.99; Mean Square Difference &lt; 0.1 V/m; <a href="#Figure-titanium_platinum">Fig.3</a> ). Theoretical analysis 
+                all meshes (p &lt; 0.99; Mean Square Difference &lt; 0.1 V/m; <a href="#Figure-titanium_platinum">Fig.7</a> ). Theoretical analysis 
                 (<a href="/appendix-ElectrochemicalAnalysis/">Appendix</a>) further confirmed 
                 that pulsed operation under expected voltage results in negligible Ti4+  release, supporting titanium's suitability 
                 as a biocompatible anode.
@@ -1180,9 +1175,9 @@
             <div id="Cargo-Channel-Material">
               <h3>Material of cargo channel</h3>
               <figure class="svg-component" id="Figure-cargochannel_M2RCL_Acrylic">
-                  <img src="Figures/cargochannel_M2RCL_Acrylic.svg" alt="Fig. X: Cargo channel (M2R-CL vs Acrylic)">
+                  <img src="Figures/cargochannel_M2RCL_Acrylic.svg" alt="Fig. 8: Cargo channel (M2R-CL vs Acrylic)">
                   <figcaption-center>
-                    <b>Fig. X: Cargo channel (M2R-CL vs Acrylic)</b> 
+                    <b>Fig. 8: Cargo channel (M2R-CL vs Acrylic)</b> 
 
                   </figcaption-center>
                   <div class="modal">
@@ -1198,7 +1193,7 @@
                 seams that could trap proteins and cause alignment variability.
                 However, prototyping revealed that the printed channel walls in M2R-CL were structurally weak, 
                 resulting in flimsy walls that were unsuitable for forming cargo channels with clean alignment to the well plate rows.
-                As a result, an acrylic version was fabricated, which provided the desired straight and rigid walls.
+                As a result, an acrylic version was fabricated, which provided the desired straight and rigid walls (<a href="#Figure-cargochannel_M2RCL_Acrylic">Fig. 8</a>).
               </p>
             </div>
             <div id="Current-Delivery">
@@ -1229,7 +1224,7 @@
               <p>
                 Latch-based mechanisms were compared with passive interlock structures. 
                 Latches introduce moving components that increase assembly complexity, 
-                tolerance stack-up, and risk of mis-seating—critical concerns when 
+                tolerance stack-up, and risk of mis-seating, which are critical concerns when 
                 aligning consumables above nanoscale electroporation structures. 
                 Interlock geometries integrated directly into the cargo-channel 
                 moulding provide stable, repeatable, and alignment-preserving attachment 
@@ -1240,7 +1235,7 @@
             <div id="Controlling-Pulses-for-Electroporation">
               <h3>Controlling pulses for electroporation</h3>
               <p>
-                Initially, a pulse generator sourced from the device manufacturer, was selected for implementation. 
+                Initially, a pulse generator sourced from a supplier, was selected for implementation. 
                 This aimed to connect directly to the CNC controller of the main device, where it generates the pulses upon receiving a voltage signal.
                 However, 
                 experimental testing demonstrated that the output did not meet the required frequency programmed 
@@ -1299,9 +1294,9 @@
                 pulse width at 40 Hz with a square waveform across varying voltages and resistive loads.
               </p>
               <figure class="svg-component" id="Figure-OptiMEM-voltage-output">
-                <img src="Figures/circuit_iteration.svg" alt="Fig. 4: Iteration of circuit design for pulse generation" style="max-width: 60%; height: auto;display: block; margin: 0 auto;">
+                <img src="Figures/circuit_iteration.svg" alt="Fig. 9: Iteration of circuit design for pulse generation" style="max-width: 60%; height: auto;display: block; margin: 0 auto;">
                 <figcaption>
-                <b>Fig. 4: Iteration of circuit design for pulse generation</b>
+                <b>Fig. 9: Iteration of circuit design for pulse generation</b>
                 In the first design, an output of 40Hz was achieved but pulse width was around 800 µs, which is much longer than the required 200 µs. 
                 While waveform was sharp at the beginning, it had a round edge at the end of the pulse. Both issues were likely due to discharge of the capacitor in the circuit. 
                 In the second design, the addition of 1kΩ resistors across the voltage output reduced pulse width to around 200 µs, with frequency around 40 Hz and marginal improvements to the shape of the waveform. 
@@ -1313,7 +1308,7 @@
                 <div class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" src="Figures/circuit_iteration.svg">
-                <div class="caption">Fig. 4: Iteration of circuit design for pulse generation</div>
+                <div class="caption">Fig. 9: Iteration of circuit design for pulse generation</div>
                 </div>
               </figure>
             </div>
@@ -1422,30 +1417,30 @@
           <div id="Final-prototype">
             <h4 style="font-size: 1.4em;">Final Prototype for Electroporation System</h4>
             <figure class="svg-component" id="Figure-Final-Prototype-Electroporation-System">
-                <img src="Figures/final_prototype_upload.svg" alt="Fig. 5: Final Prototype of Electroporation System">
+                <img src="Figures/final_prototype_upload.svg" alt="Fig. 10: Final Prototype of Electroporation System">
                 <figcaption>
-                <b>Fig. 5: Final Prototype of Electroporation System</b>
-                <strong>(5A.):</strong> Final prototype of the electroporation system, consisting of the DC power supply unit and arduino-based circuit <strong>(5C)</strong>,
-                that is connected to the titanium array and copper plate. <strong>(5B.):</strong> Schematic illustrating 
+                <b>Fig. 10: Final Prototype of Electroporation System</b>
+                <strong>(10A.):</strong> Final prototype of the electroporation system, consisting of the DC power supply unit and arduino-based circuit <strong>(10C)</strong>,
+                that is connected to the titanium array and copper plate. <strong>(10B.):</strong> Schematic illustrating 
                 the voltage and control signal flow between the DC power supply, Arduino Nano circuit, CNC controller, and electroporation setup.
-                <strong>(5D & 5E):</strong> Assembled cargo channel comprising of ITO plate, cargo channel, well plate and nano-straw membrane, 
+                <strong>(10D & 10E):</strong> Assembled cargo channel comprising of ITO plate, cargo channel, well plate and nano-straw membrane, 
                 is placed above the copper plate, where the main device shifts it to a set position and lowers the titanium array for electroporation. 
 
                 </figcaption>
                 <div class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" src="Figures/final_prototype_upload.svg">
-                <div class="caption">Fig. 5: Final Prototype of Electroporation System</div>
+                <div class="caption">Fig. 10: Final Prototype of Electroporation System</div>
                 </div>
             </figure>
             <p>
-              The final prototype of the electroporation system  <a href="#Figure-Final-Prototype-Electroporation-System">Fig. 5</a>. 
+              The final prototype of the electroporation system  <a href="#Figure-Final-Prototype-Electroporation-System">Fig. 10</a>. 
               generates the required voltage and pulse for 2 minutes upon receiving 
               a signal from the CNC controller. Aside from the prototyping plan mentioned in the methodology section, 
               the final prototype also incorporates a 3D-printed PETG holder for the copper plate, a 5mm acrylic part holding the titanium array, 
               and 2mm acrylic parts to provide protective housing for the circuit.
               The nanostraw membrane was fabricated using track-etched PETE templates, ALD alumina coating, selective wet 
-              etching and directional plasma etching (refer to <a href="appendix-Nanostraw-Fabrication/">Appendix - nanostraw fabrication</a>).
+              etching and directional plasma etching (refer to <a href="#Figure-2">Fig.2a</a>).
               
               
 
@@ -1481,9 +1476,9 @@
             
 
             <figure class="svg-component" id="Figure-OptiMEM-voltage-output">
-                <img src="Figures/heatmap_Anode+ITOMetalPlateSetup_upload.svg" alt="Fig. 6: Verification Test with Elecrodes">
+                <img src="Figures/heatmap_Anode+ITOMetalPlateSetup_upload.svg" alt="Fig. 11: Verification Test with Elecrodes">
                 <figcaption>
-                <b>Fig. 6: Verification Test with Elecrodes</b> 
+                <b>Fig. 11: Verification Test with Elecrodes</b> 
                 Heatmaps generated from percentage error (PE) of input voltage vs measured voltage at different locations of 
                 ITO + copper plate set up <b>(6A)</b> and titanium array <b>(6B)</b> exhibit zero percentage error, indicating uniform
                   spatial and voltage-independent accuracy.                            
@@ -1493,7 +1488,7 @@
                 <div class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" src="Figures/heatmap_Anode+ITOMetalPlateSetup_upload.svg">
-                <div class="caption">Fig. 6: Verification Test with Electrodes
+                <div class="caption">Fig. 11: Verification Test with Electrodes
                   
                 </div>
                 </div>
@@ -1501,7 +1496,7 @@
             <p>Measurements were recorded for input voltages of 5 V, 10 V, 20 V, and 40 V to evaluate performance across a representative operating range. 
               The results indicated that the measured output voltage matched the input voltage at all points, demonstrating 
               negligible voltage drop. This confirms that both components can deliver a uniform voltage signal without observable degradation 
-              (refer to <a href="#Figure-OptiMEM-voltage-output">Fig. 6</a>).
+              (refer to <a href="#Figure-OptiMEM-voltage-output">Fig. 11</a>).
             </p>
 
             
@@ -1542,16 +1537,16 @@
               frequency, and waveform shape recorded using an oscilloscope.
             </p>
             <figure class="svg-component" id="Figure-resistors-voltage-output">
-                <img src="Figures/test_w_resistors.svg" alt="Fig. 7: Voltage Output During Test with Resistors">
+                <img src="Figures/test_w_resistors.svg" alt="Fig. 12: Voltage Output During Test with Resistors">
                 <figcaption>
-                <b>Fig. 7: Voltage Output During Test with Resistors</b>
+                <b>Fig. 12: Voltage Output During Test with Resistors</b>
                 
 
                 </figcaption>
                 <div class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" src="Figures/test_w_resistors.svg">
-                <div class="caption">Fig. 7: Voltage Output During Test with Resistors</div>
+                <div class="caption">Fig. 12: Voltage Output During Test with Resistors</div>
                 </div>
               </figure>
             <p><u>In the first test,</u> resistive loads were used to simulate electrical conditions ranging from a single-well to a 96-well configuration (i.e., 1-wells, 6-wells, 12-wells, 24-wells, 48-wells and 96-wells). 
@@ -1570,10 +1565,10 @@
            
 
             <figure class="svg-component" id="Figure-OptiMEM-voltage-output">
-                <img src="Figures/OptiMEM_voltage_output.svg" alt="Fig. 8: Voltage Output During Test with Opti-MEM">
+                <img src="Figures/OptiMEM_voltage_output.svg" alt="Fig. 13: Voltage Output During Test with Opti-MEM">
                 <figcaption>
-                <b>Fig. 8: Voltage Output During Test with Opti-MEM</b> <b>(8A): </b> 3 readings of peak voltage, pulse width and frequency were obtained. <b>(8B): </b>
-                Comparison of mean values against target values. <b>(8C): </b>Coefficient of variation (CV) was calculated from readings. <b>(8D): </b>Percentage error (PE) of 
+                <b>Fig. 13: Voltage Output During Test with Opti-MEM</b> <b>(13A): </b> 3 readings of peak voltage, pulse width and frequency were obtained. <b>(13B): </b>
+                Comparison of mean values against target values. <b>(13C): </b>Coefficient of variation (CV) was calculated from readings. <b>(13D): </b>Percentage error (PE) of 
                 each variable was calculated based on absolute difference between mean recorded values and target values.
 
                 </figcaption>
@@ -1601,9 +1596,9 @@
               transfection was executed to observe impact on cells.
             </p>
               <figure class="svg-component" id="Figure-cells-voltage-output">
-                <img src="Figures/cells_voltage_output.svg" alt="Fig. 9: Voltage Output During Experiment with Cells">
+                <img src="Figures/cells_voltage_output.svg" alt="Fig. 14: Voltage Output During Experiment with Cells">
                 <figcaption-center>
-                <b>Fig. 9: Voltage Output During Experiment with Cells</b>
+                <b>Fig. 14: Voltage Output During Experiment with Cells</b>
 
                 </figcaption-center>
                 <div class="modal">
@@ -1703,20 +1698,20 @@
               highly susceptible to accidental contact.
             </p>
             <figure class="svg-component" id="Figure-cells-voltage-output">
-              <img src="Figures/cells_fluroscence_microscopy_upload.svg" alt="Fig. 10: Fluorescence Microscopy Observations">
+              <img src="Figures/cells_fluroscence_microscopy_upload.svg" alt="Fig. 15: Fluorescence Microscopy Observations">
               <figcaption-center>
-              <b>Fig. 10: Fluorescence Microscopy Observations</b>
+              <b>Fig. 15: Fluorescence Microscopy Observations</b>
 
               </figcaption-center>
               <div class="modal">
               <span class="close">&times;</span>
               <img class="modal-content" src="Figures/cells_fluroscence_microscopy_upload.svg">
-              <div class="caption">Fig. 10: Fluorescence Microscopy Observations</div>
+              <div class="caption">Fig. 15: Fluorescence Microscopy Observations</div>
               </div>
             </figure>  
             <p>
               <u>Fluorescence Microscopy Observations:</u>
-              Imaging (<a href="#Figure-cells-voltage-output">Fig. 10</a>) indicates that FITC-Dextran transfection occurred in a sub-population of cells, which maintained a 
+              Imaging (<a href="#Figure-cells-voltage-output">Fig. 15</a>) indicates that FITC-Dextran transfection occurred in a sub-population of cells, which maintained a 
               healthy, rounded morphology like the negative control. This proves the voltage output can achieve molecular 
               delivery without causing universal cell lysis.
             </p>
@@ -1876,9 +1871,9 @@
     <div class="content-inner" id="Discussion">
         
         <h2>4. Discussion</h2>
-        <div id="Summary-and-Analysis" class="content-inner">
+        <div id="Summary-and-Impact" class="content-inner">
           <p><b> Summary and Impact. </b> Here we present a functionally validated prototype that establishes what automated 
-            cell engineering can achieve at the level of its core modules (<b>Table 14</b>). The cell delivery subsystem 
+            cell engineering can achieve at the level of its core modules (<a href="addressing-key-milestones">Table 14</a>). The cell delivery subsystem 
             can preserve high cell viability (&gt;80%, exceeding 90% under optimized conditions), demonstrating 
             that automated handling can maintain cellular integrity and effectively replace manual processing. 
             It can further achieve efficient cell recovery (&gt;80%) with reduced adhesion, indicating reliable 
@@ -1891,7 +1886,7 @@
             the system can couple high-viability cell handling with controlled electroporation, enabling, in principle, 
             an integrated platform for programmable, automated, and scalable end-to-end cell engineering.</p>
 
-          <p><b>Limitations and Future Work.</b> While the current system demonstrates functional integration potential between 
+          <p id="limitations-and-future-work"><b>Limitations and Future Work.</b> While the current system demonstrates functional integration potential between 
             automated cell handling and programmable electroporation, it remains a proof-of-concept prototype and 
             has not yet been validated in a closed-loop workflow for therapeutic cargo delivery into primary cells. 
             In particular, transfection performance is presently limited, with low delivery efficiency despite confirmed 
@@ -1984,27 +1979,7 @@
           </table>
           
         </div>
-        <div id="limitations-and-future-work">
-          <p>
-            <b>Limitations & Future Work</b> 
-            In addition to the limitations identified in the respective 
-            systems, a key limitation as an overall device is that the 
-            cell-delivery and electroporation subsystems were validated in parallel 
-            to establish their independent functionality and robustness and have yet 
-            been experimentally evaluated under fully integrated operation. 
-            While isolated validation confirms subsystems robustness, 
-            combined operation may introduce system-level interactions 
-            not captured during separate testing.
-          </p>
-
-          <p>
-            Future work will focus on addressing the limitations 
-            identified in the sub-systems, as well as end-to-end 
-            validation of integrated prototype, to assess coupled 
-            performance and overall process robustness. 
-          </p>
-          
-        </div>
+        
         
       </div>  
 
