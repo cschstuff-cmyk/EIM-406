@@ -718,11 +718,190 @@
                 </tr>
               </tbody>
             </table>
+
+          <figure class="svg-component" id="Figure-2">
+            <img src="Figures/Cell_Transport_Figures/Figure_2.svg" alt="Fig. 2: Design and Prototype">
+            <figcaption>
+              <b>Fig. 2: Design and Prototype.</b> <b>(a).</b> Fabrication of Nanostraw. Nanostraw membranes were 
+              fabricated through a multistep process beginning with track-etched <i>poly(ethylene terephthalate)</i> 
+              (PETE) films (Step&nbsp;1), in which ion-irradiation and chemical etching generate uniformly distributed, 
+              high-aspect-ratio nanopores. In Step&nbsp;2, a conformal alumina layer is deposited onto the PETE scaffold 
+              using atomic layer deposition (ALD), forming a continuous Al<sub>2</sub>O<sub>3</sub> coating along the pore 
+              walls and on the membrane surface. In Step&nbsp;3, selective wet alumina etching exposes the underlying PETE 
+              at the pore openings while preserving the alumina lining within the pores. In Step&nbsp;4, directional oxygen 
+              plasma reactive-ion etching (O<sub>2</sub> RIE) is applied to vertically remove the PETE matrix surrounding the 
+              protected alumina, yielding vertically protruding alumina nanostraws. Additional tuning of nanostraw height can 
+              be achieved using sequential O<sub>2</sub> RIE or CF<sub>4</sub>/CHF<sub>3</sub>-based plasma steps to precisely 
+              sculpt the exposed structures. Reproduced from Arun et. al. [kumar2025non]. <b>(b).</b> Device Overview. The 
+              device consists of conveyor, sample transporter, sample platform which holds both the sample reservoir and the 
+              transfection plate, electroporation array and magnet. Bottom left: Electrode Array Schematics. (i) Schematics of 
+              layers of the nanoelectroporation substrate. Reproduced from Arun et. al. [kumar2025non]. (ii) Schematics of 
+              nanoelectroporation. Reproduced from Arun et. al. [kumar2025non]. <b>(c).</b> Automated transfection protocol. 
+              Cells are (i) input into sample reservoir, (ii, iii) translate to transfection plate, (iv) electroporated, 
+              (v) re-collected and (vi) output.
+
+            </figcaption>
+            <div class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" src="Figures/Cell_Transport_Figures/Figure_2.svg">
+              <div class="caption"></div>
+            </div>
+          </figure>
+
+          <figure class="svg-component" id="Figure-3">
+            <img src="Figures/Cell_Transport_Figures/Figure_3.svg" alt="Fig. 3: Initial Setup of Square Wave Generator">
+            <figcaption>
+              <b>Fig. 3: Iteration on Transfection Plate.</b> <b>(a).</b> Schematics of the iterated tyransfection plate. 
+              The iteration re-considers the design of the electrode array (top) and transfection plate (bottom). 
+              <b>(b).</b> Crossectional schematics of iterated transfection plate. The electroporation well is placed 
+              on top of the double layer conductive plates, whcih consists of the indium tin oxide (ITO) as top layer 
+              and metal plate on bottom. The structure is installed on a holder. Cargo can be loaded parallelly through 
+              the 8 channels on the right. <b>(c).</b> Iteration of electrode array. Non-uniform, hand-made, platinum 
+              electrode array has been iterated into a machine-grade, vertically aligned, titanium electrode array. 
+              The electrodes are fixed through a cylindrical screw holders and sealed at the back by cap soldering. 
+              Top left: Computational study on the electric field strength at the bottom of the electroporation well. 
+              Across all meshes, the electric field strength shows no difference between the two materials (p &gt; 0.99); 
+              Mean Square Difference &lt; 0.1 V/m.
+
+            </figcaption>
+            <div class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" src="Figures/Cell_Transport_Figures/Figure_3.svg">
+              <div class="caption"></div>
+            </div>
+          </figure> 
         </div>
 
+
+
+        
         <div id="Results-cell-delivery-system">
           <h3 style="font-size: 1.6em;">Results</h3>
-          <p>xxx</p>
+          <p>Here we present the automated backbone (Fig. 2) and demonstarte the readiness of the device for automated transfection. 
+            In general, we evaluated the device in three folds. First, we demonstrate the steadiness of electroporation voltage generation 
+            through a benchmark characterization of voltage conditions. Next, we demonstrated 
+            the minimum sample volume loss in a typical cell transportation protocol. Finally, 
+            we characterized the device's capability to recover cells and optimized hyperparameters
+            to achieve the best recovery performance. Together, the evaluation validated 
+            the readiness of the bioreactor for transfection experiments. </p>
+
+            <p><b>Voltage generator outputs stable rectangular waves at medium and low frequencies.</b> Steady voltage toggling is essential 
+            for achieving consistent transfection while preserving cell viability. To ensure waveform stability, we adopted a two-module 
+            architecture comprising a DC voltage generator (bottom) and a voltage regulator (top), where the DC input is modulated into a 
+            rectangular waveform (<b>Fig. 4</b>a). This modular design enables straightforward troubleshooting, independent optimization of 
+            waveform parameters, and flexible integration with alternative power sources or control schemes. To characterize electroporation-relevant 
+            output, we benchmarked the waveform across three frequencies: high (53 <i>Hz</i>), medium (50 <i>Hz</i>), and low (10 <i>Hz</i>). We found 
+            that frequency, rather than peak ratio, predominantly governs output stability. At higher frequencies, low-level fluctuations emerge 
+            (Fig. 4b–c) and progressively amplify with increasing frequency. Empirically, the upper limit for stable rectangular wave generation 
+            was ~50 <i>Hz</i>. We attribute this instability to the limited dynamic response of the regulator, which prevents complete switching 
+            within each cycle at elevated frequencies, resulting in waveform distortion. Collectively, these results establish that the current 
+            generator reliably supports the typical electroporation regime (~40 <i>Hz</i>). In the transfection section, we further refine the 
+            system to reduce device footprint and enhance programmability, thereby improving compatibility with automated and scalable transfection 
+            workflows.
+            </p>
+          
+          <figure class="svg-component" id="Figure-4">
+            <img src="Figures/Cell_Transport_Figures/figure_powersource.svg" alt="Fig. 4: Initial Setup of Square Wave Generator.">
+            <figcaption>
+              <b>Fig. 4: Initial Setup of Square Wave Generator.</b> <b>(a).</b> Initial Square Wave Generator. The 
+              module includes a voltage generator (bottom), and a wave regulator. The voltage generator outputs a DC wave, 
+              and the wave generator modulates the DC voltage to a toggling square wave for electroporation.
+              <b>(b).</b> High Frequency Wave Form. At high frequency, especially when frequency <i>f</i> &gt; 53 <i>Hz</i>, voltage artifact, 
+              typically uneven toggle cycle and fluctuating voltage level, appears at low voltage level. Peak volateg remains intact.
+              <b>(c).</b> Medium Frequency Wave Form.At medium frequency, the artifact is graudally mitigated with frequency decrease.
+              <b>(d).</b> Low Frequency Wave Form. At low frequency, the artifact disappeared. The device can generate stable wave output.
+              Empirical validation demonstrated the upper bound frequency to generate waves with controllable artifact is around 50 <i>Hz</i>. 
+              Peak ratio impacts negligibly.
+
+            </figcaption>
+            <div class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" src="Figures/Cell_Transport_Figures/figure_powersource.svg">
+              <div class="caption"></div>
+            </div>
+          </figure>
+          
+          <p><b>Automated bioreactor enables efficient medium acquisition.</b> Conventional bioreactors rely on tubing-based 
+            systems, which often incur cell loss due to residual medium within the flow path. To address this limitation, we 
+            developed a pipette-based acquisition module comprising a multi-channel pipette integrated with a movable platform 
+            supporting both the sample reservoir and transfection substrate. This design departs from conventional peristaltic 
+            pump systems by transporting the sample platform rather than the medium, thereby minimizing residual loss. To quantify 
+            acquisition performance, we evaluated volume recovery under a representative transfer protocol (<b>Fig. 5</b>a), with 
+            results summarized in Fig. 5c. At low input volumes and low acquisition speeds, near-complete recovery was achieved. 
+            In contrast, higher volumes or faster acquisition led to a marked reduction in recovery, primarily due to spillage. 
+            This systematic loss (Fig. 5b) arises from the non-negligible volume occupied by the pipette tip relative to the 
+            limited well capacity of the transfection substrate. The effect is less pronounced at low volumes, where the tip 
+            occupies a smaller fraction of the well. These observations suggest a design refinement in which medium transfer 
+            is performed in multiple stages to reduce effective tip displacement—for example, sequential dispensing in fractional 
+            volumes. Together, these results demonstrate effective medium acquisition under optimized conditions. We next assess 
+            whether cellular components within the medium can be recovered with comparable efficiency.
+          </p>
+
+          <figure class="svg-component" id="Figure-5">
+            <img src="Figures/Cell_Transport_Figures/figure_acquisition.png" alt="Fig. 5: Automated Bioreactor Achieves Effective Medium Aquisition">
+            <figcaption>
+              <b>Fig. 5: Automated Bioreactor Achieves Effective Medium Aquisition.</b> <b>(a).</b> Aquisition Test Protocol. 
+              (i) plain water is loaded, (ii) acquired by sample transporter, and then (iii) re-collected to (iv) Output. 
+              The input and output are recorded for evaluation. <b>(b).</b> Hypothetical Illustartion on volume loss mechanism. 
+              A systematic loss could be induced due to unnegligible size of pipette tips. The insertion of pipette tip to 
+              transfection well leads to medium spill, which accounts for the major volume loss.<b>(c).</b> Media Acquisition 
+              Ratio across different input volume and acquisition speed. Input volume conditions the sample volume per well. 
+              Low volume tends to have less spill. Aquisition Speed conditions how fast the pipette enters the well. From Left 
+              to right, High Volume: <i>V</i> = 0.5 mL / well; Medium Volume: <i>V</i> = 0.3 mL / well; Low Volume: <i>V</i> = 0.5 mL / Well. 
+              For each panel, from left to right, Low Speed: 100 mm / min; Medium Speed: 250 mm / min; High Speed: 500 mm / min. 
+              Volume Loss typically happened at high volume and high acquisition speed.
+
+            </figcaption>
+            <div class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" src="Figures/Cell_Transport_Figures/figure_acquisition.png">
+              <div class="caption"></div>
+            </div>
+          </figure> 
+
+          <p><b>Automated bioreactor enables high-efficiency cell recovery with minimal loss.</b> Conventional bioreactor systems 
+            are often limited by substantial cell loss during medium handling. Here, we quantitatively evaluate the recovery performance 
+            of the proposed device using a simplified protocol that excludes transfection (<b>Fig. 6</b>a). All operational parameters 
+            were set to the optimized conditions identified from prior volume acquisition experiments, namely intermediate medium volume 
+            and acquisition speed. Jurkat cells, a rapidly proliferating T cell line, were suspended in RPMI 1640 to approximate realistic 
+            manufacturing conditions. As summarized in <b>Fig. 6</b>b, the device achieves high and consistent volume recovery. Notably, 
+            recovery efficiency is approximately 5% higher than that observed in water-based controls. This discrepancy is attributed to 
+            differences in fluid properties. Specifically, the lower viscosity and surface tension of water promote dispersion upon pipette 
+            interaction, reducing the likelihood of re-collection. In contrast, RPMI 1640, enriched with proteins and nutrients, exhibits 
+            higher viscosity and surface tension, facilitating cohesive fluid behavior and improved recovery during aspiration. Cell recovery 
+            exhibits a statistically significant dependence on cell concentration, with optimal performance observed at intermediate concentrations 
+            (p &lt; 0.05). We attribute this to two competing effects. At higher concentrations, increased cell–surface interactions promote 
+            adhesion to device interfaces, reducing recovery. At lower concentrations, variability in hemocytometer-based quantification increases,
+            and particulate contaminants are more likely to be misclassified as non-viable cells due to reduced cell density in the field of view (Fig 6c). 
+            This interpretation is consistent with viability measurements, which show significantly reduced viability at low concentrations compared 
+            to medium and high conditions. An alternative explanation is that Jurkat cells, as suspension cells, exhibit enhanced viability when 
+            in proximity or loose clusters, a condition more readily achieved at higher concentrations. However, this hypothesis requires further 
+            validation beyond the scope of the present study. Taken together, these results identify an optimal operating regime at approximately 
+            1 million cells mL<sup>−1</sup>, balancing recovery efficiency and measurement stability. Across all tested conditions, recovery exceeds 60%, 
+            with optimal performance approaching 80%. These findings demonstrate that the proposed system enables efficient cell recovery with minimal 
+            loss, establishing a robust foundation for subsequent transfection experiments.</p>
+
+          <figure class="svg-component" id="Figure-6">
+            <img src="Figures/Cell_Transport_Figures/fig1.svg" alt="Fig. 6: Automated Bioreactor Recovers Input Cells with Minimum Loss.">
+            <figcaption>
+              <b>Fig. 6: Automated Bioreactor Recovers Input Cells with Minimum Loss.</b> <b>(a).</b> Schematic Test Protocol. 
+              Jurkat cells are (i) input, (ii) collected, (iii) loaded, (iv) re-collected, (v) re-loaded, and (vi) output. The 
+              protocol simulates a cell processing cycle without transfection applied to characterize system loss (e.g., cell 
+              adhesion, cytolysis etc.) induced the automated system. <b>(b).</b> Cell Recovery Performance chracterized across 
+              different cell concentrations. (i) Volume Recovery. (ii) Cell Recovery. (iii) Viability. For each panel, left to right: 
+              High cell concentration: 1.4 million cells / mL; Medium cell concentration: 1 million cells / mL; Low cell concentration: 
+              0.5 million cell / mL. <b>(c).</b> Hemacytometer Images of samples. From left to Right: High Cell Contration; Medium cell 
+              concentration; Low cell concentration. Top row: Input Sample; Bottom row: output sample. Red circles: Dead cells. Green 
+              Circle: Live cells. Scale Bar: 100 &micro;m.
+
+            </figcaption>
+            <div class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" src="Figures/Cell_Transport_Figures/fig1.svg">
+              <div class="caption"></div>
+            </div>
+          </figure> 
+
         </div>
 
     </div>
