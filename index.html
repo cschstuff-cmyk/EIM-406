@@ -519,33 +519,35 @@
                   <td>
                     <ul style="margin: 0; padding-left: 1.5em;">
                       <li>Electroporation array seamlessly incorporated and automatically controlled.</li>
-                      <li>Magnet can effectively attract cells to the nanostraw substrate.</li>
-                      <li>Sample transporter positioned away from magnet to avoid affecting magnetic Dynabeads-bound cells.</li>
+                      <li>Automation protocols can run without inter-part preclusion.</li>
+                      <li>Integrated modules are reliable, and protocols are reproducible.</li>
                     </ul>
                   </td>
                 </tr>
                 <tr>
-                  <td><strong>Performance</strong></td>
-                  <td>Sample transporter is able to acquire cells and transport samples between reservoir and 96-well plate.</td>
-                </tr>
-                <tr>
-                  <td><strong>Indirect Contact Cleanliness</strong></td>
-                  <td>All surfaces indirectly contacting sterile workspace must be compatible with hospital-grade disinfectants (e.g., 70% ethanol, hydrogen peroxide).</td>
-                </tr>
-                <tr>
                   <td><strong>Design (Footprint)</strong></td>
-                  <td>Setup designed for benchtop operation with footprint &lt; 600 mm × 1200 mm to fit on a standard laboratory table.</td>
-                </tr>
-                <tr>
-                  <td><strong>Design (Weight)</strong></td>
-                  <td>Total weight of the instrument &lt; 30 kg.</td>
-                </tr>
-                <tr>
-                  <td><strong>Safety</strong></td>
                   <td>
                     <ul style="margin: 0; padding-left: 1.5em;">
-                      <li>Protects operators and environment from shock, burns, and fire (e.g., protective earth, double insulation when required).</li>
-                      <li>Hardware and firmware enforce safe maximums that trigger emergency stop.</li>
+                      <li>Setup designed for benchtop operation with footprint &lt; 600 mm × 1200 mm to fit on a standard laboratory table.</li>
+                      <li>Total weight of the instrument &lt; 30 kg.</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Medium Acquisition and Recovery</strong></td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Input sample media can be effectively recovered, with loss &lt; 20% in volume.</li>
+                      <li>Residue droplet should be avoided.</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Cell Loading and Recovery</strong></td>
+                  <td>
+                    <ul style="margin: 0; padding-left: 1.5em;">
+                      <li>Input cells can be effectively recovered, with cell loss &lt; 40%.</li>
+                      <li>Cell viability can be maintained.</li>
                     </ul>
                   </td>
                 </tr>
@@ -748,10 +750,32 @@
             </div>
           </figure>
 
-          <figure class="svg-component" id="Figure-3">
+        
+        <div id="Results-cell-delivery-system">
+          <h3 style="font-size: 1.6em;">Results</h3>
+          <p>Here we present the fabricated prototype, including the automation backbone (Fig. 2), 
+            the initial prototype of electrode array (<b>Fig. 3</b>) and modular voltage generator (<b>Fig. 4 </b>).
+            To justify the device is ready for automated transfection, we evaluated / iterated the device in four folds. 
+            First, we demonstrated an iteration of electrode array can maintain electrode topological uniformity, 
+            and a replacement of material, i.e., from Platinum to Titanium, maintains the electric 
+            field property. Next, we demonstrate the steadiness of electroporation voltage generation 
+            through a benchmark characterization of voltage conditions. Moreover, we demonstrated 
+            the minimum sample volume loss in a typical cell transportation protocol. Finally, 
+            we characterized the device's capability to recover cells and optimized hyperparameters
+            to achieve the best recovery performance. For the last two evaluations, protocols (Fig. 5a and 6a) are programmed with
+            minimum human engagement.  </p>
+
+          <p><b>Baseline Transfection Plate Enhances Electrode Uniformity and Mainatins Electric Property.</b>. 
+            Uniformity of electrode is essential to ensure a consistent electroporation in a alrge-scale transfection
+            experiment. To enhance the electrode uniformity and also cut down cost, we employed a new material that is cheaper 
+            and stiffer, i.e., Titanium, to replace the prior Platinum electrode. Also, to ensure the electrode is vertically aligned,
+            we adopted a new fabrication protocol (Fig 3c). Computational Simulation (<a href="/appendix-ElectrochemicalAnalysis/">Appendix</a>) 
+            validated the electric field was minimumly disrupted by the new setup. Together, this provides a baseline of iteration for electrode array. <p>
+
+            <figure class="svg-component" id="Figure-3">
             <img src="Figures/Cell_Transport_Figures/Figure_3.svg" alt="Fig. 3: Initial Setup of Square Wave Generator">
             <figcaption>
-              <b>Fig. 3: Iteration on Transfection Plate.</b> <b>(a).</b> Schematics of the iterated tyransfection plate. 
+              <b>Fig. 3: Iteration on Transfection Plate Enhances Electrode Uniformity and Mainatins Electric Property. </b> <b>(a).</b> Schematics of the iterated tyransfection plate. 
               The iteration re-considers the design of the electrode array (top) and transfection plate (bottom). 
               <b>(b).</b> Crossectional schematics of iterated transfection plate. The electroporation well is placed 
               on top of the double layer conductive plates, whcih consists of the indium tin oxide (ITO) as top layer 
@@ -771,19 +795,6 @@
             </div>
           </figure> 
         </div>
-
-
-
-        
-        <div id="Results-cell-delivery-system">
-          <h3 style="font-size: 1.6em;">Results</h3>
-          <p>Here we present the automated backbone (Fig. 2) and demonstarte the readiness of the device for automated transfection. 
-            In general, we evaluated the device in three folds. First, we demonstrate the steadiness of electroporation voltage generation 
-            through a benchmark characterization of voltage conditions. Next, we demonstrated 
-            the minimum sample volume loss in a typical cell transportation protocol. Finally, 
-            we characterized the device's capability to recover cells and optimized hyperparameters
-            to achieve the best recovery performance. Together, the evaluation validated 
-            the readiness of the bioreactor for transfection experiments. </p>
 
             <p><b>Voltage generator outputs stable rectangular waves at medium and low frequencies.</b> Steady voltage toggling is essential 
             for achieving consistent transfection while preserving cell viability. To ensure waveform stability, we adopted a two-module 
@@ -823,13 +834,13 @@
           
           <p><b>Automated bioreactor enables efficient medium acquisition.</b> Conventional bioreactors rely on tubing-based 
             systems, which often incur cell loss due to residual medium within the flow path. To address this limitation, we 
-            developed a pipette-based acquisition module comprising a multi-channel pipette integrated with a movable platform 
+            developed a syringe-based acquisition module comprising a multi-channel syringe integrated with a movable platform 
             supporting both the sample reservoir and transfection substrate. This design departs from conventional peristaltic 
             pump systems by transporting the sample platform rather than the medium, thereby minimizing residual loss. To quantify 
-            acquisition performance, we evaluated volume recovery under a representative transfer protocol (<b>Fig. 5</b>a), with 
-            results summarized in Fig. 5c. At low input volumes and low acquisition speeds, near-complete recovery was achieved. 
+            acquisition performance, we evaluated volume recovery under a representative transfer protocol (<b>Fig. 5</b>a). 
+            Fig. 5c summarizes the results. At low input volumes and low acquisition speeds, near-complete recovery was achieved. 
             In contrast, higher volumes or faster acquisition led to a marked reduction in recovery, primarily due to spillage. 
-            This systematic loss (Fig. 5b) arises from the non-negligible volume occupied by the pipette tip relative to the 
+            This systematic loss (Fig. 5b) arises from the non-negligible volume occupied by the syringe tip relative to the 
             limited well capacity of the transfection substrate. The effect is less pronounced at low volumes, where the tip 
             occupies a smaller fraction of the well. These observations suggest a design refinement in which medium transfer 
             is performed in multiple stages to reduce effective tip displacement—for example, sequential dispensing in fractional 
@@ -859,12 +870,12 @@
             </div>
           </figure> 
 
-          <p><b>Automated bioreactor enables high-efficiency cell recovery with minimal loss.</b> Conventional bioreactor systems 
+          <p><b>Automated bioreactor achieves high-efficiency cell recovery with minimal loss.</b> Conventional bioreactor systems 
             are often limited by substantial cell loss during medium handling. Here, we quantitatively evaluate the recovery performance 
             of the proposed device using a simplified protocol that excludes transfection (<b>Fig. 6</b>a). All operational parameters 
             were set to the optimized conditions identified from prior volume acquisition experiments, namely intermediate medium volume 
             and acquisition speed. Jurkat cells, a rapidly proliferating T cell line, were suspended in RPMI 1640 to approximate realistic 
-            manufacturing conditions. As summarized in <b>Fig. 6</b>b, the device achieves high and consistent volume recovery. Notably, 
+            manufacturing conditions. Fig. 6b summarizes the device achieves high and consistent volume recovery. Notably, 
             recovery efficiency is approximately 5% higher than that observed in water-based controls. This discrepancy is attributed to 
             differences in fluid properties. Specifically, the lower viscosity and surface tension of water promote dispersion upon pipette 
             interaction, reducing the likelihood of re-collection. In contrast, RPMI 1640, enriched with proteins and nutrients, exhibits 
@@ -901,6 +912,86 @@
               <div class="caption"></div>
             </div>
           </figure> 
+
+          <p> <b> Summary of Prototype Evaluation. </b> <p><b>Table 4</b> summarizes the performance of the 
+            current prototype against the predefined design specifications. Overall, the system demonstrates 
+            baseline functionality across key dimensions of automation, establishing a stable and programmable 
+            platform suitable for iterative transfection studies. While all core modules are functionally validated,
+            the optimal operating regime for effective closed-loop cell manufacturing has yet to be fully determined. 
+            Notably, a key limitation lies in the system footprint, which exceeds the specified constraint, particularly 
+            following the integration of the power supply module. In the next section, we focus on iterative refinement 
+            of the transfection process, with higher-resolution parameter tuning to further enhance system performance.</p><p>
+
+          <table class="design-table" id="Table-4">
+            <caption>Table 4: Design Evaluation Against Specification</caption>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Requirement / Feature</th>
+                <th>Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Automation</strong></td>
+                <td>
+                  Setup can enable stable, controllable, programmable transportation at a desired speed.
+                </td>
+                <td rowspan="2">
+                  <ul style="margin: 0; padding-left: 1.5em;">
+                    <li>Automated Backbone achieves reproducible results under minimum human intervention</li>
+                    <li>Protocols and Hyperparameters can be easily programmed and modified in G-code</li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td><strong>Manufacturing</strong></td>
+                <td>
+                  <ul style="margin: 0; padding-left: 1.5em;">
+                    <li>Electroporation array seamlessly incorporated and automatically controlled.</li>
+                    <li>Automation protocols can run without inter-part preclusion.</li>
+                    <li>Integrated modules are reliable, and protocols are reproducible.</li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td><strong>Medium Acquisition and Recovery</strong></td>
+                <td>
+                  <ul style="margin: 0; padding-left: 1.5em;">
+                    <li>Input sample media can be effectively recovered, with loss &lt; 20% in volume</li>
+                    <li>Residue droplet should be avoided</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul style="margin: 0; padding-left: 1.5em;">
+                    <li>At low well volume, &gt; 90% volume recovery is achieved</li>
+                    <li>At medium well volume, &gt; 80% volume recovery is achieved</li>
+                    <li>The high volume recovery (~90%) is also observed in cell recovery experiment.</li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td><strong>Cell Loading and Recovery</strong></td>
+                <td>
+                  <ul style="margin: 0; padding-left: 1.5em;">
+                    <li>Input cells can be effectively recovered, with cell loss &lt; 40%</li>
+                    <li>Cell viability can be maintained</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul style="margin: 0; padding-left: 1.5em;">
+                    <li>Cell recovery achieves ~80% at optimal conditions</li>
+                    <li>Cell recovery is &gt; 60% across all conditions.</li>
+                    <li>Viability is maintained &gt; 80%</li>
+                    <li>Viability is &gt; 90% at optimal conditions</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>   
 
         </div>
 
