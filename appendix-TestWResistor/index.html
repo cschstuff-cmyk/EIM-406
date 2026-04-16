@@ -103,7 +103,9 @@
 
 
     <div class="content-inner">
-      <h1 id="Objective">Objective</h1>
+      <h1>Verification Test with Different Resistors and Voltages</h1>
+
+      <h2 id="Objective">Objective</h2>
       <p>
         To verify that output of Arduino-based pulse generator produces a reliable square wave, 
         at 40Hz and 200us at set voltages and load.
@@ -115,7 +117,7 @@
 
     <div class="content-inner">
 
-      <h1 id="Methodology">Methodology</h1>
+      <h2 id="Methodology">Methodology</h2>
       <p>
         To connect resistors to Arduino-based pulse generator to simulate a specific configuration of well plates 
         (1-hole, 6-hole, 12-hole, 24-hole, 48-hole and 96-hole) based on their calculated effective resistance 
@@ -187,7 +189,7 @@
       <p>For datasets with only one reading, SD and CV could not be calculated, and variation could not be quantitatively assessed.</p>
 
       <div id="Calculations">
-        <h2>Calculations</h2>
+        <h3><u>Calculations</u></h3>
         <p>
           To determine the appropriate resistors to use in simulating each well plate configuration, the resistance per well is required. This is given by the formula 
         </p>
@@ -231,12 +233,12 @@
         <p>Hence, \( d = 5.78mm + 1mm = 6.78mm \)</p>
 
         <h3 id="Calculating-the-value-of-sigma">Calculating the value of \( \sigma \)</h3>
-        <p><b>The relationship between osmolality and conductivity in Opti-MEM</b></p>
+        <p><u>The relationship between osmolality and conductivity in Opti-MEM</u></p>
         <p>The electrical conductivity of Opti-MEM Reduced Serum Medium can be estimated from its osmolality because both properties depend on the concentration of dissolved ionic species. While <b>osmolality</b> measures the total number of solute particles per kilogram of solvent, <b>conductivity</b> reflects the ability of ions in solution to carry electrical current.</p>
         <p>In physiological media such as Opti-MEM, these properties are dominated by strong electrolytes, primarily sodium chloride (NaCl), which dissociates completely in water:</p>
         <p>$$ NaCl\rightarrow \operatorname{Na}^++C\operatorname{l}^- $$</p>
 
-        <p><b>Osmolality and Electrolyte Concentration</b></p>
+        <p><u>Osmolality and Electrolyte Concentration</u></p>
         <p>The relationship between osmolality and solute concentration can be described using the thermodynamic expression for osmotic pressure:</p>
         <p>$$ \Pi=R\cdot T\cdot b\cdot\nu\cdot\Phi $$ <a id="[2]" href="#ref-2">[2]</a></p>
         <p>Here, the behaviour of the solution is determined by the total number of effective solute particles. Since Rand Tare constants (for a given system and temperature), osmotic pressure is directly proportional to the term \( b\cdot\nu\cdot\Phi\), which represents the concentration of osmotically active species.</p>
@@ -248,7 +250,7 @@
         <p>$$ NaCl\rightarrow \operatorname{Na}^++C\operatorname{l}^- $$</p>
         <p>i=2, so the osmolality is approximately twice the molar concentration, with \( \phi \) accounting for non-ideal behaviour.</p>
 
-        <p><b>Conductivity and Molar Conductivity</b></p>
+        <p><u>Conductivity and Molar Conductivity</u></p>
         <p>Electrical conductivity is related to ion concentration through the molar conductivity:</p>
         <p>$$\Lambda_m=\frac{\sigma}{c}$$ <a id="[3]" href="#ref-3">[3]</a></p>
         <p>or equivalently:</p>
@@ -261,13 +263,13 @@
           <li>\( c \) = is the molar concentration</li>
         </ul>
 
-        <p><b>Linking osmolality and conductivity</b></p>
+        <p><u>Linking osmolality and conductivity</u></p>
         <p>Since both osmolality and conductivity depend on the same ion concentration, we can combine the two relationships to eliminate c:</p>
         <p>$$\sigma=\frac{\Lambda_m}{i\cdot\phi}\cdot Osm $$</p>
         <p>This introduces an estimation factor:</p>
         <p>$$k=\frac{\sigma}{Osm}=\frac{\Lambda_m}{i\cdot\phi}$$</p>
 
-        <p><b>Why This Approximation Works for Opti-MEM</b></p>
+        <p><u>Why This Approximation Works for Opti-MEM</u></p>
         <ul>
           <li><b>Ionic Dominance:</b> 	Although Opti-MEM contains proteins and nutrients, its osmotic and electrical properties are largely governed by \( N\operatorname{a}^+and C\operatorname{l}^- \)ions. </li>
           <li><b>Near-linerity</b>Within physiological ranges (≈280–320 mOsm/kg), the relationship 
@@ -276,7 +278,7 @@
           </li>
         </ul>
 
-        <p><b>Estimating Conductivity of Opti-MEM</b></p>
+        <p><u>Estimating Conductivity of Opti-MEM</u></p>
         <p>The reported osmolality of Opti-MEM is approximately: \( 299mOsm/kg\approx0.299Osm/L \) <a id="[5]" href="#ref-5">[5]</a></p>
         <p>Using the osmotic relation: \( c=\frac{\operatorname{Osm}}{i\cdot\phi} \) with \( i\)=2 and \( \phi \)=0.93:</p>
         <p>$$c=\frac{0.299}{2\times0.93}\approx0.161mol/L$$</p>
@@ -346,11 +348,11 @@
 
     
     <div class="content-inner">
-      <h1 id="Results">Results</h1>
+      <h2 id="Results">Results</h2>
 
       <div id="Resistance-21.6kOhm"> 
         <!-- 1 well plate-->
-        <h2>Resistance = 21.6kΩ (1 well)</h2>
+        <h3><u>Resistance = 21.6kΩ (1 well)</u></h3>
         <p><b>At 5V input:</b></p>
         <table class="design-table" id="Table-5V-1well">      
           <thead>
@@ -608,7 +610,7 @@
           
       <div id="Resistance-3.6kOhm">
         <!-- 6 well plate-->
-        <h2 id="Resistance-3.6kOhm">Resistance = 3.6kΩ (6 well)</h2>
+        <h3 id="Resistance-3.6kOhm"><u>Resistance = 3.6kΩ (6 well)</u></h3>
         <p><b>At 5V input:</b></p>
         <table class="design-table" id="Table-5V-6well">      
           <thead>
@@ -867,7 +869,7 @@
       
       <div id="Resistance-1.8kOhm"> 
         <!-- 12 well plate-->
-        <h2 >Resistance = 1.8kΩ (12 well)</h2>
+        <h3 ><u>Resistance = 1.8kΩ (12 well)</u></h2>
         <p><b>At 5V input:</b></p>
         <table class="design-table" id="Table-5V-12well">      
           <thead>
@@ -1126,7 +1128,7 @@
       
       <!-- 24 well plate-->
       <div id="Resistance-900Ohm">
-        <h2>Resistance = 900Ω (24 well)</h2>
+        <h3><u>Resistance = 900Ω (24 well)</u></h3>
         <p><b>At 5V input:</b></p>
         <table class="design-table" id="Table-5V-24well">      
           <thead>
@@ -1388,7 +1390,7 @@
 
       <!-- 48 well plate-->
       <div id="Resistance-450Ohm">
-        <h2>Resistance = 450Ω (48 well)</h2>
+        <h3><u>Resistance = 450Ω (48 well)</u></h3>
         <p><b>At 5V input:</b></p>
         <table class="design-table" id="Table-5V-48well">      
           <thead>
@@ -1651,7 +1653,7 @@
 
       <!-- 96 well plate-->
       <div id="Resistance-210Ohm">
-        <h2>Resistance = 210Ω (96 well)</h2>
+        <h3><u>Resistance = 210Ω (96 well)</u></h2>
         <p><b>At 5V input:</b></p>
         <table class="design-table" id="Table-5V-96well">      
           <thead>

@@ -64,19 +64,22 @@
 <body>
     <div class="content">
         <div class="content-inner" id="Objective">
+            <h1>Verification Test with Cells</h1>
+        
             <h2>Objective</h2>
             <p>To observe impact on cells during full electroporation run using the designed set up.</p>
         </div>
 
         <div class="content-inner" id="Methodology">
             <h2>Methodology</h2>
-            <p>Execute full electroporation cycle (refer to <a href="./appendix-TransfectionProtocol/index.html">Transfection Protocol</a> for details), with fully assembled set up and Arduino-based pulse generator providing voltage of 40 V peak voltage, 200 µs pulse width, and 40 Hz frequency for 2 minutes. </p>
+            <p>Execute full electroporation cycle (refer to <a href="../appendix-TransfectionProtocol/index.html">Transfection Protocol</a> for details), with fully assembled set up and Arduino-based pulse generator providing voltage of 40 V peak voltage, 200 µs pulse width, and 40 Hz frequency for 2 minutes. </p>
             <p>Conduct analysis of post-experiment Jurkat cells using automated cell counter, flow cytometry and fluorescence microscopy.</p>
             <p>Monitor output signal with oscilloscope on peak voltage, pulse width, frequency and shape of waveform.</p>
             <p>When relevant, process recoded data by calculating mean for each parameter; evaluate accuracy using absolute error and percentage error, and precision using standard deviation and coefficient of variation.</p>
 
             <p>Coefficient of Variation is calculated as such:</p>
             <table class="design-table" id="Table-coefficient-of-variation">
+                <caption>Table 1: Coefficient of Variation</caption>
                 <thead>
                 <tr>
                     <th>CV(%)</th>
@@ -101,6 +104,7 @@
 
             <p>Likewise, Percentage Error is classified as such:</p>
             <table class="design-table" id="Table-percentage-error">
+                <Caption>Table 2: Percentage Error</Caption>
                 <thead>
                 <tr>
                     <th>PE(%)</th>
@@ -126,10 +130,11 @@
 
         <div class="content-inner" id="Results">
             <h2>Results</h2>
-            <p><u>Results on voltage output</u></p>
+            
             <div id="voltage-readings">
-                
-                <table class="design-table" id="Table-cells-voltage-raw-data">      
+                <caption><b>Table 3: Readings from Voltage Output</b></caption>
+                <table class="design-table" id="Table-cells-voltage-raw-data">   
+                      
                     <thead>
                         <tr>
                         <th>Parameter</th>
@@ -167,7 +172,8 @@
                 </table>
 
 
-                <table class="design-table" id="Table-cells-voltage-analysis">            
+                <table class="design-table" id="Table-cells-voltage-analysis">         
+                    <caption>Table 4: Analysis on Voltage Output</caption>   
                     <thead>
                         <tr>
                         <th>Parameter</th>
@@ -225,7 +231,7 @@
             <div id="cells">
                 <p><u>Results on cell viability and count</u></p>
                 <table class="design-table" id="Table-cells-before-experiment">      
-                    <caption>Table X: Cell viability and count data obtained from automated cell counter (Before Experiment)</caption>
+                    <caption>Table 5: Cell viability and count data obtained from automated cell counter (Before Experiment)</caption>
                     <thead>
                         <tr>
                         <th>Cell Viability (%)</th>
@@ -245,7 +251,7 @@
 
                 
                 <table class="design-table" id="Table-cells-after-experiment-viability-raw-data">      
-                    <caption>Table X: Cell viability and count data obtained from automated cell counter (After Experiment)</caption>
+                    <caption>Table 6: Cell viability and count data obtained from automated cell counter (After Experiment)</caption>
                     <thead>
                         <tr>
                         <th></th>
@@ -303,7 +309,7 @@
                 
                
                 <table class="design-table" id="Table-cells-after-experiment-viability-analysis">      
-                    <caption>Table X: Analysis of cell viability and count data obtained from automated cell counter (After Experiment)</caption>
+                    <caption>Table 7: Analysis of cell viability and count data obtained from automated cell counter (After Experiment)</caption>
                     <thead>
                         <tr>
                         <th></th>
@@ -346,7 +352,7 @@
                 
                 <p><u>Results from flow cytometry</u></p>
                 <table class="design-table" id="Table-cells-after-experiment-flow-cytometry-raw-data">     
-                    <caption>Table X: Flow cytometry data obtained from analysis of post-experiment Jurkat cells</caption> 
+                    <caption>Table 8: Flow cytometry data obtained from analysis of post-experiment Jurkat cells</caption> 
                     <thead>
                         <tr>
                         <th></th>
@@ -402,7 +408,7 @@
                 </table>
 
                 <table class="design-table" id="Table-cells-after-experiment-flow-cytometry-analysis">      
-                    <caption>Table X: Analysis of flow cytometry data obtained from analysis of post-experiment Jurkat cells</caption>
+                    <caption>Table 9: Analysis of flow cytometry data obtained from analysis of post-experiment Jurkat cells</caption>
                     <thead>
                         <tr>
                         <th></th>

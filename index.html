@@ -166,7 +166,7 @@
 
           <!-- tree item for appendix -->
           <sl-tree-item>
-            <a>Appendix</a>
+            <a href="#appendix">Appendix</a>
  
             <sl-tree-item>
               <li><a href="./appendix-SimulationProtocol/index.html">Simulation Protocol</a></li>
@@ -175,23 +175,23 @@
               <li><a href="./appendix-ElectrochemicalAnalysis/index.html">Electrochemical Analysis</a></li>
             </sl-tree-item>
             <sl-tree-item>
-              <li><a href="./appendix-TestWTitaniumArray/">Verification Testing with Titanium Array</a></li>
+              <li><a href="./appendix-TestWTitaniumArray/">Verification Test with Titanium Array</a></li>
             </sl-tree-item>
             <sl-tree-item>
-              <li><a href="./appendix-TestWItoplateAndMetalplate/index.html">Verification Testing with ITO and Metal Plates</a></li>
+              <li><a href="./appendix-TestWItoplateAndMetalplate/index.html">Verification Test with ITO and Metal Plates</a></li>
             </sl-tree-item>
             <sl-tree-item>
               <li><a href="./appendix-SeepageTest/index.html">Seepage Test</a></li>
             </sl-tree-item>
             <sl-tree-item>
-              <li><a href="./appendix-TestWResistor/index.html">Verification Testing with Different Resistors and Voltages</a></li>
+              <li><a href="./appendix-TestWResistor/index.html">Verification Test with Different Resistors and Voltages</a></li>
             </sl-tree-item>
             <sl-tree-item>
-              <li><a href="./appendix-TestWOptiMEM/index.html">Verification Testing with OptiMEM</a></li>
+              <li><a href="./appendix-TestWOptiMEM/index.html">Verification Test with OptiMEM</a></li>
             </sl-tree-item>            
             
             <sl-tree-item>
-              <li><a href="./appendix-TestWCells/index.html">Test with Cells</a></li>
+              <li><a href="./appendix-TestWCells/index.html">Verification Test with Cells</a></li>
             </sl-tree-item>
             <sl-tree-item>
               <li><a href="./appendix-TransfectionProtocol/index.html">Transfection Protocol</a></li>
@@ -725,8 +725,8 @@
         
         <div id="Results-cell-delivery-system">
           <h3 style="font-size: 1.6em;">Results</h3>
-          <p>Here we present the fabricated prototype, including the automation backbone (Fig. 2), 
-            the initial prototype of electrode array (<b>Fig. 3</b>) and modular voltage generator (<b>Fig. 4 </b>).
+          <p>Here we present the fabricated prototype, including the automation backbone (<a href="#Figure-2">Fig. 2</a>), 
+            the initial prototype of electrode array (<a href="#Figure-3"><b>Fig. 3</b></a>) and modular voltage generator (<a href="#Figure-4"><b>Fig. 4</b></a>).
             To justify the device is ready for automated transfection, we evaluated / iterated the device in four folds. 
             First, we demonstrated an iteration of electrode array can maintain electrode topological uniformity, 
             and a replacement of material, i.e., from Platinum to Titanium, maintains the electric 
@@ -741,7 +741,7 @@
             Uniformity of electrode is essential to ensure a consistent electroporation in a alrge-scale transfection
             experiment. To enhance the electrode uniformity and also cut down cost, we employed a new material that is cheaper 
             and stiffer, i.e., Titanium, to replace the prior Platinum electrode. Also, to ensure the electrode is vertically aligned,
-            we adopted a new fabrication protocol (Fig 3c). Computational Simulation (<a href="/appendix-ElectrochemicalAnalysis/">Appendix</a>) 
+            we adopted a new fabrication protocol (Fig 3c). Computational Simulation (<a href="./appendix-ElectrochemicalAnalysis/index.html">Appendix</a>) 
             validated the electric field was minimumly disrupted by the new setup. Together, this provides a baseline of iteration for electrode array. <p>
 
             <figure class="svg-component" id="Figure-3">
@@ -766,11 +766,11 @@
             <p><b>A voltage generator sourced from a supplier outputs stable rectangular waves at medium and low frequencies.</b> Steady voltage toggling is essential 
             for achieving consistent transfection while preserving cell viability. To ensure waveform stability, we adopted a two-module 
             architecture comprising a DC voltage generator (bottom) and a voltage regulator (top), where the DC input is modulated into a 
-            rectangular waveform (<b>Fig. 4</b>a). This modular design enables straightforward troubleshooting, independent optimization of 
+            rectangular waveform (<a href="#Figure-4"><b>Fig. 4</b>a</a>). This modular design enables straightforward troubleshooting, independent optimization of 
             waveform parameters, and flexible integration with alternative power sources or control schemes. To characterize electroporation-relevant 
             output, we benchmarked the waveform across three frequencies: high (53 <i>Hz</i>), medium (50 <i>Hz</i>), and low (10 <i>Hz</i>). We found 
             that frequency, rather than peak ratio, predominantly governs output stability. At higher frequencies, low-level fluctuations emerge 
-            (Fig. 4b–c) and progressively amplify with increasing frequency. Empirically, the upper limit for stable rectangular wave generation 
+            (<a href="#Figure-4">Fig. 4b–c</a>) and progressively amplify with increasing frequency. Empirically, the upper limit for stable rectangular wave generation 
             was ~50 <i>Hz</i>. We attribute this instability to the limited dynamic response of the regulator, which prevents complete switching 
             within each cycle at elevated frequencies, resulting in waveform distortion. Collectively, these results establish that the current 
             generator reliably supports the typical electroporation regime (~40 <i>Hz</i>). This serves as a baseline for a working platform for 
@@ -803,10 +803,10 @@
             developed a syringe-based acquisition module comprising a multi-channel syringe integrated with a movable platform 
             supporting both the sample reservoir and transfection substrate. This design departs from conventional peristaltic 
             pump systems by transporting the sample platform rather than the medium, thereby minimizing residual loss. To quantify 
-            acquisition performance, we evaluated volume recovery under a representative transfer protocol (<b>Fig. 5</b>a). 
+            acquisition performance, we evaluated volume recovery under a representative transfer protocol (<a href="#Figure-5"><b>Fig. 5</b>a</a>). 
             Fig. 5c summarizes the results. At low input volumes and low acquisition speeds, near-complete recovery was achieved. 
             In contrast, higher volumes or faster acquisition led to a marked reduction in recovery, primarily due to spillage. 
-            This systematic loss (Fig. 5b) arises from the non-negligible volume occupied by the syringe tip relative to the 
+            This systematic loss (<a href="#Figure-5">Fig. 5b</a>) arises from the non-negligible volume occupied by the syringe tip relative to the 
             limited well capacity of the transfection substrate. The effect is less pronounced at low volumes, where the tip 
             occupies a smaller fraction of the well. These observations suggest a design refinement in which medium transfer 
             is performed in multiple stages to reduce effective tip displacement—for example, sequential dispensing in fractional 
@@ -838,10 +838,10 @@
 
           <p><b>Automated bioreactor achieves high-efficiency cell recovery with minimal loss.</b> Conventional bioreactor systems 
             are often limited by substantial cell loss during medium handling. Here, we quantitatively evaluate the recovery performance 
-            of the proposed device using a simplified protocol that excludes transfection (<b>Fig. 6</b>a). All operational parameters 
+            of the proposed device using a simplified protocol that excludes transfection (<a href="#Figure-6"><b>Fig. 6</b>a</a>). All operational parameters 
             were set to the optimized conditions identified from prior volume acquisition experiments, namely intermediate medium volume 
             and acquisition speed. Jurkat cells, a rapidly proliferating T cell line, were suspended in RPMI 1640 to approximate realistic 
-            manufacturing conditions. Fig. 6b summarizes the device achieves high and consistent volume recovery. Notably, 
+            manufacturing conditions. <a href="#Figure-6">Fig. 6b</a> summarizes the device achieves high and consistent volume recovery. Notably, 
             recovery efficiency is approximately 5% higher than that observed in water-based controls. This discrepancy is attributed to 
             differences in fluid properties. Specifically, the lower viscosity and surface tension of water promote dispersion upon pipette 
             interaction, reducing the likelihood of re-collection. In contrast, RPMI 1640, enriched with proteins and nutrients, exhibits 
@@ -1016,7 +1016,7 @@
             <p>
               The electroporation set up aims to address viral-vector CAR-T challenges and 
               scalability limits, targeting (1a) and (1b) (<a href="#Table-1">Table 1</a>), and the key milestones on the 
-              electroporation system in <a href="key-milestones">table 2</a>. It 
+              electroporation system in <a href="#key-milestones">Table 2</a>. It 
               supports the translation of the protocol for both clinical and research, 
               enabling scalable cell production, and robust cargo delivery and 
               nano-electroporation.
@@ -1303,7 +1303,7 @@
 
               <p>
                 The circuit design underwent multiple iterations, ultimately achieving a stable output of 200 µs 
-                pulse width at 40 Hz with a square waveform across varying voltages and resistive loads.
+                pulse width at 40 Hz with a square waveform across varying voltages and resistive loads (<a href="#Figure-OptiMEM-voltage-output">Fig. 9</a>).
               </p>
               <figure class="svg-component" id="Figure-OptiMEM-voltage-output">
                 <img src="Figures/circuit_iteration.svg" alt="Fig. 9: Iteration of circuit design for pulse generation" style="max-width: 60%; height: auto;display: block; margin: 0 auto;">
@@ -1482,14 +1482,14 @@
             
             <p><b>Evaluating Electrical Integrity within the System:</b> Validation tests were conducted on both the titanium electrode array and the ITO-metal 
               plate assembly. Each component was connected to a DC power supply, and voltage measurements were taken at specified points using a multimeter 
-              (refer to <a href="appendix-TestWTitaniumArray/">appendix - verification test with titanium array</a>;
-              <a href="appendix-TestWItoplateAndMetalplate/">appendix - verification test with ITO and metal plate</a>"). 
+              (refer to <a href="./appendix-TestWTitaniumArray/index.html">appendix - verification test with titanium array</a>;
+              <a href="./appendix-TestWItoplateAndMetalplate/index.html">appendix - verification test with ITO and metal plate</a>"). 
             </p>
 
             <!---->
             
 
-            <figure class="svg-component" id="Figure-OptiMEM-voltage-output">
+            <figure class="svg-component" id="Figure-Heatmaps">
                 <img src="Figures/heatmap_Anode+ITOMetalPlateSetup_upload.svg" alt="Fig. 11: Verification Test with Elecrodes">
                 <figcaption>
                 <b>Fig. 11: Verification Test with Elecrodes</b> 
@@ -1510,7 +1510,7 @@
             <p>Measurements were recorded for input voltages of 5 V, 10 V, 20 V, and 40 V to evaluate performance across a representative operating range. 
               The results indicated that the measured output voltage matched the input voltage at all points, demonstrating 
               negligible voltage drop. This confirms that both components can deliver a uniform voltage signal without observable degradation 
-              (refer to <a href="#Figure-OptiMEM-voltage-output">Fig. 11</a>).
+              (refer to <a href="#Figure-Heatmaps">Fig. 11</a>).
             </p>
 
             
@@ -1543,7 +1543,7 @@
                 </table>
 
             <p>No evidence of seepage between channels or at the ITO interface was observed throughout the testing period, indicating that the cargo 
-              channel assembly provides effective fluid containment under the tested conditions (refer to <a href="./appendix-SeepageTest/">appendix-seepage test</a>).
+              channel assembly provides effective fluid containment under the tested conditions (refer to <a href="./appendix-SeepageTest/index.html">appendix-seepage test</a>).
             </p>
 
           
@@ -1573,8 +1573,8 @@
               Results showed predictable voltage scaling with input; however, a consistent voltage overshoot of 
               approximately 16-27% was observed across tested voltages (5-40 V). Despite this, 
               characteristics of the signal remained highly stable, with pulse width maintained near 200 µs 
-              (PE &lt; 10%), frequency near 40 Hz (error &lt; 1%, CV &lt; 0.3%) and a square waveform across varying resistance and voltages (refer to <a href="Figure-resistors-voltage-output">Fig. 12</a>, <a href="appendix-TestWResistor/index.html">appendix - verification test with resistors</a>)
-              . 
+              (PE &lt; 10%), frequency near 40 Hz (error &lt; 1%, CV &lt; 0.3%) and a square waveform across varying resistance and voltages (refer to <a href="#Figure-resistors-voltage-output">Fig. 12</a>, 
+              <a href="./appendix-TestWResistor/index.html">appendix - verification test with different resistors and voltages</a>). 
             </p>
 
            
@@ -1597,7 +1597,7 @@
               Opti-MEM-filled channels and wells. Under these conditions, peak voltage more closely matched the target 
               (43.33 V at 40 V input, ~8.3% error), indicating improved accuracy. Pulse width (≈202.67 µs, CV = 2.28%, PE = 1.33%) and 
               frequency (≈40.16 Hz, CV = 0.04%, PE = 0.4%) remained highly stable, and waveform integrity was preserved (<a href="#Figure-OptiMEM-voltage-output">fig. 13</a>, 
-              <a href="appendix-TestWOptiMEM/">Appendix - verification test with Opti-MEM</a>).
+              <a href="./appendix-TestWOptiMEM/index.html">Appendix - verification test with Opti-MEM</a>).
             </p>
 
             <p>Overall, while resistive testing revealed a systematic voltage overshoot, performance under fluid loading more accurately 
@@ -1677,7 +1677,7 @@
               Mean post-experimental viability was 76.83% (&PlusMinus;10%) from a 99% baseline. A CV of 13.03% suggests the electrical 
               impact on the cells is moderately consistent, while a mean recovery ratio of 1.34 suggests the protocol is generally non-lethal. 
               However, recovery ratio has a high CV (>70%) that was attributed to mechanical leakage of cells between the well plate and 
-              nanostraws, caused by damage to the adhesive tape during the manual assembly process (refer to <a href="#Table-cells-after-experiment-viability-analysis">Table 9</a>).
+              nanostraws, caused by damage to the adhesive tape during the manual assembly process (refer to <a href="#Table-cells-after-experiment-viability-analysis">Table 10</a>).
             </p>
             
             <table class="design-table" id="Table-cells-after-experiment-flow-cytometry-analysis">
@@ -1708,7 +1708,7 @@
 
             <p>
               <u>Flow Cytometry and Transfection Efficiency:</u>
-              Mean transfection efficiency was 6.63% (CV 35.03%) (refer to <a href="Table-cells-after-experiment-flow-cytometry-analysis">Table 10</a>). This variability 
+              Mean transfection efficiency was 6.63% (CV 35.03%) (refer to <a href="#Table-cells-after-experiment-flow-cytometry-analysis">Table 11</a>). This variability 
               likely stems from the leakages aforementioned, 
               tacky nature of the adhesive and flimsy nature of the nanostraws-adhesive composite, which made the assembly 
               highly susceptible to accidental contact.
@@ -1727,7 +1727,7 @@
             </figure>  
             <p>
               <u>Fluorescence Microscopy Observations:</u>
-              Imaging (<a href="#Figure-cells-voltage-output">Fig. 15</a>) indicates that FITC-Dextran transfection occurred in a sub-population of cells, which maintained a 
+              Imaging (<a href="#cells_fluroscence_microscopy_upload.svg">Fig. 15</a>) indicates that FITC-Dextran transfection occurred in a sub-population of cells, which maintained a 
               healthy, rounded morphology like the negative control. This proves the voltage output can achieve molecular 
               delivery without causing universal cell lysis.
             </p>
@@ -1738,7 +1738,7 @@
               The transfection efficiency - validated by both flow cytometry and fluorescence microscopy - proves the 
               device's capability to deliver molecules into the intracellular space. While the voltage output is stable, 
               further optimization of electrical parameters and process-level modifications are required to achieve more 
-              reproducible and high-yield results (refer to <a href="appendix-TestWCells/">Appendix - verification test with cells</a>).
+              reproducible and high-yield results (refer to <a href="./appendix-TestWCells/index.html">Appendix - verification test with cells</a>).
             </p>
           </div>
 
@@ -1889,7 +1889,7 @@
         <h2>4. Discussion</h2>
         <div id="Summary-and-Impact" class="content-inner">
           <p><b> Summary and Impact. </b> Here we present a functionally validated prototype that establishes what automated 
-            cell engineering can achieve at the level of its core modules (<a href="addressing-key-milestones">Table 14</a>). The cell delivery subsystem 
+            cell engineering can achieve at the level of its core modules (<a href="#addressing-key-milestones">Table 14</a>). The cell delivery subsystem 
             can preserve high cell viability (&gt;80%, exceeding 90% under optimized conditions), demonstrating 
             that automated handling can maintain cellular integrity and effectively replace manual processing. 
             It can further achieve efficient cell recovery (&gt;80%) with reduced adhesion, indicating reliable 
@@ -2018,6 +2018,41 @@
       </script>
     </div>
     <sl-divider></sl-divider>
+
+    <div class = "content-inner">
+      <!-- Container for references -->
+      <h2>Appendix</h2>
+      <div id="appendix"></div>
+      <ul>
+              <li><a href="./appendix-SimulationProtocol/index.html">Simulation Protocol</a></li>
+            
+              <li><a href="./appendix-ElectrochemicalAnalysis/index.html">Electrochemical Analysis</a></li>
+           
+              <li><a href="./appendix-TestWTitaniumArray/">Verification Test with Titanium Array</a></li>
+            
+              <li><a href="./appendix-TestWItoplateAndMetalplate/index.html">Verification Test with ITO and Metal Plates</a></li>
+            
+              <li><a href="./appendix-SeepageTest/index.html">Seepage Test</a></li>
+            
+              <li><a href="./appendix-TestWResistor/index.html">Verification Test with Different Resistors and Voltages</a></li>
+            
+              <li><a href="./appendix-TestWOptiMEM/index.html">Verification Test with OptiMEM</a></li>
+                     
+            
+           
+              <li><a href="./appendix-TestWCells/index.html">Verification Test with Cells</a></li>
+            
+              <li><a href="./appendix-TransfectionProtocol/index.html">Transfection Protocol</a></li>
+            
+           
+
+            
+              <li><a href="./appendix-Cell_Delivery_Tests_Protocol/index.html">Cell Delivery Protocols</a></li>
+      </ul>
+          
+
+      
+    </div>
     
 
     
